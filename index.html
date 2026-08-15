@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>E-CMIS ระบบหมายจับ กิจกรรมที่ 9</title>
+  <link rel="stylesheet" href="./assets/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="./assets/sweetalert2/sweetalert2.min.css">
+  <link rel="stylesheet" href="./assets/mockup.css">
+  <style>
+    @font-face{font-family:"Kanit";font-style:normal;font-weight:300;font-display:swap;src:url("./assets/fonts/Kanit-Light.ttf") format("truetype")}
+    @font-face{font-family:"Kanit";font-style:normal;font-weight:400;font-display:swap;src:url("./assets/fonts/Kanit-Regular.ttf") format("truetype")}
+    @font-face{font-family:"Kanit";font-style:normal;font-weight:500;font-display:swap;src:url("./assets/fonts/Kanit-Medium.ttf") format("truetype")}
+    @font-face{font-family:"Kanit";font-style:normal;font-weight:600;font-display:swap;src:url("./assets/fonts/Kanit-SemiBold.ttf") format("truetype")}
+    @font-face{font-family:"Kanit";font-style:normal;font-weight:700;font-display:swap;src:url("./assets/fonts/Kanit-Bold.ttf") format("truetype")}
+    :root{--navy:#10284b;--navy2:#1d3975;--blue:#16558f;--blue2:#e8f1fa;--gold:#c6a13d;--gold2:#fff8e8;--ink:#172943;--muted:#62738a;--line:#d6e0ea;--soft:#f1f5f9;--paper:#fbfdff;--green:#24714a;--green2:#e9f6ee;--red:#ad3f3d;--red2:#fff0ef;--orange:#8a6111;--orange2:#fff6df;--shadow:0 5px 18px rgba(16,40,75,.07)}
+    .app{grid-template-columns:268px minmax(0,1fr)}
+    .side{display:flex;flex-direction:column;height:100vh;overflow:hidden;padding:0;background:#0d1b3e;box-shadow:4px 0 18px rgba(13,27,62,.2)}
+    .brand{min-height:92px;flex:0 0 auto;gap:13px;padding:17px 18px;border-bottom:1px solid rgba(255,255,255,.09)}
+    .brand .seal{width:56px;height:56px;flex:0 0 56px;border:2px solid #c99a2e;border-radius:50%;object-fit:cover;background:#f4d56d}
+    .brand strong{color:#f7f9fd;font-size:20px;font-weight:700;letter-spacing:.02em}
+    .brand small{display:block;margin-top:2px;color:#e4be52;font-size:10px;font-weight:600;letter-spacing:.11em}
+    .real-nav{display:block;flex:1;overflow-y:auto;padding:18px 10px 24px}
+    .real-nav .nav-module-label{display:flex;align-items:center;gap:11px;margin-bottom:6px;padding:12px;color:#e7bd4e;font-size:15px;font-weight:600}
+    .real-nav .nav-module-label .icon{width:20px;color:#e7bd4e;text-align:center}
+    .real-nav .nav-section-label{padding:14px 12px 6px;color:#91a2c3;font-size:11px;font-weight:600;letter-spacing:.04em}
+    .real-nav button.nav-link{display:flex;width:100%;min-height:44px;align-items:center;gap:11px;margin:3px 0;padding:10px 12px 10px 38px;border:1px solid transparent;border-radius:7px;background:transparent;color:#cad5e9;font-size:13px;font-weight:500;text-align:left}
+    .real-nav button.nav-link:hover,.real-nav button.nav-link:focus-visible{background:rgba(255,255,255,.07);color:#fff;outline:0}
+    .real-nav button.nav-link.active{border-color:rgba(201,154,46,.4);background:rgba(201,154,46,.14);color:#f0c75a;box-shadow:none;font-weight:600}
+    .real-nav button.nav-link.level-two{padding-left:55px;font-size:12px}
+    .real-nav button.nav-link .icon{width:18px;color:#8fa1c6;text-align:center}
+    .real-nav button.nav-link.active .icon{color:#f0c75a}
+    .profile{flex:0 0 auto;margin:14px;padding:12px;border:0;border-radius:9px;background:rgba(255,255,255,.08)}
+    .profile .avatar{width:38px;height:38px;flex:0 0 38px;background:#1d3975;color:#fff;font-weight:600}
+    .profile strong{color:#fff;font-weight:600}.profile small{font-size:11px;color:#bac7dd}
+    .top{height:68px;padding:0 24px;background:#fafbfe}.global-search{display:flex;align-items:center;gap:9px;min-height:42px;padding:9px 14px}
+    .global-search i{color:#667a94}.collapse,.icon-btn{display:inline-grid;place-items:center}.icon-btn i,.collapse i{font-size:16px}
+    .btn i{margin-right:7px}.btn.icon-only i{margin:0}
+    .notification-dot{right:5px;top:5px;width:7px;height:7px}
+    .stats{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+    .empty{padding:18px 20px;color:#6b7e93;line-height:1.6}
+    .placeholder-note{display:flex;align-items:flex-start;gap:10px;margin:0 0 16px;padding:12px 15px;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;background:var(--gold2);color:#58471d;font-size:12px;line-height:1.6}
+    .placeholder-note i{margin-top:2px}
+    .stage-track{display:flex;flex-wrap:wrap;gap:8px;padding:16px 20px}
+    .stage-step{display:flex;align-items:center;gap:8px;padding:9px 13px;border:1px solid var(--line);border-radius:999px;background:var(--paper);color:var(--muted);font-size:12px;font-weight:600}
+    .stage-step i{font-size:11px}
+    .stage-step.done{border-color:#a9d3b9;background:var(--green2);color:var(--green)}
+    .stage-step.current{border-color:#e4c674;background:var(--gold2);color:#8a6111}
+    .stage-arrow{align-self:center;color:#b7c3d4}
+    .form-group-title{grid-column:1/-1;display:flex;align-items:center;gap:9px;margin-top:10px;padding:10px 2px 7px;border-bottom:1px solid #dbe4ee;color:#174f83;font-size:14px;font-weight:700}
+    .form-group-title:first-child{margin-top:0}.form-group-title i{color:#c39b32}
+    .field-help{display:block;margin-top:5px;color:#6a7a90;font-size:11px;line-height:1.45}
+    .choice-group{grid-column:1/-1}.choice-group>label{display:block;margin-bottom:7px;color:#34465f;font-size:12px;font-weight:800}
+    .choice-options{display:flex;flex-wrap:wrap;gap:8px 18px;padding:11px 12px;border:1px solid #cbd6e2;border-radius:8px;background:#f8fafc}
+    .choice{display:flex;align-items:flex-start;gap:7px;line-height:1.45}.choice input{width:auto;min-height:auto;margin-top:3px}
+    .intake-mode-toggle{display:flex;gap:10px;margin:0 0 16px}
+    .intake-mode-toggle label{flex:1;display:flex;align-items:flex-start;gap:10px;padding:13px 15px;border:1px solid var(--line);border-radius:10px;background:var(--paper);cursor:pointer}
+    .intake-mode-toggle label.checked{border-color:#a8c7e5;background:var(--blue2)}
+    .intake-mode-toggle input{width:auto;min-height:auto;margin-top:3px}
+    .intake-mode-toggle strong{display:block;color:var(--ink);font-size:13px}
+    .intake-mode-toggle small{display:block;margin-top:3px;color:var(--muted);font-size:11px;line-height:1.5}
+    .upload-drop{grid-column:1/-1;display:flex;flex-direction:column;align-items:center;gap:8px;padding:28px 15px;border:2px dashed #b9c9db;border-radius:12px;background:#f8fafc;color:var(--muted);text-align:center}
+    .upload-drop i{font-size:26px;color:#8095b3}
+    .upload-drop input{width:auto;min-height:auto}
+    .return-banner{display:flex;align-items:flex-start;gap:10px;margin:0 0 16px;padding:13px 16px;border:1px solid #e0c3bf;border-radius:10px;background:#fdf2f1;color:#7f3430}
+    .return-banner i{margin-top:2px}
+    .return-banner strong{display:block;font-size:13px}
+    .return-banner small{display:block;margin-top:3px;color:#5d322e;line-height:1.55}
+    .official-page-counter{position:sticky;top:8px;z-index:4;display:flex;justify-content:flex-end;height:0;padding-right:8px;pointer-events:none}
+    .official-page-counter span{display:inline-flex;align-items:center;height:30px;padding:0 11px;border:1px solid #d7e1eb;border-radius:999px;background:rgba(255,255,255,.95);color:#28486f;font-size:12px;font-weight:700;box-shadow:0 2px 8px rgba(16,40,75,.08)}
+    .form-page .official-page-switcher{padding:12px}
+    @media(max-width:1180px){.stats{grid-template-columns:repeat(3,1fr)}.app{grid-template-columns:84px minmax(0,1fr)}.brand>div:last-child,.nav button span,.nav-group,.profile>div:last-child{display:none}.nav button,.nav button.sub{justify-content:center;padding:10px}.top{padding:0 14px}.global-search{display:none}.content{padding:18px 14px 45px}}
+    @media(max-width:560px){.app{display:block}.side{display:none}.top{height:64px}.top .collapse{display:none}.page-head,.card-head{flex-direction:column}.stats{grid-template-columns:1fr 1fr}}
+  </style>
+</head>
+<body>
+<div class="app">
+  <aside class="side">
+    <div class="brand"><img class="seal" src="./assets/images/pacc-logo.webp" alt="ตราสำนักงาน ป.ป.ท."><div><strong>E-CMIS</strong><small>COMPLAINT MANAGEMENT</small></div></div>
+    <nav class="nav real-nav" aria-label="เมนูระบบหมายจับ">
+      <div class="nav-module-label"><i class="fa-solid fa-gavel icon" aria-hidden="true"></i><span>หมายจับ</span></div>
+      <button class="nav-link level-one" data-route="intake-activity5"><i class="fa-solid fa-folder-open icon" aria-hidden="true"></i><span>รับสำนวนจากกิจกรรมที่ 5</span></button>
+      <button class="nav-link level-one" data-route="registry"><i class="fa-solid fa-clipboard-list icon" aria-hidden="true"></i><span>ทะเบียนคำร้อง</span></button>
+      <div class="nav-section-label" data-role-nav-label>ตรวจสอบคำร้อง</div>
+      <button class="nav-link level-two" data-route="queue-officer" data-role-nav="officer"><i class="fa-solid fa-user-check icon" aria-hidden="true"></i><span>เจ้าหน้าที่/เจ้าของสำนวน</span></button>
+      <button class="nav-link level-two" data-route="queue-supervisor" data-role-nav="supervisor"><i class="fa-solid fa-user-tie icon" aria-hidden="true"></i><span>ผู้บังคับบัญชาชั้นต้น</span></button>
+      <button class="nav-link level-two" data-route="queue-director" data-role-nav="director"><i class="fa-solid fa-building-user icon" aria-hidden="true"></i><span>ผอ.สำนัก/กอง</span></button>
+      <button class="nav-link level-two" data-route="queue-secretary" data-role-nav="secretary"><i class="fa-solid fa-stamp icon" aria-hidden="true"></i><span>เลขานุการ</span></button>
+      <div class="nav-section-label">งานหลังศาลออกหมาย</div>
+      <button class="nav-link level-one" data-route="warrant-record"><i class="fa-solid fa-scale-balanced icon" aria-hidden="true"></i><span>บันทึกหมายจับศาล (มจ.2)</span></button>
+      <button class="nav-link level-one" data-route="tracking"><i class="fa-solid fa-location-crosshairs icon" aria-hidden="true"></i><span>ติดตามหมายจับ</span></button>
+      <button class="nav-link level-one" data-route="reports"><i class="fa-solid fa-chart-column icon" aria-hidden="true"></i><span>รายงาน</span></button>
+    </nav>
+    <div class="profile"><div class="avatar">T</div><div><strong>thanthita</strong><small id="side-role">Super Admin</small></div></div>
+  </aside>
+  <main class="main">
+    <header class="top">
+      <button class="collapse" data-action="toggle-sidebar" aria-label="ย่อหรือขยายเมนู" aria-expanded="true"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+      <div class="global-search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><span>ค้นหาเลขคำร้อง ผู้ต้องหา หน่วยงาน...</span></div>
+      <div class="top-right">
+        <select id="role" class="role-select" aria-label="บทบาทผู้ใช้งาน">
+          <option value="officer">เจ้าหน้าที่/เจ้าของสำนวน</option><option value="supervisor">ผู้บังคับบัญชาชั้นต้น</option><option value="director">ผอ.สำนัก/กอง</option><option value="secretary">เลขานุการ</option><option value="admin">Super Admin</option>
+        </select>
+        <button class="icon-btn" aria-label="การแจ้งเตือน"><i class="fa-solid fa-bell" aria-hidden="true"></i><span class="notification-dot"></span></button><button class="icon-btn" aria-label="คู่มือ"><i class="fa-solid fa-book" aria-hidden="true"></i></button>
+      </div>
+    </header>
+    <div id="view" class="content"></div>
+  </main>
+</div>
+<div id="toast" class="toast" role="status"></div>
+<script>
+/* เทมเพลตโครงหน้า/nav ของกิจกรรมที่ 9 (หมายจับ) — โครงสร้างอ้างอิงกิจกรรมที่ 6
+   จุดเริ่มต้นงาน: สำนวนไต่สวนจากกิจกรรมที่ 5 -> เจ้าของสำนวนส่งให้พนักงานอัยการพิจารณา (อัยการเป็นบุคคลภายนอก E-CMIS
+   จึงไม่มี login/คิวในระบบ — เจ้าของสำนวนเป็นผู้บันทึกผลพิจารณาของอัยการเข้าระบบเอง) เมื่อได้รับคำสั่งให้ขอหมายจับ
+   จึงเปิดงานจริงในกิจกรรมที่ 9 (สถานะ "เตรียมคำร้องขอหมายจับ") แล้วไล่ผ่าน ผบช.ชั้นต้น -> ผอ.สำนัก/กอง -> เลขานุการ -> ยื่นศาล
+   เนื้อหาฟอร์ม มจ.1 อ้างอิงแบบ ปปท.8-17 (คำร้องขอหมายจับ) และ มจ.2 อ้างอิงแบบ ปปท.8-21/8-22 (หมายจับฉบับศาล) */
+const roleNames={officer:'เจ้าหน้าที่/เจ้าของสำนวน',supervisor:'ผู้บังคับบัญชาชั้นต้น',director:'ผอ.สำนัก/กอง',secretary:'เลขานุการ',admin:'Super Admin'};
+let currentRole='admin';
+
+// สำนวนไต่สวนจากกิจกรรมที่ 5 ที่ยังไม่ถูกรับเข้าโมดูลหมายจับ (ข้อมูลตัวอย่าง)
+const activity5Cases=[
+  {caseNo:'กบค.014/2569',suspect:'นายเอกชัย หนีคดี',charge:'ทุจริตต่อหน้าที่ตามประมวลกฎหมายอาญา มาตรา 157',idCard:'1-2345-67890-12-3',address:'อ.เมือง จ.นนทบุรี',owner:'นายพงศกร รักษ์ธรรม',department:'สำนักงาน ป.ป.ท. เขต 1',prosecutor:'ยังไม่ทราบ',evidence:'รายงานการไต่สวน 1 แฟ้ม, พยานเอกสาร 12 รายการ',orderRef:'มติ ป.ป.ท. ครั้งที่ 8/2569 ลงวันที่ 20 ก.ค. 2569'},
+  {caseNo:'กบค.021/2569',suspect:'นางสาวปวีณา ปกปิดหลักฐาน',charge:'ยักยอกทรัพย์ในหน้าที่ตามประมวลกฎหมายอาญา มาตรา 147',idCard:'1-3456-78901-23-4',address:'อ.ปากเกร็ด จ.นนทบุรี',owner:'นางสาวอรุณี ใจมั่น',department:'สำนักงาน ป.ป.ท. เขต 1',prosecutor:'สำนักงานอัยการพิเศษฝ่ายคดีปราบปรามการทุจริต 2',evidence:'รายงานการไต่สวนพร้อมเอกสารประกอบเรื่องกล่าวหา',orderRef:'หนังสือสำนักงาน ป.ป.ท. ลับ ที่ ปป 0012/2569'}
+];
+
+const demoCases=[
+  {no:'AW-2569-000109',suspect:'นายเอกชัย หนีคดี',status:'รอผลพิจารณาจากพนักงานอัยการ',stage:'prosecutor_pending',owner:'นายพงศกร รักษ์ธรรม (เจ้าของสำนวน)',next:'รอผลพิจารณาจากพนักงานอัยการ แล้วบันทึกผลเข้าระบบ',intakeMode:'form',fromCaseNo:'กบค.014/2569'},
+  {no:'AW-2569-000108',suspect:'นางสาวรุ่งทิวา เลี่ยงคดี',status:'อัยการขอข้อมูลเพิ่มเติมก่อนเปิดงาน',stage:'prosecutor_pending',owner:'เจ้าหน้าที่เจ้าของสำนวน',next:'จัดส่งข้อมูล/พยานหลักฐานเพิ่มเติมตามที่อัยการร้องขอ แล้วบันทึกผลอีกครั้ง',intakeMode:'form',fromCaseNo:'กบค.009/2569',returnedBy:'พนักงานอัยการ สำนักงานอัยการพิเศษฝ่ายคดีปราบปรามการทุจริต',returnNote:'ขอพยานหลักฐานเพิ่มเติมเรื่องพฤติการณ์หลบหนีของผู้ถูกกล่าวหา และสำเนาหนังสือนัดพบที่ส่งไปยังภูมิลำเนาผู้ถูกกล่าวหา'},
+  {no:'AW-2569-000101',suspect:'นายสมชาย ทุจริตกิจ',status:'เตรียมคำร้องขอหมายจับ',stage:'draft',owner:'เจ้าหน้าที่เจ้าของสำนวน',next:'กรอก มจ.1 คำร้องขอออกหมายจับให้ครบก่อนส่งตรวจ',intakeMode:'form',fromCaseNo:'กบค.002/2569',prosecutorOrder:{date:'2026-07-28',ref:'ที่ อส.007/2569',name:'นายวิชัย ยุติธรรม',agency:'สำนักงานอัยการพิเศษฝ่ายคดีปราบปรามการทุจริต 1',summary:'เห็นควรให้ดำเนินการขอหมายจับ เนื่องจากผู้ถูกกล่าวหาไม่มาพบตามนัด'}},
+  {no:'AW-2569-000102',suspect:'นางสาวปิยะดา หลบเลี่ยง',status:'รอผู้บังคับบัญชาชั้นต้นตรวจสอบ',stage:'supervisor_review',owner:'ผู้บังคับบัญชาชั้นต้น',next:'ตรวจความครบถ้วนของคำร้องก่อนเสนอ ผอ.',intakeMode:'form'},
+  {no:'AW-2569-000103',suspect:'นายวิรัช เบี่ยงบัง',status:'รอ ผอ.สำนัก/กอง อนุมัติ',stage:'director_review',owner:'ผอ.สำนัก/กอง',next:'พิจารณาและลงนามก่อนส่งเลขานุการ',intakeMode:'form'},
+  {no:'AW-2569-000104',suspect:'นายกิตติ ปกปิดทรัพย์',status:'รอเลขานุการเตรียมยื่นศาล',stage:'secretary_review',owner:'เลขานุการ',next:'จัดเตรียมเอกสารยื่นคำร้องต่อศาล',intakeMode:'upload',uploadFile:'คำร้องขอหมายจับ_AW-2569-000104.pdf'},
+  {no:'AW-2569-000105',suspect:'นางสมศรี ซ่อนเร้น',status:'ยื่นศาลแล้ว รอผลพิจารณา',stage:'court_pending',owner:'เลขานุการ',next:'ติดตามผลการพิจารณาจากศาล',intakeMode:'form'},
+  {no:'AW-2569-000106',suspect:'นายประเสริฐ หลีกหนี',status:'ศาลออกหมายแล้ว · ยังไม่จับกุม',stage:'issued',owner:'เจ้าหน้าที่เจ้าของสำนวน',next:'ติดตามสถานะจับกุม (ดูที่เมนูติดตามหมายจับ)',expiry:'2026-11-20',intakeMode:'form'}
+];
+
+const stageOrder=[
+  ['prosecutor_pending','รอผลอัยการ (ก่อนเปิดงาน)'],
+  ['draft','เตรียมคำร้อง'],
+  ['supervisor_review','ผู้บังคับบัญชาชั้นต้น'],
+  ['director_review','ผอ.สำนัก/กอง'],
+  ['secretary_review','เลขานุการ'],
+  ['court_pending','ยื่นศาล'],
+  ['issued','ศาลออกหมาย']
+];
+
+let formSection=0;
+const officialFormPages={mj1:[1,2,3],mj2:[4,5]};
+function officialPagePath(page){return `./assets/forms/official/page-${String(page).padStart(2,'0')}.png`}
+
+function kb1Sections(){return [
+  {title:'ข้อมูลผู้ร้อง (เจ้าของสำนวน)',page:1,fields:['ศาลที่ยื่นคำร้อง','ชื่อ-สกุล ผู้ร้อง','ตำแหน่ง','อายุ','สถานที่ทำงาน','โทรศัพท์'],body:`
+    <div class="field"><label>ศาลที่ยื่นคำร้อง</label><input placeholder="เช่น ศาลอาญาคดีทุจริตและประพฤติมิชอบ..."></div>
+    <div class="field"><label>ชื่อ-สกุล ผู้ร้อง (พนักงาน ป.ป.ท./เจ้าหน้าที่ ป.ป.ท.)</label><input placeholder="นาย/นาง/นางสาว..."></div>
+    <div class="field"><label>ตำแหน่ง</label><input></div>
+    <div class="field"><label>อายุ</label><input type="number" placeholder="ปี"></div>
+    <div class="field"><label>สถานที่ทำงาน</label><input value="สำนักงาน ป.ป.ท."></div>
+    <div class="field"><label>โทรศัพท์</label><input type="tel"></div>`},
+  {title:'ข้อมูลผู้ถูกกล่าวหา',page:1,fields:['ชื่อ-สกุล ผู้ถูกกล่าวหา','เลขประจำตัวประชาชน','อายุ','เชื้อชาติ/สัญชาติ','อาชีพ','ที่อยู่ตามทะเบียนราษฎร'],body:`
+    <div class="field"><label>ชื่อ-สกุล ผู้ถูกกล่าวหา</label><input></div>
+    <div class="field"><label>เลขประจำตัวประชาชน</label><input placeholder="X-XXXX-XXXXX-XX-X"></div>
+    <div class="field"><label>อายุ</label><input type="number" placeholder="ปี"></div>
+    <div class="field"><label>เชื้อชาติ/สัญชาติ</label><input></div>
+    <div class="field"><label>อาชีพ</label><input></div>
+    <div class="field wide"><label>ที่อยู่ตามทะเบียนราษฎร</label><input placeholder="บ้านเลขที่ / ตำบล / อำเภอ / จังหวัด"></div>
+    <div class="field wide"><label>ตำหนิรูปพรรณ</label><textarea rows="2" placeholder="ลักษณะที่สังเกตได้ เช่น รอยสัก ส่วนสูง..."></textarea></div>`},
+  {title:'เหตุผลขอออกหมายจับ',page:1,fields:['เกณฑ์ตาม ป.วิอาญา ม.66','ฐานความผิด/มาตรา'],body:`
+    <div class="choice-group"><label>เข้าเกณฑ์ตามประมวลกฎหมายวิธีพิจารณาความอาญา มาตรา 66</label><div class="choice-options">
+      <label class="choice"><input type="checkbox">ได้หรือน่าจะได้กระทำความผิดอาญาร้ายแรงซึ่งมีอัตราโทษจำคุกอย่างสูงเกิน 3 ปี</label>
+      <label class="choice"><input type="checkbox">น่าจะหลบหนี</label>
+      <label class="choice"><input type="checkbox">น่าจะไปยุ่งเหยิงกับพยานหลักฐาน</label>
+      <label class="choice"><input type="checkbox">ก่อเหตุอันตรายประการอื่น</label>
+    </div></div>
+    <div class="field wide"><label>ฐานความผิด/มาตรา</label><input placeholder="เช่น ทุจริตต่อหน้าที่ตามประมวลกฎหมายอาญา มาตรา..."></div>`},
+  {title:'พฤติการณ์และข้อเท็จจริงของคดี',page:2,fields:['เหตุเกิดที่','วันที่/เวลาเกิดเหตุ','พฤติการณ์กระทำความผิด','ความเสียหาย'],body:`
+    <div class="field"><label>เหตุเกิดที่</label><input></div>
+    <div class="field"><label>วันที่/เวลาเกิดเหตุ</label><input type="datetime-local"></div>
+    <div class="field wide"><label>พฤติการณ์กระทำความผิด</label><textarea rows="4" placeholder="รายละเอียดพฤติการณ์ตามผลการไต่สวน..."></textarea></div>
+    <div class="field wide"><label>ความเสียหายที่เกิดขึ้น</label><textarea rows="2"></textarea></div>`},
+  {title:'กระบวนการที่ผ่านมากับพนักงานอัยการ',page:3,fields:['สำนักงานอัยการที่รับผิดชอบ','เลขหนังสือ/วันที่คำสั่งฟ้อง','วันนัดพบอัยการ','ผลการนัด'],body:`
+    <div class="field-help wide">ส่วนนี้บันทึกข้อเท็จจริงกระบวนการก่อนขอหมายจับ (มติ ป.ป.ท. → ส่งอัยการ → อัยการมีคำสั่ง → นัดพบ) เพื่อประกอบคำร้องต่อศาล ไม่ใช่ขั้นตอนอนุมัติภายในระบบ</div>
+    <div class="field"><label>สำนักงานอัยการที่รับผิดชอบ</label><input placeholder="เช่น สำนักงานอัยการพิเศษฝ่ายคดีปราบปรามการทุจริต..."></div>
+    <div class="field"><label>เลขหนังสือ/วันที่อัยการมีคำสั่งฟ้อง</label><input></div>
+    <div class="field"><label>วันนัดพบพนักงานอัยการ</label><input type="datetime-local"></div>
+    <div class="field"><label>ผลการนัด</label><select><option>ยังไม่ถึงกำหนดนัด</option><option>ไม่มาพบตามนัด (เหตุขอหมายจับ)</option><option>มาพบตามนัด</option></select></div>`},
+  {title:'ความประสงค์และประวัติการขอหมายจับ',page:3,fields:['เคยร้องขอหมายจับมาก่อนหรือไม่','หมายเหตุ'],body:`
+    <div class="choice-group"><label>เคยร้องขอให้ศาลออกหมายจับบุคคลนี้มาก่อนหรือไม่</label><div class="choice-options">
+      <label class="choice"><input type="radio" name="ever-requested">เคย</label>
+      <label class="choice"><input type="radio" name="ever-requested" checked>ไม่เคย</label>
+    </div></div>
+    <div class="field wide"><label>หมายเหตุ (กรณีเคยร้องขอ ระบุเหตุแห่งการร้องขอเดิมหรือเหตุอื่น)</label><textarea rows="2"></textarea></div>`}
+];}
+
+function mj2Sections(){return [
+  {title:'ข้อมูลหมายจับ',page:4,fields:['เลขที่หมายจับ','ศาลที่ออกหมาย','วันที่ออกหมาย','ผู้พิพากษา'],body:`
+    <div class="field"><label>เลขที่หมายจับ</label><input placeholder="เช่น จ.123/2569"></div>
+    <div class="field"><label>ศาลที่ออกหมาย</label><input placeholder="เช่น ศาลอาญาคดีทุจริตและประพฤติมิชอบ..."></div>
+    <div class="field"><label>วันที่ออกหมาย</label><input type="date"></div>
+    <div class="field"><label>ผู้พิพากษา</label><input></div>`},
+  {title:'เกณฑ์การออกหมาย',page:4,fields:['เกณฑ์การออกหมาย (ตามคำสั่งศาล)'],body:`
+    <div class="choice-group"><div class="choice-options">
+      <label class="choice"><input type="checkbox">ได้หรือน่าจะได้กระทำความผิดอาญาซึ่งมีอัตราโทษจำคุกอย่างสูงเกิน 3 ปี</label>
+      <label class="choice"><input type="checkbox">จะหลบหนี</label>
+      <label class="choice"><input type="checkbox">จะไปยุ่งเหยิงกับพยานหลักฐาน</label>
+      <label class="choice"><input type="checkbox">ก่อเหตุอันตรายประการอื่น</label>
+    </div></div>`},
+  {title:'ส่งตัวและอายุความ',page:4,fields:['ให้ไปส่งที่','ภายในอายุความ (ปี)','นับแต่วันที่','วันหมดอายุหมาย'],body:`
+    <div class="field"><label>ให้ไปส่งที่</label><input placeholder="เช่น สำนักงานอัยการพิเศษฝ่าย..."></div>
+    <div class="field"><label>ภายในอายุความ (ปี)</label><input type="number"></div>
+    <div class="field"><label>นับแต่วันที่</label><input type="date"></div>
+    <div class="field"><label>วันหมดอายุหมาย</label><input type="date"></div>`},
+  {title:'แนบไฟล์และบันทึกการรับทราบ',page:5,fields:['แนบไฟล์สำเนาหมายจับ','วันที่แจ้ง/ส่งหมาย','เจ้าพนักงานผู้จัดการตามหมาย'],body:`
+    <div class="field wide"><label>แนบไฟล์สำเนาหมายจับฉบับศาล (PDF)</label><input type="file" accept=".pdf"></div>
+    <div class="field"><label>วันที่แจ้ง/ส่งหมายให้ผู้เกี่ยวข้องตรวจดู</label><input type="date"></div>
+    <div class="field"><label>เจ้าพนักงานผู้จัดการตามหมาย</label><input></div>`}
+];}
+
+function officialFieldRows(section){return (section.fields||[]).slice(0,6).map(label=>`<div class="official-live-row"><span>${esc(label)}</span><strong>—</strong></div>`).join('')}
+
+function paperHtml(kind,section){
+  const pages=officialFormPages[kind],page=section.page,pageIndex=pages.indexOf(page)+1;
+  return `<aside class="paper-wrap official-paper-wrap"><div class="official-page-counter"><span>หน้า ${pageIndex} / ${pages.length}</span></div><div class="official-page-stage"><img class="official-page-image" src="${officialPagePath(page)}" alt="แบบทางการ หน้า ${pageIndex}"><section class="official-live-panel"><header><i class="fa-solid fa-pen-to-square" aria-hidden="true"></i><span>ข้อมูลที่กำลังกรอกในส่วนนี้</span></header><div class="official-live-list">${officialFieldRows(section)}</div></section></div><div class="official-page-switcher">${pages.map((p,i)=>`<button type="button" class="${p===page?'active':''}" data-official-page="${p}" title="หน้า ${i+1}">${i+1}</button>`).join('')}</div></aside>`;
+}
+
+function tabbedFormPage(kind,formLabel,title,sections,caseNo,afterHeaderHtml){
+  if(formSection>=sections.length)formSection=0;
+  const section=sections[formSection],isLast=formSection===sections.length-1;
+  return `<div class="form-page"><header class="form-header"><div class="breadcrumb">ระบบหมายจับ <b>›</b> ${esc(caseNo||'คำร้องใหม่')} <b>›</b> ${esc(formLabel)}</div><div class="page-head"><div><h1>${esc(title)}</h1><p>เลขคำร้อง ${esc(caseNo||'-')}, ร่างเอกสาร, ผู้รับผิดชอบ ${esc(roleNames[currentRole])}</p></div><div class="actions"><button class="btn secondary" data-go="registry"><i class="fa-solid fa-table-cells-large" aria-hidden="true"></i>ทะเบียนคำร้อง</button><button class="btn secondary" data-action="print"><i class="fa-solid fa-print" aria-hidden="true"></i>พิมพ์ / บันทึก PDF</button></div></div></header>${afterHeaderHtml||''}`
+  +`<section class="case-context"><div><small>แฟ้มคำร้อง</small><strong>${esc(caseNo||'-')}</strong></div><div><small>ผู้ต้องหา</small><strong>${esc((demoCases.find(x=>x.no===caseNo)||{}).suspect||'-')}</strong></div><div><small>แบบฟอร์ม</small><strong>${esc(formLabel)}</strong></div><div><small>ขั้นตอนปัจจุบัน</small><strong>${esc(roleNames[currentRole])}</strong></div><div><small>ส่วนที่กำลังกรอก</small><strong>${formSection+1} / ${sections.length}</strong></div></section>`
+  +`<nav class="form-tabs" aria-label="หัวข้อแบบ ${esc(formLabel)}">${sections.map((s,i)=>`<button class="${i===formSection?'active':''}" data-section="${i}">${i+1}. ${esc(s.title)}</button>`).join('')}</nav>`
+  +`<div class="workspace"><section class="form-panel"><header class="section-head"><div><span>ส่วนที่ ${formSection+1}</span><h2>${esc(section.title)}</h2><p>กรอกข้อมูลให้ครบก่อนไปหัวข้อถัดไป</p></div><span class="badge warning"><i class="fa-solid fa-pen" aria-hidden="true"></i>กำลังกรอก</span></header><div class="form-grid">${section.body}</div></section>${paperHtml(kind,section)}</div>`
+  +`<footer class="sticky-actions"><button class="btn secondary" data-action="form-back"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i>ย้อนกลับ</button><div class="actions"><button class="btn secondary" data-action="save"><i class="fa-solid fa-floppy-disk" aria-hidden="true"></i>บันทึกร่าง</button><button class="btn" data-action="form-next">${isLast?'<i class="fa-solid fa-paper-plane" aria-hidden="true"></i>ส่งขั้นตอนถัดไป':'<i class="fa-solid fa-arrow-right" aria-hidden="true"></i>บันทึกและถัดไป'}</button></div></footer></div>`;
+}
+
+function esc(v){return String(v).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+function toast(message){const el=document.getElementById('toast');el.textContent=message;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),2400)}
+function go(route){location.hash='#/'+route}
+function base(title,description,actions=''){return `<div class="breadcrumb">กิจกรรมที่ 9 <b>›</b> ระบบหมายจับ</div><header class="page-head"><div><h1>${title}</h1><p>${description}</p></div><div class="actions">${actions}</div></header>`}
+function placeholderNote(text){return `<div class="placeholder-note"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><div>${text}</div></div>`}
+function stageTrack(current){
+  return `<div class="card"><div class="stage-track">${stageOrder.map(([key,label],i)=>{const idx=stageOrder.findIndex(s=>s[0]===current);const cls=i<idx?'done':i===idx?'current':'';return `<span class="stage-step ${cls}">${i<idx?'<i class="fa-solid fa-check"></i>':''}${esc(label)}</span>`+(i<stageOrder.length-1?'<span class="stage-arrow"><i class="fa-solid fa-chevron-right"></i></span>':'')}).join('')}</div></div>`;
+}
+
+function caseRows(items){return items.map(c=>`<tr><td>${esc(c.no)}</td><td>${esc(c.suspect)}</td><td><span class="badge">${esc(c.status)}</span></td><td>${esc(c.owner)}</td><td>${esc(c.next)}</td><td><button class="btn secondary" data-go="case/${esc(c.no)}">เปิด →</button></td></tr>`).join('')}
+
+function registry(){
+  return base('ทะเบียนคำร้องขอออกหมายจับ','รายการคำร้องขอออกหมายจับทั้งหมดในระบบ (ข้อมูลตัวอย่าง)','<button class="btn" data-go="intake-activity5"><i class="fa-solid fa-folder-open" aria-hidden="true"></i>รับสำนวนจากกิจกรรมที่ 5</button>')
+  +placeholderNote('หน้านี้เป็นโครงเทมเพลต — คอลัมน์/ตัวกรอง/การแบ่งหน้ายังไม่ทำ ใช้ demoCases ชุดตัวอย่างเพื่อแสดงสถานะครบทุกขั้นของ workflow รวมกรณีก่อนเปิดงาน (รอผลอัยการ)')
+  +`<div class="stats"><div class="stat"><small>คำร้องทั้งหมด</small><strong>${demoCases.length}</strong></div><div class="stat"><small>รอผลอัยการ (ก่อนเปิดงาน)</small><strong>${demoCases.filter(c=>c.stage==='prosecutor_pending').length}</strong></div><div class="stat"><small>อยู่ระหว่างพิจารณาภายใน</small><strong>${demoCases.filter(c=>['draft','supervisor_review','director_review','secretary_review','court_pending'].includes(c.stage)).length}</strong></div><div class="stat"><small>ศาลออกหมายแล้ว</small><strong>${demoCases.filter(c=>c.stage==='issued').length}</strong></div></div>`
+  +`<section class="card"><div class="card-head"><div><h2>รายการคำร้อง</h2><p>พบทั้งหมด ${demoCases.length} รายการ</p></div></div><div class="table-wrap"><table><thead><tr><th>เลขคำร้อง</th><th>ผู้ต้องหา</th><th>สถานะ</th><th>ผู้รับผิดชอบ</th><th>งานถัดไป</th><th>การดำเนินการ</th></tr></thead><tbody>${caseRows(demoCases)}</tbody></table></div></section>`;
+}
+
+const queues={
+  'queue-officer':{role:'officer',label:'คิวเจ้าหน้าที่/เจ้าของสำนวน',stages:['prosecutor_pending','draft']},
+  'queue-supervisor':{role:'supervisor',label:'คิวผู้บังคับบัญชาชั้นต้น',stages:['supervisor_review']},
+  'queue-director':{role:'director',label:'คิว ผอ.สำนัก/กอง',stages:['director_review']},
+  'queue-secretary':{role:'secretary',label:'คิวเลขานุการ',stages:['secretary_review','court_pending']}
+};
+function queuePage(routeKey){
+  const meta=queues[routeKey];
+  const items=demoCases.filter(c=>meta.stages.includes(c.stage));
+  return base(meta.label,'รายการคำร้องที่รอดำเนินการในขั้นตอนนี้ (ข้อมูลตัวอย่าง)')
+  +placeholderNote('คิวตรวจสอบตามบทบาท — ยังไม่มีปุ่มอนุมัติ/ส่งกลับจริง เป็นโครงหน้าเทมเพลต')
+  +`<section class="card"><div class="card-head"><div><h2>${esc(meta.label)}</h2><p>พบ ${items.length} รายการ</p></div></div><div class="table-wrap"><table><thead><tr><th>เลขคำร้อง</th><th>ผู้ต้องหา</th><th>สถานะ</th><th>งานถัดไป</th><th>การดำเนินการ</th></tr></thead><tbody>${items.length?items.map(c=>`<tr><td>${esc(c.no)}</td><td>${esc(c.suspect)}</td><td><span class="badge">${esc(c.status)}</span></td><td>${esc(c.next)}</td><td><button class="btn secondary" data-go="case/${esc(c.no)}">เปิด →</button></td></tr>`).join(''):'<tr><td colspan="5"><div class="empty"><i class="fa-solid fa-inbox"></i><br>ไม่มีรายการในคิวนี้</div></td></tr>'}</tbody></table></div></section>`;
+}
+
+function casePage(no){
+  const c=demoCases.find(x=>x.no===no)||demoCases[0];
+  return base('คำร้อง '+esc(c.no),esc(c.suspect)+' · '+esc(c.status))
+  +stageTrack(c.stage)
+  +(c.stage==='prosecutor_pending'&&c.returnedBy?`<div class="return-banner"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i><div><strong>อัยการขอข้อมูลเพิ่มเติม (ก่อนเปิดงานจริง)</strong><small>ส่งกลับโดย: ${esc(c.returnedBy||'')}</small><small>${esc(c.returnNote||'')}</small></div></div>`:'')
+  +placeholderNote('หน้ารายละเอียดคำร้อง — ยังไม่มี signature-party flow เต็มรูปแบบ หรือปุ่มอนุมัติ/ส่งกลับจริง (เทียบเคียงหน้า Case ของกิจกรรมที่ 6)')
+  +`<section class="card"><div class="card-head"><div><h2>ข้อมูลคำร้องเบื้องต้น</h2></div></div><div style="padding:16px 20px" class="review-summary">
+    <div><span>เลขคำร้อง</span><strong>${esc(c.no)}</strong></div>
+    <div><span>สำนวนต้นทาง (กิจกรรมที่ 5)</span><strong>${esc(c.fromCaseNo||'-')}</strong></div>
+    <div><span>ผู้ต้องหา</span><strong>${esc(c.suspect)}</strong></div>
+    <div><span>สถานะปัจจุบัน</span><strong>${esc(c.status)}</strong></div>
+    <div><span>ผู้รับผิดชอบขั้นตอนนี้</span><strong>${esc(c.owner)}</strong></div>
+    <div><span>งานถัดไป</span><strong>${esc(c.next)}</strong></div>
+    ${c.stage!=='prosecutor_pending'?`<div><span>วิธีจัดทำคำร้อง มจ.1</span><strong>${c.intakeMode==='upload'?'อัปโหลดไฟล์ (PDF)':'กรอกฟอร์มออนไลน์'}</strong></div>`:''}
+    ${c.expiry?`<div><span>วันหมดอายุหมาย</span><strong>${esc(c.expiry)}</strong></div>`:''}
+  </div></section>`
+  +(c.prosecutorOrder?`<section class="card"><div class="card-head"><div><h2>คำสั่งจากพนักงานอัยการ (บันทึกโดยเจ้าของสำนวน)</h2></div></div><div style="padding:16px 20px" class="review-summary">
+    <div><span>วันที่ได้รับคำสั่ง</span><strong>${esc(c.prosecutorOrder.date)}</strong></div>
+    <div><span>เลขหนังสือ/เลขอ้างอิง</span><strong>${esc(c.prosecutorOrder.ref)}</strong></div>
+    <div><span>ชื่อพนักงานอัยการ</span><strong>${esc(c.prosecutorOrder.name)}</strong></div>
+    <div><span>หน่วยงานอัยการ</span><strong>${esc(c.prosecutorOrder.agency)}</strong></div>
+    <div><span>สรุปสาระสำคัญ</span><strong>${esc(c.prosecutorOrder.summary)}</strong></div>
+  </div></section>`:'')
+  +(c.stage==='prosecutor_pending'?`<section class="card"><div class="card-head"><div><h2>บันทึกผลจากพนักงานอัยการ</h2><p>อัยการเป็นบุคคลภายนอก E-CMIS — เจ้าของสำนวนเป็นผู้บันทึกผลพิจารณาเข้าระบบเอง</p></div></div><div style="padding:0 20px 20px"><button class="btn" data-go="prosecutor-result/${esc(c.no)}"><i class="fa-solid fa-pen-to-square" aria-hidden="true"></i>บันทึกผลพิจารณาจากอัยการ</button></div></section>`:
+  `<section class="card"><div class="card-head"><div><h2>เอกสารที่เกี่ยวข้อง</h2></div></div><div style="padding:0 20px 20px">
+    <div class="task-row"><span class="task-no">มจ.1</span><div><strong>คำร้องขอออกหมายจับ</strong><small>${c.intakeMode==='upload'?'อัปโหลดไฟล์: '+esc(c.uploadFile||''):'จัดทำผ่านฟอร์มออนไลน์'}</small></div><div><button class="btn secondary" data-go="form/${esc(c.no)}">เปิด →</button></div></div>
+    <div class="task-row"><span class="task-no">มจ.2</span><div><strong>หมายจับฉบับศาล</strong><small>${c.stage==='issued'?'บันทึกแล้ว':'ยังไม่มีข้อมูล'}</small></div><div><button class="btn secondary" data-go="warrant-record">เปิด →</button></div></div>
+  </div></section>`);
+}
+
+function intakeActivity5Page(){
+  return base('รับสำนวนจากกิจกรรมที่ 5','เลือกสำนวนไต่สวนที่ผ่านกระบวนการแล้วและมีเหตุต้องขอศาลออกหมายจับ เพื่อส่งให้พนักงานอัยการพิจารณาก่อนเปิดงานจริง')
+  +placeholderNote('หน้านี้เป็นโครงเทมเพลต — แสดงข้อมูลตัวอย่างจากกิจกรรมที่ 5 เท่านั้น ยังไม่เชื่อมต่อจริง กดปุ่ม "ส่งอัยการพิจารณา" จะสร้างรายการคำร้องใหม่ในสถานะ "รอผลพิจารณาจากพนักงานอัยการ"')
+  +`<div class="chart-grid">${activity5Cases.map(a=>`<section class="card" style="padding:22px">
+    <span class="form-code" style="width:58px">${esc(a.caseNo)}</span>
+    <h2>${esc(a.suspect)}</h2>
+    <p><strong>ข้อกล่าวหา:</strong> ${esc(a.charge)}</p>
+    <div class="review-summary" style="margin-top:10px">
+      <div><span>เลขประจำตัวประชาชน</span><strong>${esc(a.idCard)}</strong></div>
+      <div><span>ที่อยู่</span><strong>${esc(a.address)}</strong></div>
+      <div><span>เจ้าของสำนวน</span><strong>${esc(a.owner)}</strong></div>
+      <div><span>สำนัก/กองที่รับผิดชอบ</span><strong>${esc(a.department)}</strong></div>
+      <div><span>พนักงานอัยการที่เกี่ยวข้อง</span><strong>${esc(a.prosecutor)}</strong></div>
+      <div><span>เอกสาร/พยานหลักฐาน</span><strong>${esc(a.evidence)}</strong></div>
+      <div><span>หนังสือ/คำสั่งอันเป็นเหตุ</span><strong>${esc(a.orderRef)}</strong></div>
+    </div>
+    <div class="actions" style="margin-top:14px"><button class="btn" data-intake-activity5="${esc(a.caseNo)}"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i>ส่งอัยการพิจารณา / เปิดงานในกิจกรรมที่ 9</button></div>
+  </section>`).join('')}</div>`;
+}
+
+function prosecutorResultPage(no){
+  const c=demoCases.find(x=>x.no===no);
+  if(!c)return base('ไม่พบคำร้อง','ไม่พบเลขคำร้องนี้ในระบบ');
+  return base('บันทึกผลพิจารณาจากพนักงานอัยการ','เลขคำร้อง '+esc(c.no)+' · '+esc(c.suspect))
+  +placeholderNote('อัยการเป็นบุคคลภายนอก E-CMIS ไม่มีบัญชีผู้ใช้ในระบบ — เจ้าของสำนวนบันทึกผลพิจารณาที่ได้รับ (ทางหนังสือ/วาจา) เข้าระบบเองในหน้านี้')
+  +`<section class="card"><div class="card-head"><div><h2>ผลพิจารณาจากพนักงานอัยการ</h2></div></div><div class="form-grid" style="padding:18px 20px">
+    <div class="field wide"><label>ผลพิจารณา</label><select id="prosecutor-outcome">
+      <option value="proceed">เห็นควรให้ดำเนินการขอหมายจับ</option>
+      <option value="more_info">ขอข้อมูลหรือเอกสารเพิ่มเติม</option>
+      <option value="decline">ยังไม่ให้ดำเนินการขอหมายจับ</option>
+    </select></div>
+    <div class="field"><label>วันที่ได้รับคำสั่ง</label><input type="date" id="prosecutor-date"></div>
+    <div class="field"><label>เลขหนังสือ/เลขอ้างอิง</label><input id="prosecutor-ref"></div>
+    <div class="field"><label>ชื่อพนักงานอัยการ</label><input id="prosecutor-name"></div>
+    <div class="field"><label>หน่วยงานอัยการ</label><input id="prosecutor-agency" placeholder="เช่น สำนักงานอัยการพิเศษฝ่ายคดีปราบปรามการทุจริต..."></div>
+    <div class="field wide"><label>สรุปสาระสำคัญของคำสั่ง</label><textarea rows="3" id="prosecutor-summary"></textarea></div>
+    <div class="field wide"><label>แนบไฟล์สำเนาหนังสือ/คำสั่ง</label><input type="file" accept=".pdf"></div>
+    <div class="field"><label>ผู้รับคำสั่ง</label><input id="prosecutor-receiver" value="${esc(c.owner)}"></div>
+    <div class="field"><label>วันที่ต้องดำเนินการ (ถ้ามี)</label><input type="date"></div>
+  </div></section>`
+  +`<div class="sticky-actions"><button class="btn secondary" data-go="case/${esc(c.no)}">ยกเลิก</button><button class="btn" data-save-prosecutor-result="${esc(c.no)}"><i class="fa-solid fa-floppy-disk" aria-hidden="true"></i>บันทึกผลพิจารณา</button></div>`;
+}
+
+function formPage(no){
+  const c=demoCases.find(x=>x.no===no);
+  const mode=(c&&c.intakeMode)||'form';
+  if(mode==='upload'){
+    return base('มจ.1 คำร้องขอออกหมายจับ','แบบฟอร์มจำลองอ้างอิงเอกสารจริง ปปท.8-17 (คำร้องขอหมายจับ) — เลือกกรอกออนไลน์ หรืออัปโหลดไฟล์ที่จัดทำภายนอกได้')
+    +`<div class="intake-mode-toggle">
+      <label><input type="radio" name="intake-mode" value="form"><div><strong>กรอกฟอร์มออนไลน์</strong><small>กรอกข้อมูลคำร้องตามแบบ ปปท.8-17 ในระบบโดยตรง (ดูตัวอย่างหน้าจริงประกอบ)</small></div></label>
+      <label class="checked"><input type="radio" name="intake-mode" value="upload" checked><div><strong>อัปโหลดไฟล์ที่จัดทำภายนอก</strong><small>กรณีจัดทำคำร้องด้วย Word แล้วแปลงเป็น PDF มาอัปโหลดแทนการกรอกฟอร์ม</small></div></label>
+    </div>`
+    +`<div id="intake-form-section" style="display:none"></div>`
+    +`<div id="intake-upload-section"><section class="card"><div class="card-head"><div><h2>อัปโหลดไฟล์คำร้องขอหมายจับ</h2></div></div><div class="form-grid" style="padding:18px 20px">
+      <div class="field"><label>เลขคำร้อง</label><input value="${c?esc(c.no):''}" placeholder="ระบบสร้างให้อัตโนมัติ"></div>
+      <div class="field"><label>ผู้ถูกกล่าวหา</label><input value="${c?esc(c.suspect):''}"></div>
+      <div class="upload-drop"><i class="fa-solid fa-file-arrow-up" aria-hidden="true"></i><strong>ลากไฟล์มาวาง หรือคลิกเพื่อเลือกไฟล์</strong><small>รองรับไฟล์ PDF ที่จัดทำจาก Word ภายนอก (คำร้องขอหมายจับ ตามแบบ ปปท.8-17)</small><input type="file" accept=".pdf">
+      ${c&&c.uploadFile?`<div class="task-row" style="width:100%;margin-top:8px"><span class="task-no"><i class="fa-solid fa-file-pdf"></i></span><div><strong>${esc(c.uploadFile)}</strong><small>ไฟล์ที่อัปโหลดไว้แล้ว (ตัวอย่าง)</small></div></div>`:''}</div>
+    </div></section></div>`
+    +`<div class="sticky-actions"><button class="btn secondary" data-go="registry">ยกเลิก</button><button class="btn" onclick="toast('เทมเพลตนี้ยังไม่บันทึกจริง')">บันทึกร่าง</button></div>`;
+  }
+  const toggle=`<div class="intake-mode-toggle" style="margin:0 22px 0">
+    <label class="checked"><input type="radio" name="intake-mode" value="form" checked><div><strong>กรอกฟอร์มออนไลน์</strong><small>กรอกข้อมูลคำร้องตามแบบ ปปท.8-17 ในระบบโดยตรง</small></div></label>
+    <label><input type="radio" name="intake-mode" value="upload"><div><strong>อัปโหลดไฟล์ที่จัดทำภายนอก</strong><small>กรณีจัดทำคำร้องด้วย Word แล้วแปลงเป็น PDF มาอัปโหลดแทนการกรอกฟอร์ม</small></div></label>
+  </div>`;
+  return toggle
+  +`<div id="intake-form-section">`+tabbedFormPage('mj1','มจ.1',' คำร้องขอให้ศาลออกหมายจับ',kb1Sections(),c?c.no:'')+`</div>`
+  +`<div id="intake-upload-section" style="display:none"><section class="card"><div class="card-head"><div><h2>อัปโหลดไฟล์คำร้องขอหมายจับ</h2></div></div><div class="form-grid" style="padding:18px 20px">
+    <div class="field"><label>เลขคำร้อง</label><input value="${c?esc(c.no):''}" placeholder="ระบบสร้างให้อัตโนมัติ"></div>
+    <div class="field"><label>ผู้ถูกกล่าวหา</label><input value="${c?esc(c.suspect):''}"></div>
+    <div class="upload-drop"><i class="fa-solid fa-file-arrow-up" aria-hidden="true"></i><strong>ลากไฟล์มาวาง หรือคลิกเพื่อเลือกไฟล์</strong><small>รองรับไฟล์ PDF ที่จัดทำจาก Word ภายนอก (คำร้องขอหมายจับ ตามแบบ ปปท.8-17)</small><input type="file" accept=".pdf"></div>
+  </div></section></div>`;
+}
+
+function warrantRecordPage(){
+  return tabbedFormPage('mj2','มจ.2','บันทึกหมายจับฉบับศาล',mj2Sections(),'');
+}
+
+function warrantRecordPage(){
+  return base('มจ.2 บันทึกหมายจับฉบับศาล','กรอกข้อมูลหมายจับหลังศาลอนุมัติออกหมายแล้ว อ้างอิงแบบ ปปท.8-21/8-22')
+  +placeholderNote('โครงฟอร์มนี้จัดกลุ่มฟิลด์ตามแบบหมายจับฉบับศาลจริง แต่ยังไม่มีการตรวจสอบความครบถ้วน/บันทึกจริง')
+  +`<section class="card"><div class="card-head"><div><h2>ข้อมูลหมายจับ</h2></div></div><div class="form-grid" style="padding:18px 20px">
+    <div class="field"><label>เลขที่หมายจับ</label><input type="text" placeholder="เช่น จ.123/2569"></div>
+    <div class="field"><label>ศาลที่ออกหมาย</label><input type="text" placeholder="เช่น ศาลอาญาคดีทุจริตและประพฤติมิชอบ..."></div>
+    <div class="field"><label>วันที่ออกหมาย</label><input type="date"></div>
+    <div class="field"><label>ผู้พิพากษา</label><input type="text"></div>
+  </div></section>`
+  +`<section class="card"><div class="card-head"><div><h2>เกณฑ์การออกหมาย (ตามคำสั่งศาล)</h2></div></div><div class="form-grid" style="padding:18px 20px">
+    <div class="choice-group"><div class="choice-options">
+      <label class="choice"><input type="checkbox">ได้หรือน่าจะได้กระทำความผิดอาญาซึ่งมีอัตราโทษจำคุกอย่างสูงเกิน 3 ปี</label>
+      <label class="choice"><input type="checkbox">จะหลบหนี</label>
+      <label class="choice"><input type="checkbox">จะไปยุ่งเหยิงกับพยานหลักฐาน</label>
+      <label class="choice"><input type="checkbox">ก่อเหตุอันตรายประการอื่น</label>
+    </div></div>
+  </div></section>`
+  +`<section class="card"><div class="card-head"><div><h2>ส่งตัวและอายุความ</h2></div></div><div class="form-grid" style="padding:18px 20px">
+    <div class="field"><label>ให้ไปส่งที่</label><input type="text" placeholder="เช่น สำนักงานอัยการพิเศษฝ่าย..."></div>
+    <div class="field"><label>ภายในอายุความ (ปี)</label><input type="number"></div>
+    <div class="field"><label>นับแต่วันที่</label><input type="date"></div>
+    <div class="field"><label>วันหมดอายุหมาย</label><input type="date"></div>
+  </div></section>`
+  +`<section class="card"><div class="card-head"><div><h2>แนบไฟล์และบันทึกการรับทราบ</h2></div></div><div class="form-grid" style="padding:18px 20px">
+    <div class="field wide"><label>แนบไฟล์สำเนาหมายจับฉบับศาล (PDF)</label><input type="file" accept=".pdf"></div>
+    <div class="field"><label>วันที่แจ้ง/ส่งหมายให้ผู้เกี่ยวข้องตรวจดู</label><input type="date"></div>
+    <div class="field"><label>เจ้าพนักงานผู้จัดการตามหมาย</label><input type="text"></div>
+  </div></section>`
+  +`<div class="sticky-actions"><button class="btn secondary" data-go="registry">ยกเลิก</button><button class="btn" onclick="toast('เทมเพลตนี้ยังไม่บันทึกจริง')">บันทึก</button></div>`;
+}
+
+function trackingPage(){
+  const issued=demoCases.filter(c=>c.stage==='issued');
+  return base('ติดตามหมายจับ','สถานะจับกุมและวันหมดอายุของหมายจับที่ศาลออกแล้ว')
+  +placeholderNote('แดชบอร์ดติดตาม — ยังไม่มีตัวกรอง/แจ้งเตือนใกล้หมดอายุ/ปุ่มบันทึกผลจับกุมจริง เป็นโครงหน้าเทมเพลต')
+  +`<div class="stats"><div class="stat"><small>หมายจับที่ยังไม่จับกุม</small><strong>${issued.length}</strong></div><div class="stat"><small>จับกุมแล้ว</small><strong>0</strong></div><div class="stat"><small>ใกล้หมดอายุ</small><strong>0</strong></div></div>`
+  +`<section class="card"><div class="card-head"><div><h2>รายการหมายจับที่ออกแล้ว</h2></div></div><div class="table-wrap"><table><thead><tr><th>เลขคำร้อง</th><th>ผู้ต้องหา</th><th>วันหมดอายุ</th><th>สถานะจับกุม</th><th>การดำเนินการ</th></tr></thead><tbody>${issued.length?issued.map(c=>`<tr><td>${esc(c.no)}</td><td>${esc(c.suspect)}</td><td>${esc(c.expiry||'-')}</td><td><span class="badge">ยังไม่จับกุม</span></td><td><button class="btn secondary" data-go="case/${esc(c.no)}">เปิด →</button></td></tr>`).join(''):'<tr><td colspan="5"><div class="empty">ยังไม่มีหมายจับที่ออกแล้ว</div></td></tr>'}</tbody></table></div></section>`;
+}
+
+function reportsPage(){
+  return base('รายงาน','สรุปสถิติคำร้องขอออกหมายจับ')
+  +placeholderNote('หน้ารายงาน — ยังไม่มีกราฟ/ตัวกรองช่วงเวลาจริง เป็นโครงหน้าเทมเพลต');
+}
+
+function render(){
+  const route=(location.hash.replace(/^#\//,'')||'registry');
+  document.querySelectorAll('.nav button[data-route]').forEach(b=>b.classList.toggle('active',route===b.dataset.route||(route.startsWith('case/')&&b.dataset.route==='registry')));
+  const view=document.getElementById('view');
+  if(route==='registry')view.innerHTML=registry();
+  else if(route==='intake-activity5')view.innerHTML=intakeActivity5Page();
+  else if(route.startsWith('prosecutor-result/'))view.innerHTML=prosecutorResultPage(decodeURIComponent(route.substring('prosecutor-result/'.length)));
+  else if(queues[route])view.innerHTML=queuePage(route);
+  else if(route.startsWith('case/'))view.innerHTML=casePage(decodeURIComponent(route.substring('case/'.length)));
+  else if(route.startsWith('form/'))view.innerHTML=formPage(decodeURIComponent(route.substring('form/'.length)));
+  else if(route==='warrant-record')view.innerHTML=warrantRecordPage();
+  else if(route==='tracking')view.innerHTML=trackingPage();
+  else if(route==='reports')view.innerHTML=reportsPage();
+  else view.innerHTML=registry();
+  bind();
+  window.scrollTo(0,0);
+}
+
+function bind(){
+  document.querySelectorAll('[data-route]').forEach(b=>b.onclick=()=>go(b.dataset.route));
+  document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>go(b.dataset.go));
+  document.querySelectorAll('input[name="intake-mode"]').forEach(r=>r.addEventListener('change',()=>{
+    document.querySelectorAll('.intake-mode-toggle label').forEach(l=>l.classList.toggle('checked',l.querySelector('input').checked));
+    const formOn=document.querySelector('input[name="intake-mode"][value="form"]').checked;
+    document.getElementById('intake-form-section').style.display=formOn?'':'none';
+    document.getElementById('intake-upload-section').style.display=formOn?'none':'';
+  }));
+  document.querySelectorAll('[data-section]').forEach(b=>b.onclick=()=>{formSection=Number(b.dataset.section);render()});
+  document.querySelectorAll('[data-action="form-next"]').forEach(b=>b.onclick=()=>{formSection++;render();window.scrollTo(0,0)});
+  document.querySelectorAll('[data-action="form-back"]').forEach(b=>b.onclick=()=>{if(formSection>0){formSection--;render()}else go('registry')});
+  document.querySelectorAll('[data-action="save"]').forEach(b=>b.onclick=()=>toast('บันทึกร่างแล้ว (เทมเพลตนี้ยังไม่บันทึกจริง)'));
+  document.querySelectorAll('[data-action="print"]').forEach(b=>b.onclick=()=>window.print());
+  document.querySelectorAll('[data-official-page]').forEach(b=>b.onclick=()=>{const wrap=b.closest('.official-paper-wrap'),img=wrap?.querySelector('.official-page-image'),page=Number(b.dataset.officialPage);if(img)img.src=`./assets/forms/official/page-${String(page).padStart(2,'0')}.png`;wrap?.querySelectorAll('[data-official-page]').forEach(x=>x.classList.toggle('active',x===b))});
+  document.querySelectorAll('[data-intake-activity5]').forEach(b=>b.onclick=()=>{
+    const caseNo=b.dataset.intakeActivity5,a=activity5Cases.find(x=>x.caseNo===caseNo);
+    if(!a)return;
+    const no='AW-2569-'+String(100+demoCases.length).padStart(6,'0');
+    demoCases.unshift({no,suspect:a.suspect,status:'รอผลพิจารณาจากพนักงานอัยการ',stage:'prosecutor_pending',owner:a.owner+' (เจ้าของสำนวน)',next:'รอผลพิจารณาจากพนักงานอัยการ แล้วบันทึกผลเข้าระบบ',intakeMode:'form',fromCaseNo:a.caseNo});
+    toast('รับสำนวน '+caseNo+' เข้าโมดูลหมายจับแล้ว เลขคำร้อง '+no);
+    go('case/'+no);
+  });
+  document.querySelectorAll('[data-save-prosecutor-result]').forEach(b=>b.onclick=()=>{
+    const no=b.dataset.saveProsecutorResult,c=demoCases.find(x=>x.no===no);
+    if(!c)return;
+    const outcome=document.getElementById('prosecutor-outcome').value;
+    const order={date:document.getElementById('prosecutor-date').value||'-',ref:document.getElementById('prosecutor-ref').value||'-',name:document.getElementById('prosecutor-name').value||'-',agency:document.getElementById('prosecutor-agency').value||'-',summary:document.getElementById('prosecutor-summary').value||'-'};
+    if(outcome==='proceed'){
+      c.stage='draft';c.status='เตรียมคำร้องขอหมายจับ';c.owner='เจ้าหน้าที่เจ้าของสำนวน';c.next='กรอก มจ.1 คำร้องขอออกหมายจับให้ครบก่อนส่งตรวจ';c.prosecutorOrder=order;delete c.returnedBy;delete c.returnNote;
+      toast('บันทึกคำสั่งอัยการแล้ว — เปิดงานขอหมายจับในกิจกรรมที่ 9');
+    }else if(outcome==='more_info'){
+      c.stage='prosecutor_pending';c.status='อัยการขอข้อมูลเพิ่มเติมก่อนเปิดงาน';c.returnedBy=(order.name!=='-'?order.name+' ':'')+(order.agency!=='-'?order.agency:'พนักงานอัยการ');c.returnNote=order.summary;
+      toast('บันทึกแล้ว — รอเจ้าของสำนวนจัดส่งข้อมูลเพิ่มเติมแล้วบันทึกผลอีกครั้ง');
+    }else{
+      c.stage='prosecutor_declined';c.status='อัยการยังไม่ให้ดำเนินการขอหมายจับ';c.next='ยุติการดำเนินการขอหมายจับชั่วคราว รอเหตุอันควรใหม่';delete c.returnedBy;delete c.returnNote;
+      toast('บันทึกผลแล้ว — ยังไม่ให้ดำเนินการขอหมายจับ');
+    }
+    go('case/'+no);
+  });
+}
+
+document.getElementById('role').addEventListener('change',e=>{currentRole=e.target.value;document.getElementById('side-role').textContent=roleNames[currentRole];toast('เปลี่ยนบทบาทเป็น '+roleNames[currentRole]);});
+window.addEventListener('hashchange',()=>{formSection=0;render()});
+render();
+</script>
+</body>
+</html>
