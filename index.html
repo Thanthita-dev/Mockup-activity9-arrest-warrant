@@ -30,6 +30,13 @@
     .real-nav button.nav-link.level-two{padding-left:55px;font-size:12px}
     .real-nav button.nav-link .icon{width:18px;color:#8fa1c6;text-align:center}
     .real-nav button.nav-link.active .icon{color:#f0c75a}
+    .role-view-switch{display:flex;align-items:center;gap:9px;padding:5px 7px 5px 12px;border:1px solid #d3deea;border-radius:8px;background:#fff}
+    .role-view-switch>span{display:flex;align-items:center;gap:6px;color:#65768c;font-size:10px;font-weight:600;white-space:nowrap}
+    .role-access-note{padding:2px 6px;border-radius:999px;background:#eef4fb;color:#2e6294;font-size:9px;font-weight:700}
+    .role-view-switch .role-select{min-width:220px;border:0;background:transparent;padding-left:0}
+    .queue-scope-title{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+    .queue-scope-badge{display:inline-flex;align-items:center;gap:6px;padding:5px 9px;border:1px solid #d6e1ed;border-radius:999px;background:#f2f6fb;color:#45617f;font-size:11px;font-weight:700}
+    .queue-scope-badge.personal{border-color:#bfe0ca;background:#edf8f1;color:#267143}
     .profile{flex:0 0 auto;margin:14px;padding:12px;border:0;border-radius:9px;background:rgba(255,255,255,.08)}
     .profile .avatar{width:38px;height:38px;flex:0 0 38px;background:#1d3975;color:#fff;font-weight:600}
     .profile strong{color:#fff;font-weight:600}.profile small{font-size:11px;color:#bac7dd}
@@ -137,7 +144,7 @@
     .role-stack{min-width:170px}.role-stack strong,.role-stack small{display:block}.role-stack strong{font-size:12px;line-height:1.45}.role-stack small{margin-top:3px;color:var(--muted);line-height:1.45}
     .role-stack .unassigned{color:var(--orange)}
     .registry-row-actions{display:flex;flex-wrap:wrap;gap:7px;min-width:180px}.registry-row-actions .btn{padding:8px 10px;font-size:11px}
-    .assignment-form{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:14px;text-align:left}.assignment-form .wide{grid-column:1/-1}.assignment-form label{display:block;margin-bottom:5px;color:#34465f;font-size:12px;font-weight:700}.assignment-form input,.assignment-form select,.assignment-form textarea{width:100%;min-height:42px;padding:9px 11px;border:1px solid #cbd6e2;border-radius:8px;background:#fbfdff;color:#172943;font:inherit}.assignment-form textarea{min-height:76px;resize:vertical}
+    .assignment-form{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:14px;text-align:left}.assignment-form .wide{grid-column:1/-1}.assignment-form label{display:block;margin-bottom:5px;color:#34465f;font-size:12px;font-weight:700}.assignment-form input,.assignment-form select,.assignment-form textarea{width:100%;min-height:42px;margin:0!important;padding:9px 11px;border:1px solid #cbd6e2;border-radius:8px;background:#fbfdff;color:#172943;font:inherit}.assignment-form textarea{min-height:76px;resize:vertical}
     .assignment-summary{display:grid;grid-template-columns:150px 1fr;gap:7px 12px;padding:13px 15px;border:1px solid #d6e0ea;border-radius:9px;background:#f7f9fc;text-align:left}.assignment-summary span{color:#62738a;font-size:12px}.assignment-summary strong{color:#172943;font-size:12px}
     .swal2-popup{font-family:"Kanit",sans-serif!important}.swal2-title{color:#172943!important;font-size:21px!important}.swal2-html-container{color:#34465f!important;font-size:13px!important}.swal2-confirm,.swal2-cancel{font:600 13px "Kanit",sans-serif!important}
     .audit-list{display:grid;gap:0;padding:0 20px 20px}.audit-item{display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:11px;align-items:start;padding:13px 0;border-bottom:1px solid #e5ebf1}.audit-item:last-child{border-bottom:0}.audit-icon{display:grid;width:30px;height:30px;place-items:center;border-radius:50%;background:#e8f1fa;color:#16558f}.audit-item strong,.audit-item small{display:block}.audit-item strong{font-size:12px}.audit-item small{margin-top:3px;color:var(--muted);line-height:1.45}.audit-time{color:var(--muted);font-size:11px;white-space:nowrap}
@@ -161,16 +168,23 @@
     .registry-result-summary strong{color:var(--ink);font-size:13px}
     @media(max-width:1100px){.registry-search-panel{grid-template-columns:minmax(260px,1fr) minmax(190px,240px)}.registry-search-panel .btn{width:100%}.registry-advanced-grid{grid-template-columns:repeat(2,minmax(180px,1fr))}}
     @media(max-width:650px){.registry-search-panel,.registry-advanced-grid{grid-template-columns:1fr}.registry-search-panel{padding:15px}.registry-advanced-grid{padding:15px}.registry-advanced summary{padding:13px 15px}}
-    .source-banner{display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;padding:14px 16px;border:1px solid #bcd4e8;border-radius:10px;background:#edf5fb;color:#214b70}
-    .source-banner i{margin-top:2px;color:#2d6b9e}
-    .source-banner strong{display:block;font-size:13px}.source-banner small{display:block;margin-top:3px;color:#4b657d;line-height:1.55}
-    .source-intake-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,.55fr);gap:14px;margin-bottom:14px}
-    .source-intake-panel,.source-intake-aside{border:1px solid var(--line);border-radius:11px;background:var(--paper);box-shadow:var(--shadow);overflow:hidden}
-    .source-intake-section{padding:17px 20px;border-bottom:1px solid #e4eaf1}.source-intake-section:last-child{border-bottom:0}
-    .source-intake-section h2,.source-intake-aside h2{margin:0 0 4px;font-size:16px}.source-intake-section>p,.source-intake-aside>p{margin:0 0 13px;color:var(--muted);font-size:10px;line-height:1.55}
-    .source-intake-aside{height:max-content;padding:18px}.source-intake-aside .review-summary>div{grid-template-columns:1fr;gap:3px;padding:9px 0}.source-intake-aside .field{margin-top:14px}.source-intake-aside .btn{width:100%;justify-content:center;margin-top:8px}
-    .source-document-list{display:grid;gap:0}.source-document-row{display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:11px;align-items:center;padding:11px 0;border-bottom:1px solid #e5ebf1}.source-document-row:last-child{border-bottom:0}.source-document-row>i{display:grid;width:32px;height:32px;place-items:center;border-radius:7px;background:#f8ebea;color:#a1433c}.source-document-row strong,.source-document-row small{display:block}.source-document-row strong{font-size:11px}.source-document-row small{margin-top:2px;color:var(--muted);font-size:9px}.source-document-row .btn{width:auto;margin:0;padding:7px 10px}
-    @media(max-width:900px){.source-intake-grid{grid-template-columns:1fr}}
+    .source-banner{display:flex;align-items:center;gap:12px;margin-bottom:12px;padding:11px 15px;border:1px solid #c8d9e8;border-radius:10px;background:#f5f9fc;color:#214b70}.source-banner i{color:#2d6b9e}.source-banner strong{display:block;font-size:12px}.source-banner small{display:block;margin-top:2px;color:#60758a;font-size:10px;line-height:1.45}
+    .source-intake-grid{display:grid;grid-template-columns:minmax(0,1fr) 310px;gap:16px;margin-bottom:14px;align-items:start}.source-intake-panel,.source-intake-aside{border:1px solid var(--line);border-radius:12px;background:var(--paper);box-shadow:0 2px 8px rgba(20,45,74,.05);overflow:hidden}
+    .source-case-head{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;padding:18px 22px;background:#173c63;color:#fff}.source-case-head small,.source-case-head strong{display:block}.source-case-head small{color:#bfd1e1;font-size:10px;font-weight:700}.source-case-head h2{max-width:760px;margin:4px 0;font-size:17px;line-height:1.4}.source-case-head p{margin:0;color:#d8e4ee;font-size:11px}.source-case-head-meta{display:grid;grid-template-columns:1fr;gap:9px;min-width:210px;padding-left:18px;border-left:1px solid rgba(255,255,255,.22)}.source-case-head-meta strong{margin-top:2px;color:#fff;font-size:10px}
+    .source-trigger{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;padding:0 22px;border-bottom:1px solid #dfe7ef;background:#f8fafc}.source-trigger-item{display:grid;grid-template-columns:24px minmax(0,1fr);gap:8px;align-items:center;padding:12px 14px;border-right:1px solid #e0e7ee}.source-trigger-item:first-child{padding-left:0}.source-trigger-item:last-child{padding-right:0;border-right:0}.source-trigger-item>i{display:grid;width:22px;height:22px;place-items:center;border-radius:50%;background:#e2f2e8;color:#237444;font-size:9px}.source-trigger-item.missing>i{background:#fbe9e7;color:#a43c36}.source-trigger-item strong,.source-trigger-item small{display:block}.source-trigger-item strong{font-size:10px;line-height:1.4}.source-trigger-item small{margin-top:1px;color:#6d7e90;font-size:8px;line-height:1.4}
+    .source-intake-section{padding:20px 22px;border-bottom:1px solid #e1e8ef}.source-intake-section:last-child{border-bottom:0}.source-section-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:14px}.source-section-head h2{margin:0;font-size:14px}.source-section-head p{margin:3px 0 0;color:var(--muted);font-size:9px}.source-count{flex:0 0 auto;padding:5px 9px;border-radius:999px;background:#edf4fb;color:#285f8d;font-size:9px;font-weight:800}
+    .source-summary-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.source-summary-item{min-width:0;padding:11px 12px;border:1px solid #e0e7ee;border-radius:8px;background:#fafbfd}.source-summary-item span,.source-summary-item strong{display:block}.source-summary-item span{color:#6f8093;font-size:8px;font-weight:700}.source-summary-item strong{margin-top:4px;color:var(--ink);font-size:10px;line-height:1.45;overflow-wrap:anywhere}
+    .source-narrative{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 20px;margin-top:16px}.source-narrative-block{padding:11px 0;border-bottom:1px solid #e3e9ef}.source-narrative-block:nth-child(n+3){grid-column:1/-1}.source-narrative-block span,.source-narrative-block strong{display:block}.source-narrative-block span{margin-bottom:4px;color:#64778b;font-size:9px;font-weight:700}.source-narrative-block strong{font-size:11px;line-height:1.6}.source-narrative-block.reason{margin-top:8px;padding:12px 14px;border:1px solid #d4e2ee;border-radius:8px;background:#f2f7fb}.source-narrative-block.reason strong{color:#173f65}
+    .source-order{margin-top:16px;border:1px solid #d5e1ec;border-radius:9px;overflow:hidden;background:#fbfcfd}.source-order-head{display:flex;align-items:center;gap:9px;padding:11px 13px;border-bottom:1px solid #dce5ed;background:#eef5fa;color:#1f5078}.source-order-head i{font-size:12px}.source-order-head strong{font-size:11px}.source-order-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));padding:4px 13px}.source-order-grid>div{padding:9px 0;border-bottom:1px solid #e2e9ef}.source-order-grid>div:nth-last-child(-n+2){border-bottom:0}.source-order-grid>div:nth-child(odd){padding-right:14px}.source-order-grid>div:nth-child(even){padding-left:14px;border-left:1px solid #e2e9ef}.source-order-grid .wide{grid-column:1/-1;padding-right:0!important}.source-order-grid span,.source-order-grid strong{display:block}.source-order-grid span{color:#748396;font-size:8px}.source-order-grid strong{margin-top:3px;color:#183a5a;font-size:10px;line-height:1.45}.source-order-file{display:flex;align-items:center;justify-content:space-between;gap:12px}.source-order-file .btn{width:auto;margin:0;padding:6px 9px}
+    .source-document-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.source-document-row{display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:9px;align-items:center;padding:10px;border:1px solid #e0e7ee;border-radius:8px;background:#fbfcfd}.source-document-row>i{display:grid;width:28px;height:28px;place-items:center;border-radius:7px;background:#f8ebea;color:#a1433c}.source-document-row strong,.source-document-row small{display:block}.source-document-row strong{font-size:9px;line-height:1.35}.source-document-row small{margin-top:2px;color:var(--muted);font-size:8px}.source-document-row .btn{width:30px;height:30px;margin:0;padding:0;justify-content:center;font-size:0}.source-document-row .btn i{font-size:10px}
+    .source-intake-aside{position:sticky;top:76px;height:max-content;padding:19px}.source-intake-aside h2{margin:0;font-size:15px}.source-intake-aside>p{margin:4px 0 14px;color:var(--muted);font-size:9px}.source-intake-aside .review-summary{padding:0 12px;border:1px solid #e1e8ef;border-radius:9px;background:#f8fafc}.source-intake-aside .review-summary>div{grid-template-columns:1fr;gap:2px;padding:9px 0}.source-intake-aside .review-summary span{font-size:8px}.source-intake-aside .review-summary strong{font-size:10px}.source-intake-aside .field{margin-top:14px}.source-intake-aside .btn{width:100%;justify-content:center;margin-top:8px}
+    .source-assignment-summary{margin-top:12px;padding:11px 12px;border:1px solid #dbe5ef;border-radius:9px;background:#f8fbfe}.source-assignment-summary div+div{margin-top:8px;padding-top:8px;border-top:1px solid #e3eaf1}.source-assignment-summary span{display:block;color:var(--muted);font-size:8px}.source-assignment-summary strong{display:block;margin-top:2px;font-size:10px}.source-assignment-summary small{display:block;margin-top:3px;color:#60728a;font-size:8px;line-height:1.5}.source-intake-aside textarea{width:100%;min-height:68px;padding:10px 11px;border:1px solid #cbd6e2;border-radius:8px;background:#fff;color:#172943;font:inherit;resize:vertical}
+    .responsibility-card{margin-bottom:14px;border:1px solid #d8e3ee;border-radius:12px;background:#fff;box-shadow:0 2px 8px rgba(20,45,74,.04);overflow:hidden}.responsibility-head{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 18px;border-bottom:1px solid #e4ebf2}.responsibility-head h2{margin:0;font-size:14px}.responsibility-head p{margin:3px 0 0;color:var(--muted);font-size:9px}.responsibility-head .btn{flex:0 0 auto}.responsibility-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding:0 18px}.responsibility-grid>div{padding:13px 12px;border-left:1px solid #e5ebf2}.responsibility-grid>div:first-child{border-left:0}.responsibility-grid span{display:block;color:var(--muted);font-size:8px}.responsibility-grid strong{display:block;margin-top:3px;font-size:10px;line-height:1.45}.responsibility-acting{display:inline-flex!important;width:auto;margin-top:5px!important;padding:3px 7px;border-radius:999px;background:#fff4d8;color:#8a5b00;font-size:8px!important}.responsibility-history{padding:11px 18px;border-top:1px solid #e5ebf2;background:#f8fafc}.responsibility-history>strong{font-size:9px}.responsibility-history-list{display:grid;gap:6px;margin-top:7px}.responsibility-history-item{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:start;font-size:9px}.responsibility-history-item small{color:var(--muted);line-height:1.5}.responsibility-history-item time{color:#60728a;font-size:8px;white-space:nowrap}
+    @media(max-width:900px){.responsibility-grid{grid-template-columns:1fr 1fr}.responsibility-grid>div:nth-child(3){border-left:0;border-top:1px solid #e5ebf2}.responsibility-grid>div:nth-child(4){border-top:1px solid #e5ebf2}}
+    @media(max-width:600px){.responsibility-head{align-items:flex-start;flex-direction:column}.responsibility-grid{grid-template-columns:1fr}.responsibility-grid>div{border-left:0!important;border-top:1px solid #e5ebf2}.responsibility-grid>div:first-child{border-top:0}.responsibility-history-item{grid-template-columns:1fr}}
+    .source-start-note{margin-top:12px;padding:11px 12px;border-radius:9px;background:#f2f6fa;color:#44576d;font-size:9px;line-height:1.5}.source-start-note.blocked{background:#fff2f0;color:#8c332e}
+    @media(max-width:1050px){.source-intake-grid{grid-template-columns:1fr}.source-intake-aside{position:static}.source-document-list{grid-template-columns:1fr}}
+    @media(max-width:760px){.source-case-head{display:grid;grid-template-columns:1fr}.source-case-head-meta,.source-summary-grid,.source-order-grid,.source-narrative{grid-template-columns:1fr}.source-case-head-meta{min-width:0;padding:12px 0 0;border-left:0;border-top:1px solid rgba(255,255,255,.22)}.source-trigger{grid-template-columns:1fr;padding:4px 16px}.source-trigger-item,.source-trigger-item:first-child,.source-trigger-item:last-child{padding:8px 0;border-right:0;border-bottom:1px solid #e3eaf1}.source-trigger-item:last-child{border-bottom:0}.source-narrative-block:nth-child(n){grid-column:auto}.source-order-grid>div,.source-order-grid>div:nth-child(odd),.source-order-grid>div:nth-child(even){grid-column:auto;padding:9px 0!important;border-left:0}.source-order-grid>div:last-child{border-bottom:0}}
     .readonly-source{background:#eef3f7!important;color:#41556d!important;border-color:#c7d3df!important}
     .checklist{display:grid;gap:10px;padding:0 20px 20px}
     .checklist-item{display:grid;grid-template-columns:26px minmax(0,1fr) auto;gap:12px;align-items:start;padding:13px 14px;border:1px solid var(--line);border-radius:9px;background:var(--paper)}
@@ -250,6 +264,24 @@
     .intake-option-card p{margin:0 0 22px;color:var(--muted);font-size:13px;line-height:1.65;flex:1}
     .intake-option-card .btn{align-self:stretch;justify-content:center;padding:13px 20px;font-size:14px;font-weight:700}
     @media(max-width:820px){.intake-option-grid{grid-template-columns:1fr}}
+    .era-option-grid{grid-template-columns:repeat(3,1fr)}
+    .era-card .intake-option-icon{display:grid;place-items:center;width:56px;height:56px;flex:0 0 56px;border-radius:14px;margin-bottom:16px;font-size:23px;background:none;color:inherit}
+    .era-card.era-after{border-color:#2f8f4e}
+    .era-card.era-after .intake-option-icon{color:#2f8f4e}
+    .era-card.era-onward{border-color:#c07a1e}
+    .era-card.era-onward .intake-option-icon{color:#c07a1e}
+    .era-card.era-before{border-color:#8a5cc9}
+    .era-card.era-before .intake-option-icon{color:#8a5cc9}
+    .era-card.selected{box-shadow:0 12px 28px rgba(16,40,75,.16);border-width:3px}
+    .era-card .intake-option-selected-mark{display:none;align-items:center;gap:6px;margin-bottom:12px;padding:4px 10px;border-radius:999px;background:var(--green2);color:var(--green);font-size:11px;font-weight:700;width:fit-content}
+    .era-card.selected .intake-option-selected-mark{display:inline-flex}
+    .intake-option-card.method-locked{opacity:.55;pointer-events:none}
+    .intake-method-hint{margin:14px 0 0;color:var(--muted);font-size:12px}
+    @media(max-width:1100px){.era-option-grid{grid-template-columns:1fr}}
+    .era-reference-block{padding:14px;border:1px dashed #b9c4cf;border-radius:10px;background:#f8fafc}
+    .era-reference-images{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+    .era-reference-images img{width:180px;border:1px solid var(--line);border-radius:6px;box-shadow:var(--shadow);cursor:zoom-in;transition:transform .15s}
+    .era-reference-images img:hover{transform:scale(1.03)}
     .official-page-counter{position:sticky;top:8px;z-index:4;display:flex;justify-content:flex-end;height:0;padding-right:8px;pointer-events:none}
     .official-page-counter span{display:inline-flex;align-items:center;height:30px;padding:0 11px;border:1px solid #d7e1eb;border-radius:999px;background:rgba(255,255,255,.95);color:#28486f;font-size:12px;font-weight:700;box-shadow:0 2px 8px rgba(16,40,75,.08)}
     .form-page .official-page-switcher{padding:12px}
@@ -333,17 +365,13 @@
     <div class="brand"><img class="seal" src="./assets/images/pacc-logo.webp" alt="ตราสำนักงาน ป.ป.ท."><div><strong>E-CMIS</strong><small>COMPLAINT MANAGEMENT</small></div></div>
     <nav class="nav real-nav" aria-label="เมนูระบบหมายจับ">
       <div class="nav-module-label"><i class="fa-solid fa-gavel icon" aria-hidden="true"></i><span>หมายจับ</span></div>
-      <button class="nav-link level-one" data-route="registry"><i class="fa-solid fa-clipboard-list icon" aria-hidden="true"></i><span>ทะเบียนคำร้องขอศาลออกหมายจับ</span></button>
-      <div class="nav-section-label" data-role-nav-label>ตรวจสอบคำร้อง</div>
-      <button class="nav-link level-two" data-route="queue-officer" data-role-nav="officer"><i class="fa-solid fa-user-check icon" aria-hidden="true"></i><span>เจ้าหน้าที่/เจ้าของสำนวน</span></button>
-      <button class="nav-link level-two" data-route="queue-got" data-role-nav="got"><i class="fa-solid fa-folder-open icon" aria-hidden="true"></i><span>เจ้าหน้าที่ธุรการคดี กอท.</span></button>
-      <button class="nav-link level-two" data-route="queue-supervisor" data-role-nav="supervisor"><i class="fa-solid fa-user-tie icon" aria-hidden="true"></i><span>ผู้บังคับบัญชาชั้นต้น</span></button>
-      <button class="nav-link level-two" data-route="queue-director" data-role-nav="director"><i class="fa-solid fa-building-user icon" aria-hidden="true"></i><span>ผอ.สำนัก/กอง</span></button>
-      <button class="nav-link level-two" data-route="queue-approver" data-role-nav="approver"><i class="fa-solid fa-file-signature icon" aria-hidden="true"></i><span>ผู้มีอำนาจอนุมัติ/เลขาธิการ</span></button>
-      <button class="nav-link level-two" data-route="queue-bureau" data-role-nav="bureau"><i class="fa-solid fa-landmark icon" aria-hidden="true"></i><span>สำนัก/กองผู้รับผิดชอบ</span></button>
-      <div class="nav-section-label">งานหลังศาลออกหมาย</div>
-      <button class="nav-link level-one" data-route="tracking"><i class="fa-solid fa-location-crosshairs icon" aria-hidden="true"></i><span>ติดตามหมายจับ</span></button>
-      <button class="nav-link level-one" data-route="reports"><i class="fa-solid fa-chart-column icon" aria-hidden="true"></i><span>รายงาน</span></button>
+      <div class="nav-section-label">งานตามกระบวนการ</div>
+      <button class="nav-link level-one" data-route="registry" data-process-nav="registry"><i class="fa-solid fa-clipboard-list icon" aria-hidden="true"></i><span>ทะเบียนคำร้องขอหมายจับ</span></button>
+      <button class="nav-link level-one" data-route="my-work" data-process-nav="my-work"><i class="fa-solid fa-inbox icon" aria-hidden="true"></i><span>งานของฉัน</span></button>
+      <button class="nav-link level-one" data-route="court-process" data-process-nav="court-process"><i class="fa-solid fa-scale-balanced icon" aria-hidden="true"></i><span>ยื่นศาลและผลจากศาล</span></button>
+      <button class="nav-link level-one" data-route="tracking" data-process-nav="tracking"><i class="fa-solid fa-location-crosshairs icon" aria-hidden="true"></i><span>ติดตามหมายจับ</span></button>
+      <button class="nav-link level-one" data-route="termination-process" data-process-nav="termination-process"><i class="fa-solid fa-file-circle-xmark icon" aria-hidden="true"></i><span>ยุติและถอนหมายจับ</span></button>
+      <button class="nav-link level-one" data-route="reports" data-process-nav="reports"><i class="fa-solid fa-chart-column icon" aria-hidden="true"></i><span>รายงานและ Dashboard</span></button>
     </nav>
     <div class="profile"><div class="avatar">อ</div><div><strong>นางสาวอรุณี ใจมั่น</strong><small id="side-role">เจ้าหน้าที่/เจ้าของสำนวน</small></div></div>
   </aside>
@@ -352,9 +380,9 @@
       <button class="collapse" data-action="toggle-sidebar" aria-label="ย่อหรือขยายเมนู" aria-expanded="true"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
       <div class="global-search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><span>ค้นหาเลขงาน เลขสำนวน ผู้ถูกกล่าวหา หน่วยงาน...</span></div>
       <div class="top-right">
-        <select id="role" class="role-select" aria-label="บทบาทผู้ใช้งาน">
+        <label class="role-view-switch" title="แสดงเฉพาะบทบาทที่บัญชีผู้ใช้ได้รับสิทธิ์"><span>มุมมองบทบาท <small class="role-access-note">สิทธิ์สาธิต</small></span><select id="role" class="role-select" aria-label="มุมมองบทบาทผู้ใช้งานตามสิทธิ์">
           <option value="officer">เจ้าหน้าที่/เจ้าของสำนวน</option><option value="got">เจ้าหน้าที่ธุรการคดี กอท.</option><option value="supervisor">ผู้บังคับบัญชาชั้นต้น</option><option value="director">ผอ.สำนัก/กอง</option><option value="approver">ผู้มีอำนาจอนุมัติ/เลขาธิการ</option><option value="bureau">สำนัก/กองผู้รับผิดชอบ</option><option value="admin">Super Admin</option>
-        </select>
+        </select></label>
         <button class="icon-btn" aria-label="การแจ้งเตือน"><i class="fa-solid fa-bell" aria-hidden="true"></i><span class="notification-dot"></span></button><button class="icon-btn" aria-label="คู่มือ"><i class="fa-solid fa-book" aria-hidden="true"></i></button>
       </div>
     </header>
@@ -372,7 +400,7 @@
 const roleNames={officer:'เจ้าหน้าที่/เจ้าของสำนวน',got:'เจ้าหน้าที่ธุรการคดี กอท.',supervisor:'ผู้บังคับบัญชาชั้นต้น',director:'ผอ.สำนัก/กอง',approver:'ผู้มีอำนาจอนุมัติ/เลขาธิการ',bureau:'สำนัก/กองผู้รับผิดชอบ',admin:'Super Admin'};
 let currentRole='officer';
 
-const demoCases=[
+const demoCaseSeed=[
   {no:'A5-2569-00027',activity9No:'AW-2569-000126',sourceTransferId:'A5-ส่งต่อ-2569/027',suspect:'นายอธิคม รอจัดทำคำร้อง',status:'งานใหม่จากกิจกรรมที่ 5',stage:'activity5_new',owner:'นางสาวอรุณี ใจมั่น',caseOwner:'นางสาวอรุณี ใจมั่น',next:'ตรวจข้อมูลสำนวนและเอกสารต้นทางก่อนเปิดงานจัดทำคำร้อง',fromCaseNo:'กบค.052/2569',caseType:'คดีทุจริตต่อหน้าที่',caseTitle:'โครงการจัดซื้ออุปกรณ์สำนักงานโดยมิชอบ',charge:'ปฏิบัติหน้าที่โดยมิชอบตามประมวลกฎหมายอาญา มาตรา 157',idCard:'1-4141-52637-48-9',address:'อำเภอเมือง จังหวัดนนทบุรี',department:'สำนักงาน ป.ป.ท. เขต 1',factSummary:'ผลการไต่สวนพบพฤติการณ์กำหนดคุณลักษณะเฉพาะเพื่อเอื้อประโยชน์แก่ผู้เสนอราคารายหนึ่ง และผู้ถูกกล่าวหาไม่มาพบพนักงานอัยการตามกำหนดนัด',warrantReason:'มีเหตุอันควรเชื่อว่าผู้ถูกกล่าวหาจะหลบหนี เนื่องจากไม่มาพบตามหนังสือนัดและไม่สามารถติดต่อได้',evidence:'รายงานการไต่สวน มติคณะกรรมการ ป.ป.ท. หนังสือนัดพบพนักงานอัยการ และหลักฐานการส่งหนังสือ',attachments:[{name:'รายงานการไต่สวน_กบค.052-2569.pdf',type:'pdf',size:'4.8 MB'},{name:'มติคณะกรรมการ ป.ป.ท._กบค.052-2569.pdf',type:'pdf',size:'1.2 MB'},{name:'หนังสือนัดพบพนักงานอัยการ.pdf',type:'pdf',size:'640 KB'},{name:'หลักฐานการส่งหนังสือนัด.pdf',type:'pdf',size:'920 KB'}],sentToProsecutorDate:'2026-08-02',prosecutorOrder:{date:'2026-08-14',ref:'ที่ อส.021/2569',name:'นายวิชัย ยุติธรรม',agency:'สำนักงานอัยการพิเศษฝ่ายคดีปราบปรามการทุจริต 1',summary:'เห็นควรให้สำนักงาน ป.ป.ท. ดำเนินการขอศาลออกหมายจับ',file:'หนังสือคำสั่งอัยการ_กบค.052-2569.pdf'},activity5Source:{sentAt:'16 ส.ค. 2569 08:45',sentBy:'นายพงศกร รักษ์ธรรม',sourceModule:'กิจกรรมที่ 5 ระบบไต่สวนข้อเท็จจริง',assignedTo:'นางสาวอรุณี ใจมั่น'}},
   {no:'A5-2569-00028',activity9No:'AW-2569-000127',sourceTransferId:'A5-ส่งต่อ-2569/028',suspect:'นางสาววรัญญา รอรับมอบหมาย',status:'งานใหม่จากกิจกรรมที่ 5',stage:'activity5_new',owner:'ยังไม่ได้มอบหมาย',caseOwner:'นายพงศกร รักษ์ธรรม',next:'มอบหมายผู้จัดทำและตรวจข้อมูลก่อนเริ่มคำร้อง',fromCaseNo:'กบค.054/2569',caseType:'คดีเรียกรับทรัพย์สิน',caseTitle:'เรียกรับผลประโยชน์เพื่ออนุมัติใบอนุญาต',charge:'เรียกรับทรัพย์สินโดยมิชอบตามประมวลกฎหมายอาญา มาตรา 149',idCard:'1-5252-63748-59-0',address:'อำเภอปากเกร็ด จังหวัดนนทบุรี',department:'สำนักงาน ป.ป.ท. เขต 1',factSummary:'มีพยานบุคคลและหลักฐานการสนทนาประกอบผลการไต่สวน ผู้ถูกกล่าวหาไม่มาพบตามนัดหมายครั้งที่สอง',warrantReason:'ไม่มาพบพนักงานอัยการตามนัดสองครั้งและมีข้อมูลว่าเตรียมเดินทางออกนอกพื้นที่',evidence:'รายงานการไต่สวน พยานบุคคล 4 ปาก ไฟล์บันทึกเสียง และหลักฐานการนัดหมาย',attachments:[{name:'รายงานการไต่สวน_กบค.054-2569.pdf',type:'pdf',size:'5.2 MB'},{name:'บัญชีพยานและเอกสารประกอบ.pdf',type:'pdf',size:'1.4 MB'},{name:'หลักฐานหนังสือนัดครั้งที่ 1-2.pdf',type:'pdf',size:'1.1 MB'}],sentToProsecutorDate:'2026-08-04',prosecutorOrder:{date:'2026-08-15',ref:'ที่ อส.024/2569',name:'นางสาวพิไลวรรณ สุจริตกุล',agency:'สำนักงานอัยการพิเศษฝ่ายคดีปราบปรามการทุจริต 2',summary:'ให้ดำเนินการขอหมายจับพร้อมแนบหลักฐานการนัดหมายทั้งสองครั้ง',file:'หนังสือคำสั่งอัยการ_กบค.054-2569.pdf'},activity5Source:{sentAt:'16 ส.ค. 2569 09:20',sentBy:'นายพงศกร รักษ์ธรรม',sourceModule:'กิจกรรมที่ 5 ระบบไต่สวนข้อเท็จจริง',assignedTo:'ยังไม่ได้มอบหมาย'}},
   {no:'A5-2569-00029',activity9No:'AW-2569-000128',sourceTransferId:'A5-ส่งต่อ-2569/029',suspect:'นายภาคภูมิ รอข้อมูลเพิ่ม',status:'รอแก้ไขข้อมูลจากกิจกรรมที่ 5',stage:'activity5_source_revision',owner:'นายพงศกร รักษ์ธรรม',caseOwner:'นายพงศกร รักษ์ธรรม',next:'รอกิจกรรมที่ 5 แก้เลขประจำตัวประชาชนและแนบหลักฐานการส่งหนังสือนัด',fromCaseNo:'กบค.055/2569',caseType:'คดีละเว้นการปฏิบัติหน้าที่',caseTitle:'ละเว้นการตรวจรับงานก่อสร้าง',charge:'ละเว้นการปฏิบัติหน้าที่โดยมิชอบตามประมวลกฎหมายอาญา มาตรา 157',idCard:'ข้อมูลรอตรวจสอบ',address:'อำเภอเมือง จังหวัดปทุมธานี',department:'สำนักงาน ป.ป.ท. เขต 1',factSummary:'สำนวนมีผลการไต่สวนและคำสั่งจากพนักงานอัยการแล้ว แต่ข้อมูลระบุตัวบุคคลและหลักฐานการส่งหนังสือนัดยังไม่ครบ',warrantReason:'ไม่มาพบพนักงานอัยการตามนัด',evidence:'รายงานการไต่สวนและมติคณะกรรมการ ป.ป.ท.',attachments:[{name:'รายงานการไต่สวน_กบค.055-2569.pdf',type:'pdf',size:'3.9 MB'},{name:'มติคณะกรรมการ ป.ป.ท._กบค.055-2569.pdf',type:'pdf',size:'980 KB'}],sentToProsecutorDate:'2026-08-05',prosecutorOrder:{date:'2026-08-15',ref:'ที่ อส.025/2569',name:'นายวิชัย ยุติธรรม',agency:'สำนักงานอัยการพิเศษฝ่ายคดีปราบปรามการทุจริต 1',summary:'เห็นควรให้ดำเนินการขอหมายจับเมื่อเอกสารระบุตัวบุคคลครบถ้วน',file:'หนังสือคำสั่งอัยการ_กบค.055-2569.pdf'},sourceReturnNote:'เลขประจำตัวประชาชนไม่ครบ และไม่พบหลักฐานการส่งหนังสือนัดให้ผู้ถูกกล่าวหา',activity5Source:{sentAt:'16 ส.ค. 2569 09:35',sentBy:'นางสาวอรุณี ใจมั่น',sourceModule:'กิจกรรมที่ 5 ระบบไต่สวนข้อเท็จจริง',assignedTo:'นายพงศกร รักษ์ธรรม'}},
@@ -382,8 +410,8 @@ const demoCases=[
   {no:'AW-2569-000101',suspect:'นายสมชาย ทุจริตกิจ',status:'เตรียมคำร้องขอหมายจับ',stage:'draft',owner:'เจ้าหน้าที่เจ้าของสำนวน',next:'จัดทำคำร้องตามแบบ ปปท.8-17 และตรวจเอกสารก่อนส่งตรวจ',intakeMode:'form',fromCaseNo:'กบค.002/2569',charge:'ทุจริตต่อหน้าที่ตามประมวลกฎหมายอาญา มาตรา 157',idCard:'1-1234-56789-01-2',address:'อ.เมือง จ.นนทบุรี · โทร. 08x-xxx-xxxx',department:'สำนักงาน ป.ป.ท. เขต 1',factSummary:'ผู้ถูกกล่าวหาใช้ตำแหน่งหน้าที่เอื้อประโยชน์แก่พวกพ้องในการจัดซื้อจัดจ้าง คณะกรรมการ ป.ป.ท. มีมติชี้มูลความผิดแล้ว',evidence:'รายงานการไต่สวนพร้อมเอกสารประกอบเรื่องกล่าวหา, พยานเอกสาร 9 รายการ',attachments:[{name:'รายงานการไต่สวน_กบค.002-2569.pdf',type:'pdf',size:'4.2 MB'},{name:'มติคณะกรรมการ ป.ป.ท. ครั้งที่ 8-2569.pdf',type:'pdf',size:'1.1 MB'},{name:'บันทึกแจ้งข้อกล่าวหา.pdf',type:'pdf',size:'820 KB'},{name:'ภาพถ่ายเอกสารจัดซื้อจัดจ้าง.jpg',type:'image',size:'2.4 MB'}],sentToProsecutorDate:'2026-07-10',prosecutorOrder:{date:'2026-07-28',ref:'ที่ อส.007/2569',name:'นายวิชัย ยุติธรรม',agency:'สำนักงานอัยการพิเศษฝ่ายคดีปราบปรามการทุจริต 1',summary:'เห็นควรให้ดำเนินการขอหมายจับ เนื่องจากผู้ถูกกล่าวหาไม่มาพบตามนัด',file:'หนังสือคำสั่งอัยการ_AW-2569-000101.pdf'}},
   {no:'AW-2569-000111',suspect:'นายธีรวัฒน์ ลี้ภัยคดี',status:'เตรียมคำร้องขอหมายจับ',stage:'draft',owner:'เจ้าหน้าที่เจ้าของสำนวน',next:'จัดทำคำร้องตามแบบ ปปท.8-17 และตรวจเอกสารก่อนส่งตรวจ',intakeMode:'form',fromCaseNo:'กบค.005/2569',charge:'รับสินบนในตำแหน่งหน้าที่ตามประมวลกฎหมายอาญา มาตรา 149',idCard:'1-2233-44556-67-8',address:'อ.บางบัวทอง จ.นนทบุรี · โทร. 08x-xxx-xxxx',department:'สำนักงาน ป.ป.ท. เขต 1',factSummary:'ผู้ถูกกล่าวหารับเงินจากผู้ประกอบการเพื่อละเว้นการตรวจสอบ มีพยานบุคคลยืนยันการรับเงิน 3 ปาก',evidence:'บันทึกการไต่สวนพยานบุคคล 3 ปาก, หลักฐานการโอนเงิน',attachments:[{name:'บันทึกถ้อยคำพยานบุคคล 3 ปาก.pdf',type:'pdf',size:'2.8 MB'},{name:'หลักฐานการโอนเงิน (Statement).pdf',type:'pdf',size:'1.6 MB'},{name:'รายงานการไต่สวน_กบค.005-2569.pdf',type:'pdf',size:'3.9 MB'}],sentToProsecutorDate:'2026-07-18',prosecutorOrder:{date:'2026-08-01',ref:'ที่ อส.011/2569',name:'นางสาวพิไลวรรณ สุจริตกุล',agency:'สำนักงานอัยการพิเศษฝ่ายคดีปราบปรามการทุจริต 2',summary:'เห็นควรให้ดำเนินการขอหมายจับ เนื่องจากผู้ถูกกล่าวหาไม่มาพบตามนัดและมีเหตุอันควรเชื่อว่าจะหลบหนี',file:'หนังสือคำสั่งอัยการ_AW-2569-000111.pdf'}},
   {no:'AW-2569-000112',suspect:'นางสาวกันยารัตน์ แฝงตัว',status:'เตรียมคำร้องขอหมายจับ',stage:'draft',owner:'นางสาวอรุณี ใจมั่น (เจ้าของสำนวน)',next:'จัดทำคำร้องตามแบบ ปปท.8-17 และตรวจเอกสารก่อนส่งตรวจ',intakeMode:'form',fromCaseNo:'กบค.018/2569',charge:'ยักยอกทรัพย์ในหน้าที่ตามประมวลกฎหมายอาญา มาตรา 147',idCard:'1-3344-55667-78-9',address:'อ.ปากเกร็ด จ.นนทบุรี · โทร. 08x-xxx-xxxx',department:'สำนักงาน ป.ป.ท. เขต 1',factSummary:'ผู้ถูกกล่าวหายักยอกเงินทดรองราชการในความรับผิดชอบ คณะกรรมการ ป.ป.ท. มีมติชี้มูลความผิดแล้ว',evidence:'รายงานการไต่สวนพร้อมเอกสารประกอบเรื่องกล่าวหา',attachments:[{name:'รายงานการไต่สวน_กบค.018-2569.pdf',type:'pdf',size:'3.3 MB'},{name:'ใบสำคัญเบิกจ่ายเงินทดรองราชการ.pdf',type:'pdf',size:'950 KB'}],sentToProsecutorDate:'2026-07-22',prosecutorOrder:{date:'2026-08-05',ref:'ที่ อส.014/2569',name:'นายวิชัย ยุติธรรม',agency:'สำนักงานอัยการพิเศษฝ่ายคดีปราบปรามการทุจริต 1',summary:'เห็นควรให้ดำเนินการขอหมายจับ เนื่องจากผู้ถูกกล่าวหาไม่มาพบตามนัด',file:'หนังสือคำสั่งอัยการ_AW-2569-000112.pdf'}},
-  {no:'AW-2569-000102',suspect:'นางสาวปิยะดา หลบเลี่ยง',status:'รอผู้บังคับบัญชาชั้นต้นตรวจสอบ',stage:'supervisor_review',owner:'ผู้บังคับบัญชาชั้นต้น',next:'ตรวจความครบถ้วนของคำร้องก่อนเสนอ ผอ.',intakeMode:'form'},
-  {no:'AW-2569-000103',suspect:'นายวิรัช เบี่ยงบัง',status:'รอ ผอ.สำนัก/กอง อนุมัติ',stage:'director_review',owner:'ผอ.สำนัก/กอง',next:'พิจารณาคำร้องก่อนส่งกลับเจ้าของสำนวนเพื่อยื่นศาล',intakeMode:'form'},
+  {no:'AW-2569-000102',suspect:'นางสาวปิยะดา หลบเลี่ยง',status:'พร้อมเตรียมชุดยื่นศาล',stage:'court_ready',owner:'นางสาวอรุณี ใจมั่น',next:'ตรวจและยืนยันรายการเอกสารก่อนนำคำร้องไปยื่นศาล',intakeMode:'form'},
+  {no:'AW-2569-000103',suspect:'นายวิรัช เบี่ยงบัง',status:'พร้อมเตรียมชุดยื่นศาล',stage:'court_ready',owner:'นางสาวอรุณี ใจมั่น',next:'ตรวจและยืนยันรายการเอกสารก่อนนำคำร้องไปยื่นศาล',intakeMode:'form'},
   {no:'AW-2569-000104',suspect:'นายกิตติ ปกปิดทรัพย์',status:'พร้อมยื่นคำร้องต่อศาล',stage:'court_ready',owner:'เจ้าหน้าที่เจ้าของสำนวน',next:'นำชุดคำร้องไปยื่นศาลและบันทึกเลขรับคำร้อง',intakeMode:'upload',uploadFile:'คำร้องขอหมายจับ_AW-2569-000104.pdf',targetCourt:'ศาลอาญาคดีทุจริตและประพฤติมิชอบกลาง'},
   {no:'AW-2569-000105',suspect:'นางสมศรี ซ่อนเร้น',status:'ยื่นศาลแล้ว รอผลพิจารณา',stage:'court_pending',owner:'เจ้าหน้าที่เจ้าของสำนวน',next:'ติดตามและบันทึกผลการพิจารณาจากศาล',intakeMode:'form'},
   {no:'AW-2569-000106',suspect:'นายประเสริฐ หลีกหนี',status:'ศาลออกหมายแล้ว รอตรวจสอบข้อมูลหมาย',stage:'warrant_verification',owner:'เจ้าหน้าที่เจ้าของสำนวน',next:'ตรวจสอบข้อมูลและเอกสารหมายจับ ก่อนยืนยันเข้าทะเบียนหมาย',expiry:'2026-11-20',intakeMode:'form',fromCaseNo:'กบค.011/2569',charge:'ทุจริตต่อหน้าที่ตามประมวลกฎหมายอาญา มาตรา 157',idCard:'1-4455-66778-89-0',department:'สำนักงาน ป.ป.ท. เขต 1',attachments:[{name:'รายงานการไต่สวน_กบค.011-2569.pdf',type:'pdf',size:'3.8 MB'},{name:'บันทึกข้อความสรุปสำนวน_กบค.011-2569.pdf',type:'pdf',size:'780 KB'},{name:'พยานหลักฐานประกอบคำร้อง_กบค.011-2569.pdf',type:'pdf',size:'5.1 MB'}]},
@@ -403,13 +431,106 @@ const demoCases=[
   {no:'AW-2569-000125',suspect:'นายวิเชียร ถอนหมายแล้ว',status:'ถอนหมายแล้ว',stage:'withdrawn',owner:'สำนัก/กองผู้รับผิดชอบ',next:'ปิดงานและเก็บเอกสารการถอนหมายไว้ตรวจสอบย้อนหลัง',intakeMode:'form',fromCaseNo:'กบค.047/2569',charge:'รับสินบนในตำแหน่งหน้าที่',idCard:'1-3030-44556-78-9',department:'สำนักงาน ป.ป.ท. เขต 5',requestDocument:{form:'ปปท.8-17',name:'คำร้องขอให้ศาลออกหมายจับ',file:'คำร้องขอหมายจับ_AW-2569-000125.pdf',version:'ฉบับศาลอนุมัติ',status:'ศาลออกหมายแล้ว',stateKey:'issued'},warrant:{warrantNo:'มจ.2568/00310',warrantDate:'2025-04-02',court:'ศาลอาญาคดีทุจริตและประพฤติมิชอบภาค 5',caseNo:'คดีหมายเลขดำ อท.42/2568',file:'หมายจับ_AW-2569-000125.pdf'},terminationReason:{key:'arrested',eventDate:'2026-08-01',referenceNo:'อส.รับตัว/2569-0074',issuingAgency:'สำนักงานอัยการจังหวัดเชียงใหม่',evidenceFile:'ใบรับมอบตัว_AW-2569-000125.pdf'},terminationApproval:{outcome:'approved',referenceNo:'ปปท.ลธ.205/2569',decidedAt:'2026-08-05 10:20',decidedBy:'เลขาธิการคณะกรรมการ ป.ป.ท.',file:'หนังสืออนุมัติยุติหมาย_AW-2569-000125.pdf'},courtWithdrawal:{submissionNo:'ถม.65/2569',submittedAt:'2026-08-07',channel:'manual',courtReceiptNo:'ศาลรับ 912/2569',orderNo:'คำสั่งถอนหมาย 188/2569',orderDate:'2026-08-12',orderFile:'คำสั่งถอนหมาย_AW-2569-000125.pdf',status:'withdrawn'},auditTrail:[{action:'บันทึกคำสั่งถอนหมายจากศาล',from:'ศาลอาญาคดีทุจริตและประพฤติมิชอบภาค 5',to:'E-CMIS',note:'คำสั่งถอนหมาย 188/2569',time:'12 ส.ค. 2569 15:40'}]}
 ];
 
+/* Workflow กลางของกิจกรรมที่ 9
+   ทุกหน้าจอใช้ stage ชุดเดียวกัน และทุกการเปลี่ยน stage จะถูกตรวจเทียบ Transition ที่นี่ */
+const workflowPhaseMeta={
+  intake:{label:'รับงานและจัดทำคำร้อง'},
+  court:{label:'ยื่นศาลและรับผล'},
+  warrant:{label:'ตรวจหมายจับและกำหนดแนวทาง'},
+  dispatch:{label:'ตรวจรับและส่งหมาย'},
+  tracking:{label:'ติดตามและดำเนินการ'},
+  termination:{label:'ตรวจเหตุและขอยุติหมาย'},
+  withdrawal:{label:'รายงานศาลถอนหมาย'},
+  closed:{label:'ปิดงาน'}
+};
+const workflowPhaseOrder=['intake','court','warrant','dispatch','tracking','termination','withdrawal','closed'];
+const workflowStages={
+  activity5_new:{label:'งานใหม่จากกิจกรรมที่ 5',phase:'intake',next:['activity5_source_revision','draft']},
+  activity5_source_revision:{label:'รอกิจกรรมที่ 5 แก้ไขข้อมูล',phase:'intake',next:['activity5_new']},
+  prosecutor_pending:{label:'รอผลจากพนักงานอัยการ',phase:'intake',next:['draft','prosecutor_declined']},
+  prosecutor_declined:{label:'พนักงานอัยการยังไม่ให้ขอหมายจับ',phase:'intake',next:['activity5_new','draft','prosecutor_pending']},
+  draft:{label:'กำลังจัดทำคำร้อง',phase:'intake',next:['owner_review']},
+  owner_review:{label:'รอเจ้าของสำนวนตรวจสอบ',phase:'intake',next:['draft','court_ready']},
+  supervisor_review:{label:'รอผู้บังคับบัญชาตรวจสอบ (ข้อมูลเดิม)',phase:'intake',next:['court_ready']},
+  director_review:{label:'รอผู้อำนวยการสำนัก/กองพิจารณา (ข้อมูลเดิม)',phase:'intake',next:['court_ready']},
+  court_ready:{label:'พร้อมจัดชุดยื่นศาล',phase:'court',next:['court_pending']},
+  court_pending:{label:'ยื่นศาลแล้ว รอผลพิจารณา',phase:'court',next:['court_revision','court_hearing','court_transfer','court_decision','warrant_verification']},
+  court_revision:{label:'ศาลขอแก้ไขหรือขอเอกสารเพิ่ม',phase:'court',next:['owner_review','court_ready','court_pending']},
+  court_hearing:{label:'ศาลนัดไต่สวน',phase:'court',next:['court_pending','court_revision','court_transfer','court_decision','warrant_verification']},
+  court_transfer:{label:'โอนหรือยื่นต่อศาลใหม่',phase:'court',next:['court_ready','court_pending']},
+  court_decision:{label:'ศาลไม่อนุมัติหรือมีผลอื่น',phase:'court',next:['court_decision_review']},
+  court_decision_review:{label:'รอเจ้าของสำนวนพิจารณาผลศาล',phase:'court',next:['owner_review','court_closed']},
+  court_closed:{label:'ปิดงานคำร้องตามผลศาล',phase:'closed',next:[]},
+  issued:{label:'ศาลออกหมายจับแล้ว (ข้อมูลเดิม)',phase:'warrant',next:['warrant_verification']},
+  warrant_verification:{label:'รอตรวจสอบหมายจับที่ศาลออก',phase:'warrant',next:['warrant_correction','warrant_verified','execution_planning','got_pending']},
+  warrant_correction:{label:'พบข้อมูลหมายจับต้องแก้ไข',phase:'warrant',next:['warrant_verification','execution_planning']},
+  warrant_verified:{label:'ยืนยันข้อมูลหมายจับแล้ว',phase:'warrant',next:['execution_planning','got_pending']},
+  execution_planning:{label:'กำหนดแนวทางดำเนินการตามหมาย',phase:'warrant',next:['got_pending','operation_tracking','warrant_tracking']},
+  got_pending:{label:'รอธุรการคดี กอท. ตรวจรับ',phase:'dispatch',next:['warrant_verification','got_letter']},
+  got_register:{label:'ลงทะเบียนรับหมายแล้ว (ข้อมูลเดิม)',phase:'dispatch',next:['got_letter']},
+  got_letter:{label:'รอจัดทำหนังสือนำส่งหมายจับ',phase:'dispatch',next:['got_dispatch']},
+  got_dispatch:{label:'รอบันทึกการส่งหมายจับ',phase:'dispatch',next:['got_tracking']},
+  got_tracking:{label:'ติดตามการนำส่งหมายจับ',phase:'dispatch',next:['got_dispatch','warrant_tracking','operation_tracking']},
+  warrant_tracking:{label:'ติดตามการดำเนินการตามหมายจับ',phase:'tracking',next:['warrant_tracking','operation_tracking','arrest_handover','withdrawal_review','central_registry_due']},
+  operation_tracking:{label:'ติดตามแผนหรือผลการปฏิบัติการ',phase:'tracking',next:['operation_tracking','warrant_tracking','arrest_handover','withdrawal_review','central_registry_due']},
+  central_registry_due:{label:'ครบ 180 วัน รอแจ้งทะเบียนกลาง',phase:'tracking',next:['warrant_tracking']},
+  arrest_handover:{label:'จับกุมหรือมอบตัวแล้ว รอตรวจเอกสารส่งมอบ',phase:'tracking',next:['termination_prepare']},
+  withdrawal_review:{label:'ตรวจสอบเหตุถอนหมายจับ',phase:'termination',next:['withdrawal_owner_review']},
+  withdrawal_owner_review:{label:'รอเจ้าของสำนวนยืนยันเหตุถอนหมาย',phase:'termination',next:['termination_got_pending','warrant_tracking','operation_tracking']},
+  termination_prepare:{label:'เตรียมข้อมูลขอยุติหมาย',phase:'termination',next:['termination_got_pending']},
+  termination_got:{label:'ส่งเรื่องยุติให้ กอท. (ข้อมูลเดิม)',phase:'termination',next:['termination_got_pending']},
+  termination_owner_correction:{label:'ส่งกลับเจ้าของสำนวนแก้ไขชุดยุติ',phase:'termination',next:['termination_got_pending']},
+  termination_got_pending:{label:'รอธุรการคดี กอท. ตรวจรับชุดยุติ',phase:'termination',next:['termination_owner_correction','termination_got_accepted']},
+  termination_got_accepted:{label:'กอท. รับชุดยุติแล้ว รอจัดชุดเสนอ',phase:'termination',next:['termination_approval_pending']},
+  termination_approval_pending:{label:'รอผู้มีอำนาจพิจารณายุติหมาย',phase:'termination',next:['termination_approval_revision','termination_notice_prepare','termination_rejected']},
+  termination_approval_revision:{label:'ส่งกลับแก้ไขชุดเสนออนุมัติ',phase:'termination',next:['termination_approval_pending']},
+  termination_rejected:{label:'ไม่อนุมัติการยุติหมาย',phase:'termination',next:['termination_got_accepted','warrant_tracking','operation_tracking']},
+  termination_notice_prepare:{label:'อนุมัติแล้ว รอจัดทำหนังสือแจ้งยุติ',phase:'termination',next:['termination_notice_dispatch']},
+  termination_notice_dispatch:{label:'รอบันทึกการส่งหนังสือแจ้งยุติ',phase:'termination',next:['termination_notice_tracking']},
+  termination_notice_tracking:{label:'ติดตามการรับหนังสือแจ้งยุติ',phase:'termination',next:['court_withdrawal_prepare']},
+  court_withdrawal_prepare:{label:'รอสำนัก/กองจัดทำรายงานถอนหมายต่อศาล',phase:'withdrawal',next:['court_withdrawal_pending']},
+  court_withdrawal_pending:{label:'ยื่นศาลแล้ว รอผลถอนหมาย',phase:'withdrawal',next:['court_withdrawal_revision','final_notification_prepare']},
+  court_withdrawal_revision:{label:'ศาลขอแก้ไขคำร้องถอนหมาย',phase:'withdrawal',next:['court_withdrawal_prepare','court_withdrawal_pending']},
+  final_notification_prepare:{label:'ศาลถอนหมายแล้ว รอแจ้งผลหน่วยงานที่เกี่ยวข้อง',phase:'withdrawal',next:['withdrawn']},
+  withdrawn:{label:'ถอนหมายจับและแจ้งผลครบถ้วนแล้ว',phase:'closed',next:[]}
+};
+function workflowStageInfo(stage){
+  return workflowStages[stage]||{label:'สถานะไม่อยู่ในรายการกลาง',phase:'intake',next:[]};
+}
+function canTransitionStage(from,to){
+  if(!workflowStages[to])return false;
+  if(!from||from===to)return true;
+  return Boolean(workflowStages[from]?.next?.includes(to));
+}
+function createWorkflowCase(seed){
+  if(!workflowStages[seed.stage])console.warn('[E-CMIS] ไม่พบสถานะเริ่มต้นใน Workflow กลาง',seed.no,seed.stage);
+  seed.statusDetail=seed.status||'';
+  return new Proxy(seed,{get(target,property){
+    if(property==='status')return workflowStageInfo(target.stage).label;
+    return target[property];
+  },set(target,property,value){
+    if(property==='stage'){
+      const from=target.stage;
+      if(!workflowStages[value])console.error('[E-CMIS] สถานะไม่อยู่ใน Workflow กลาง',target.no,value);
+      else if(from&&from!==value&&!canTransitionStage(from,value))console.warn('[E-CMIS] Transition นอกเส้นทางที่กำหนด',target.no,from,'→',value);
+    }
+    if(property==='status'){
+      target.statusDetail=value;
+      return true;
+    }
+    target[property]=value;
+    return true;
+  }});
+}
+const demoCases=demoCaseSeed.map(createWorkflowCase);
+
 // เอกสารคำร้องเป็นข้อมูลชุดเดียวกับทะเบียนกลาง ไม่สร้างสำเนาใหม่เมื่อรายการย้ายเข้าคิวของเจ้าหน้าที่
 const requestDocumentByCase={
   'AW-2569-000101':{form:'ปปท.8-17',name:'คำร้องขอให้ศาลออกหมายจับ',file:'ร่างคำร้อง_AW-2569-000101.pdf',version:'ฉบับร่าง 2',status:'ร่างพร้อมตรวจ',stateKey:'ready'},
   'AW-2569-000111':{form:'ปปท.8-17',name:'คำร้องขอให้ศาลออกหมายจับ',file:'ร่างคำร้อง_AW-2569-000111.pdf',version:'ฉบับร่าง 1',status:'อยู่ระหว่างจัดทำ',stateKey:'drafting'},
   'AW-2569-000112':{form:'ปปท.8-17',name:'คำร้องขอให้ศาลออกหมายจับ',file:'ร่างคำร้อง_AW-2569-000112.pdf',version:'ฉบับร่าง 1',status:'ร่างพร้อมตรวจ',stateKey:'ready'},
-  'AW-2569-000102':{form:'ปปท.8-17',name:'คำร้องขอให้ศาลออกหมายจับ',file:'คำร้อง_AW-2569-000102.pdf',version:'ฉบับส่งตรวจ 1',status:'อยู่ระหว่างตรวจสอบภายใน',stateKey:'internal'},
-  'AW-2569-000103':{form:'ปปท.8-17',name:'คำร้องขอให้ศาลออกหมายจับ',file:'คำร้อง_AW-2569-000103.pdf',version:'ฉบับส่งตรวจ 2',status:'รอ ผอ.สำนัก/กอง พิจารณา',stateKey:'internal'},
+  'AW-2569-000102':{form:'ปปท.8-17',name:'คำร้องขอให้ศาลออกหมายจับ',file:'คำร้อง_AW-2569-000102.pdf',version:'ฉบับเจ้าของสำนวนยืนยัน',status:'พร้อมเตรียมชุดยื่นศาล',stateKey:'court_ready'},
+  'AW-2569-000103':{form:'ปปท.8-17',name:'คำร้องขอให้ศาลออกหมายจับ',file:'คำร้อง_AW-2569-000103.pdf',version:'ฉบับเจ้าของสำนวนยืนยัน',status:'พร้อมเตรียมชุดยื่นศาล',stateKey:'court_ready'},
   'AW-2569-000104':{form:'ปปท.8-17',name:'คำร้องขอให้ศาลออกหมายจับ',file:'คำร้องขอหมายจับ_AW-2569-000104.pdf',version:'ฉบับผ่านตรวจ',status:'พร้อมยื่นศาล',stateKey:'approved'},
   'AW-2569-000105':{form:'ปปท.8-17',name:'คำร้องขอให้ศาลออกหมายจับ',file:'คำร้องขอหมายจับ_AW-2569-000105.pdf',version:'ฉบับยื่นศาล',status:'ยื่นต่อศาลแล้ว',stateKey:'submitted'},
   'AW-2569-000106':{form:'ปปท.8-17',name:'คำร้องขอให้ศาลออกหมายจับ',file:'คำร้องขอหมายจับ_AW-2569-000106.pdf',version:'ฉบับศาลอนุมัติ',status:'รอตรวจสอบข้อมูลหมายจับ',stateKey:'warrant_verification'}
@@ -467,6 +588,15 @@ const existingCourtDataByCase={
 demoCases.forEach(c=>{if(existingCourtDataByCase[c.no])Object.assign(c,existingCourtDataByCase[c.no])});
 
 const currentOfficerName='นางสาวอรุณี ใจมั่น';
+const currentUserAccess={name:currentOfficerName,roles:['officer','got','supervisor','director','approver','bureau','admin'],demoMode:true};
+const staffDirectory=[
+  {name:'นางสาวอรุณี ใจมั่น',department:'สำนักงาน ป.ป.ท. เขต 1'},
+  {name:'นายพงศกร รักษ์ธรรม',department:'สำนักงาน ป.ป.ท. เขต 1'},
+  {name:'นายโสภณ ธีระวงศ์ภิญโญ',department:'กองอำนวยการต่อต้านการทุจริต'},
+  {name:'พ.ต.ต. จักรกฤษณ์ ประจันพล',department:'กองอำนวยการต่อต้านการทุจริต'},
+  {name:'เจ้าหน้าที่ธุรการคดี กอท.',department:'กองอำนวยการต่อต้านการทุจริต'}
+];
+function staffDepartment(name){return staffDirectory.find(person=>person.name===name)?.department||''}
 const caseOwnerByCase={
   'AW-2569-000101':'นางสาวอรุณี ใจมั่น',
   'AW-2569-000111':'นายพงศกร รักษ์ธรรม',
@@ -491,7 +621,11 @@ const caseOwnerByCase={
   ,'AW-2569-000125':'นางสาวอรุณี ใจมั่น'
 };
 demoCases.forEach(c=>{
-  c.caseOwner=caseOwnerByCase[c.no]||c.owner.replace(' (เจ้าของสำนวน)','');
+  c.caseOwner=c.caseOwner||caseOwnerByCase[c.no]||String(c.owner||'').replace(' (เจ้าของสำนวน)','');
+  c.originalCaseOwner=c.originalCaseOwner||c.caseOwner;
+  c.requestDrafter=c.requestDrafter||c.activity5Source?.assignedTo||(c.owner&&c.owner!=='ยังไม่ได้มอบหมาย'?c.owner:c.caseOwner);
+  c.responsibleDepartment=c.responsibleDepartment||c.department||staffDepartment(c.owner)||'-';
+  c.assignmentHistory=c.assignmentHistory||[];
   if(c.stage==='draft')c.owner=currentOfficerName;
   if(['court_ready','court_pending','court_revision','court_hearing','court_transfer','court_decision','court_decision_review','warrant_verification','warrant_correction','warrant_verified','issued'].includes(c.stage))c.owner=c.caseOwner;
   c.auditTrail=c.auditTrail||[];
@@ -502,6 +636,15 @@ demoCases.forEach(c=>{
 // รายการรอผลอัยการยังเป็นงานในกิจกรรมที่ 5 จึงไม่แสดงเป็นคิวของกิจกรรมที่ 9
 // กิจกรรมที่ 9 เริ่มเมื่อมีผลให้ดำเนินการขอหมายจับและระบบสร้างเลขงาน AW แล้ว
 function normalizeActivity9Case(c){
+  // สถานะตรวจตามสายงานเป็นข้อมูลจาก Mockup รุ่นเดิม ลูกค้ายืนยันว่าไม่ใช่
+  // ขั้นตอนบังคับก่อนยื่นศาล จึงย้ายรายการเดิมไปยังขั้นเตรียมชุดยื่นศาล
+  if(c&&['supervisor_review','director_review'].includes(c.stage)){
+    c.stage='court_ready';
+    c.status='พร้อมเตรียมชุดยื่นศาล';
+    c.owner=c.caseOwner||c.owner;
+    c.next='ตรวจและยืนยันรายการเอกสารก่อนนำคำร้องไปยื่นศาล';
+    c.requestDocument={...(c.requestDocument||{}),status:'เจ้าของสำนวนยืนยันแล้ว พร้อมยื่นศาล',stateKey:'court_ready'};
+  }
   if(c&&c.stage==='got_register'){
     c.stage='got_letter';
     c.status='ตรวจรับเอกสารครบถ้วนแล้ว รอจัดทำหนังสือนำส่ง';
@@ -546,6 +689,7 @@ let registryFilter='all';
 let registryAdvancedOpen=false;
 let registrySearchState={query:'',status:'all',department:'all',owner:'',intakeMode:'all',dateFrom:'',dateTo:''};
 let officerTaskFilter='all';
+let myWorkBucket='all';
 let officerAdvancedOpen=false;
 let officerTaskSearch={query:'',task:'all',department:'all',documentState:'all',intakeMode:'all',dateFrom:'',dateTo:''};
 let officerWorkTab='overview';
@@ -579,19 +723,18 @@ function planUsesPolice(mode){return ['police','pacc_police','owner_police'].inc
 function planUsesPacc(mode){return ['pacc_police','owner_police','pacc'].includes(mode)}
 function planHasParallelPaccWork(c){return Boolean(c.executionPlan?.confirmed&&planUsesPacc(c.executionPlan.mode)&&['got_pending','got_letter','got_dispatch','got_tracking'].includes(c.stage))}
 
-const stageOrder=[
-  ['draft','เตรียมคำร้อง'],
-  ['owner_review','เจ้าของสำนวนตรวจสอบ'],
-  ['supervisor_review','ผู้บังคับบัญชาชั้นต้น'],
-  ['director_review','ผอ.สำนัก/กอง'],
-  ['court_ready','พร้อมยื่นศาล'],
-  ['court_pending','รอผลศาล'],
-  ['warrant_verification','ตรวจสอบหมายจับ']
-];
+const stageOrder=workflowPhaseOrder.map(key=>[key,workflowPhaseMeta[key].label]);
 
 let formSection=0;
-const officialFormPages={mj1:[1,2,3],mj2:[1,2]};
+const officialFormPages={mj1:[1,2,3],mj2:[1,2],mj3:[1,2]};
 function officialPagePath(kind,page){return `./assets/forms/official/${kind}/page-${String(page).padStart(2,'0')}.png`}
+function eraDocumentKind(era){return era==='onward'?'mj2':era==='before'?'mj3':'mj1';}
+function eraDocumentLabel(era){return era==='onward'?'หมายจับ กรณีอายุความสะดุดหยุดลง (เหตุเกิด 30 เม.ย. 2559 เป็นต้นไป)':era==='before'?'หมายจับ กรณีอายุความไม่สะดุดหยุดลง (เหตุเกิดก่อน 30 เม.ย. 2559)':'คำร้องขอหมายจับ ปปท.8-17 (เหตุเกิดหลัง 30 เม.ย. 2559)';}
+const eraDocNames={
+  after:'คำร้องขอให้ศาลออกหมายจับ (เหตุเกิดหลัง 30 เม.ย. 2559)',
+  onward:'หมายจับ กรณีอายุความสะดุดหยุดลง (เหตุเกิด 30 เม.ย. 2559 เป็นต้นไป)',
+  before:'หมายจับ กรณีอายุความไม่สะดุดหยุดลง (เหตุเกิดก่อน 30 เม.ย. 2559)'
+};
 
 function kb1Sections(c){
   const po=(c&&c.prosecutorOrder)||{};
@@ -739,60 +882,109 @@ function formShell(formLabel,title,caseNo,modeBarHtml,bodyHtml){
   +bodyHtml+`</div>`;
 }
 
+
+function activity5Readiness(c){
+  const po=c?.prosecutorOrder||{};
+  const missedAppointment=/ไม่มา|ไม่มาพบ|ผิดนัด|ขาดนัด/.test([c?.factSummary,c?.warrantReason,po.summary].filter(Boolean).join(' '));
+  const writtenOrder=Boolean(po.ref&&po.date&&po.file&&/(ขอ(?:ให้)?ศาลออกหมายจับ|ขอหมายจับ|ดำเนินการขอ(?:ศาลออก)?หมายจับ)/.test(po.summary||''));
+  const sourceReady=Boolean(c?.fromCaseNo&&c?.suspect&&c?.idCard&&c?.idCard!=='ข้อมูลรอตรวจสอบ'&&c?.charge&&(c?.attachments||[]).length);
+  return {missedAppointment,writtenOrder,sourceReady,ready:missedAppointment&&writtenOrder&&sourceReady&&c?.stage==='activity5_new'};
+}
+
 function activity5IntakePage(no){
   const c=demoCases.find(x=>x.no===no);
   if(!c)return base('ไม่พบงานจากกิจกรรมที่ 5','ไม่พบรายการส่งต่อที่ต้องการ');
-  const source=c.activity5Source||{},po=c.prosecutorOrder||{},returned=c.stage==='activity5_source_revision',docs=[...(c.attachments||[]),...(po.file?[{name:po.file,type:'pdf',size:'หนังสือ/คำสั่งจากพนักงานอัยการ'}]:[])];
+  const source=c.activity5Source||{},po=c.prosecutorOrder||{},returned=c.stage==='activity5_source_revision',readiness=activity5Readiness(c);
+  const docs=[...(c.attachments||[])];
   const statusBanner=returned
-    ?`<div class="return-banner"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i><div><strong>ส่งกลับกิจกรรมที่ 5 เพื่อแก้ไขข้อมูลแล้ว</strong><small>${esc(c.sourceReturnNote||'โปรดตรวจสอบข้อมูลต้นทาง')}</small><small>เมื่อได้รับข้อมูลแก้ไข ให้กด “รับข้อมูลที่แก้ไขแล้ว” ก่อนเริ่มจัดทำคำร้อง</small></div></div>`
-    :`<div class="source-banner"><i class="fa-solid fa-link" aria-hidden="true"></i><div><strong>ข้อมูลเชื่อมโยงมาจากกิจกรรมที่ 5</strong><small>รายการนี้ยังไม่ออกเลขงานหมายจับ เจ้าหน้าที่ต้องตรวจข้อมูลและเอกสารต้นทางก่อนเปิดงานจัดทำคำร้อง</small></div></div>`;
+    ?`<div class="return-banner"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i><div><strong>ส่งกลับกิจกรรมที่ 5 เพื่อแก้ไขข้อมูลแล้ว</strong><small>${esc(c.sourceReturnNote||'โปรดตรวจสอบข้อมูลต้นทาง')}</small><small>เมื่อได้รับข้อมูลแก้ไข ให้กด “รับข้อมูลที่แก้ไขแล้ว” ก่อนเปิดงานกิจกรรมที่ 9</small></div></div>`
+    :`<div class="source-banner"><i class="fa-solid fa-link" aria-hidden="true"></i><div><strong>รับข้อมูลจากกิจกรรมที่ 5 แล้ว — ยังไม่ออกเลขงานหมายจับ</strong><small>ตรวจเงื่อนไขเปิดงาน ข้อมูลต้นทาง และผู้จัดทำก่อนสร้างเลขงานกิจกรรมที่ 9</small></div></div>`;
+  const triggerItem=(ready,title,detail)=>`<div class="source-trigger-item ${ready?'':'missing'}"><i class="fa-solid ${ready?'fa-check':'fa-xmark'}" aria-hidden="true"></i><div><strong>${title}</strong><small>${detail}</small></div></div>`;
   return base('ตรวจรับข้อมูลก่อนจัดทำคำร้องขอหมายจับ',`${esc(c.fromCaseNo||'-')} · ${esc(c.suspect)} · ${esc(c.sourceTransferId||'-')}`)
-  +statusBanner
+  +(returned?statusBanner:'')
   +`<section class="source-intake-grid"><div class="source-intake-panel">
-    <div class="source-intake-section"><h2>ข้อมูลสำนวนจากกิจกรรมที่ 5</h2><p>ข้อมูลหลักใช้อ้างอิงร่วมกันทั้ง E-CMIS และไม่ต้องคีย์ซ้ำในกิจกรรมที่ 9</p><div class="review-summary">
-      <div><span>เลขสำนวนต้นทาง</span><strong>${esc(c.fromCaseNo||'-')}</strong></div>
-      <div><span>ประเภทคดี / ชื่อเรื่อง</span><strong>${esc(c.caseType||'-')} · ${esc(c.caseTitle||'-')}</strong></div>
-      <div><span>สำนัก/กองต้นทาง</span><strong>${esc(c.department||'-')}</strong></div>
-      <div><span>เจ้าของสำนวน</span><strong>${esc(c.caseOwner||'-')}</strong></div>
-      <div><span>ผู้ถูกกล่าวหา</span><strong>${esc(c.suspect)} · ${esc(c.idCard||'-')}</strong></div>
-      <div><span>ที่อยู่ / ข้อมูลติดต่อ</span><strong>${esc(c.address||'-')}</strong></div>
-      <div><span>ข้อกล่าวหาและฐานความผิด</span><strong>${esc(c.charge||'-')}</strong></div>
-      <div><span>สรุปผลการไต่สวน</span><strong>${esc(c.factSummary||'-')}</strong></div>
-      <div><span>เหตุที่อาจต้องขอหมายจับ</span><strong>${esc(c.warrantReason||'-')}</strong></div>
-    </div></div>
-    <div class="source-intake-section"><h2>ผลจากพนักงานอัยการ</h2><p>พนักงานอัยการเป็นบุคคลภายนอกระบบ เจ้าของสำนวนบันทึกผลและแนบหนังสือไว้ในสำนวนก่อนส่งมาที่นี่</p><div class="review-summary">
-      <div><span>ผลพิจารณา</span><strong>${esc(po.summary||'-')}</strong></div>
-      <div><span>เลขหนังสือ / วันที่</span><strong>${esc(po.ref||'-')} · ${esc(po.date||'-')}</strong></div>
-      <div><span>พนักงานอัยการ / หน่วยงาน</span><strong>${esc(po.name||'-')} · ${esc(po.agency||'-')}</strong></div>
-      <div><span>วันที่ส่งสำนวนให้อัยการ</span><strong>${esc(c.sentToProsecutorDate||'-')}</strong></div>
-    </div></div>
-    <div class="source-intake-section"><h2>เอกสารและพยานหลักฐานที่รับมา</h2><p>เอกสารเหล่านี้จะถูกเรียกใช้ในร่างคำร้องโดยไม่ต้องอัปโหลดซ้ำ</p><div class="source-document-list">${docs.map((d,i)=>`<div class="source-document-row"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i><div><strong>${esc(d.name)}</strong><small>${esc(d.size||'เอกสารจากกิจกรรมที่ 5')}</small></div><button class="btn secondary" data-preview-name="${esc(d.name)}" ${i<(c.attachments||[]).length?`data-preview-attachment="${i}"`:''}>ดูเอกสาร</button></div>`).join('')}</div></div>
-  </div><aside class="source-intake-aside"><h2>ข้อมูลการส่งต่อ</h2><p>ตรวจผู้ส่ง ผู้รับ และผู้จัดทำก่อนเปิดงานกิจกรรมที่ 9</p><div class="review-summary">
+    <div class="source-case-head">
+      <div class="source-case-title"><small>ข้อมูลส่งต่อจากกิจกรรมที่ 5</small><h2>${esc(c.caseTitle||c.caseType||'สำนวนขอศาลออกหมายจับ')}</h2><p>${esc(c.fromCaseNo||'-')} · ${esc(c.suspect||'-')}</p></div>
+      <div class="source-case-head-meta"><div><small>รับข้อมูลเมื่อ</small><strong>${esc(source.sentAt||'-')}</strong></div><div><small>เลขอ้างอิงส่งต่อ</small><strong>${esc(c.sourceTransferId||'-')}</strong></div></div>
+    </div>
+    <div class="source-trigger">
+      ${triggerItem(readiness.missedAppointment,'ผู้ถูกกล่าวหาไม่มาพบตามนัด',readiness.missedAppointment?'พบเหตุในข้อมูลสำนวนต้นทาง':'ยังไม่พบเหตุในข้อมูลที่ส่งมา')}
+      ${triggerItem(readiness.writtenOrder,'มีหนังสือจากพนักงานอัยการให้ขอหมายจับ',readiness.writtenOrder?esc(po.ref||'-'):'เลขหนังสือ วันที่ หรือไฟล์คำสั่งยังไม่ครบ')}
+      ${triggerItem(readiness.sourceReady,'ข้อมูลและเอกสารต้นทางพร้อม',readiness.sourceReady?`${(c.attachments||[]).length} เอกสารจากกิจกรรมที่ 5`:'ข้อมูลระบุตัวบุคคล ข้อกล่าวหา หรือเอกสารยังไม่ครบ')}
+    </div>
+    <div class="source-intake-section">
+      <div class="source-section-head"><div><h2>ข้อมูลสำคัญของสำนวน</h2><p>ตรวจสอบข้อมูลที่รับมา ก่อนเปิดงานหมายจับ</p></div><span class="source-count">อ่านอย่างเดียว</span></div>
+      <div class="source-summary-grid">
+        <div class="source-summary-item"><span>เลขสำนวน</span><strong>${esc(c.fromCaseNo||'-')}</strong></div>
+        <div class="source-summary-item"><span>ประเภทคดี</span><strong>${esc(c.caseType||'-')}</strong></div>
+        <div class="source-summary-item"><span>สำนัก/กองที่รับผิดชอบ</span><strong>${esc(c.department||'-')}</strong></div>
+        <div class="source-summary-item"><span>เจ้าของสำนวน</span><strong>${esc(c.caseOwner||'-')}</strong></div>
+        <div class="source-summary-item"><span>ผู้ถูกกล่าวหา</span><strong>${esc(c.suspect||'-')}</strong></div>
+        <div class="source-summary-item"><span>เลขประจำตัวประชาชน</span><strong>${esc(c.idCard||'-')}</strong></div>
+      </div>
+      <div class="source-narrative">
+        <div class="source-narrative-block"><span>ที่อยู่ / ข้อมูลติดต่อ</span><strong>${esc(c.address||'-')}</strong></div>
+        <div class="source-narrative-block"><span>ข้อกล่าวหาและฐานความผิด</span><strong>${esc(c.charge||'-')}</strong></div>
+        <div class="source-narrative-block"><span>สรุปผลการไต่สวน</span><strong>${esc(c.factSummary||'-')}</strong></div>
+        <div class="source-narrative-block reason"><span>เหตุที่จำเป็นต้องขอศาลออกหมายจับ</span><strong>${esc(c.warrantReason||'-')}</strong></div>
+      </div>
+      <div class="source-order">
+        <div class="source-order-head"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i><strong>คำสั่งจากพนักงานอัยการ</strong></div>
+        <div class="source-order-grid">
+          <div class="wide"><span>ผลพิจารณา / คำสั่ง</span><strong>${esc(po.summary||'-')}</strong></div>
+          <div><span>เลขหนังสือและวันที่</span><strong>${esc(po.ref||'-')} · ${esc(po.date||'-')}</strong></div>
+          <div><span>พนักงานอัยการ / หน่วยงาน</span><strong>${esc(po.name||'-')} · ${esc(po.agency||'-')}</strong></div>
+          <div><span>วันที่ส่งคำสั่ง</span><strong>${esc(po.sentAt||source.sentAt||'-')}</strong></div>
+          <div class="source-order-file"><div><span>ไฟล์คำสั่ง</span><strong>${esc(po.file||'ไม่พบไฟล์แนบ')}</strong></div>${po.file?`<button class="btn secondary" data-preview-name="${esc(po.file)}"><i class="fa-solid fa-eye" aria-hidden="true"></i>ดูเอกสาร</button>`:''}</div>
+        </div>
+      </div>
+    </div>
+    <div class="source-intake-section">
+      <div class="source-section-head"><div><h2>เอกสารและพยานหลักฐานจากกิจกรรมที่ 5</h2><p>รายการที่ส่งมาพร้อมสำนวนและจะใช้ประกอบการจัดทำคำร้องขอหมายจับ</p></div><span class="source-count">${docs.length} เอกสาร</span></div>
+      <div class="source-document-list">${docs.map((d,i)=>`<div class="source-document-row"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i><div><strong>${esc(d.name)}</strong><small>${esc(d.size||'เอกสารจากกิจกรรมที่ 5')}</small></div><button class="btn secondary" data-preview-name="${esc(d.name)}" data-preview-attachment="${i}"><i class="fa-solid fa-eye" aria-hidden="true"></i>ดูเอกสาร</button></div>`).join('')}</div>
+    </div>
+  </div><aside class="source-intake-aside"><h2>เปิดงานกิจกรรมที่ 9</h2><p>เจ้าของสำนวนยังคงเดิม แต่สามารถมอบหมายผู้จัดทำคำร้องแทนได้</p><div class="review-summary">
     <div><span>แหล่งข้อมูล</span><strong>${esc(source.sourceModule||'กิจกรรมที่ 5')}</strong></div>
     <div><span>วันที่ส่งเข้า</span><strong>${esc(source.sentAt||'-')}</strong></div>
     <div><span>ผู้ส่งข้อมูล</span><strong>${esc(source.sentBy||'-')}</strong></div>
     <div><span>เลขอ้างอิงส่งต่อ</span><strong>${esc(c.sourceTransferId||'-')}</strong></div>
-  </div><div class="field"><label for="source-assignee">ผู้จัดทำคำร้อง</label><select id="source-assignee"><option ${c.owner==='นางสาวอรุณี ใจมั่น'?'selected':''}>นางสาวอรุณี ใจมั่น</option><option ${c.owner==='นายพงศกร รักษ์ธรรม'?'selected':''}>นายพงศกร รักษ์ธรรม</option><option ${c.owner==='ยังไม่ได้มอบหมาย'?'selected':''}>ยังไม่ได้มอบหมาย</option></select></div><button class="btn secondary" data-assign-source="${esc(c.no)}"><i class="fa-solid fa-user-check" aria-hidden="true"></i>บันทึกผู้จัดทำ</button></aside></section>
-  <footer class="sticky-actions"><button class="btn secondary" data-go="registry"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i>กลับทะเบียนคำร้อง</button><div class="actions">${returned?`<button class="btn" data-source-received="${esc(c.no)}"><i class="fa-solid fa-inbox" aria-hidden="true"></i>รับข้อมูลที่แก้ไขแล้ว</button>`:`<button class="btn secondary" data-return-source="${esc(c.no)}"><i class="fa-solid fa-rotate-left" aria-hidden="true"></i>ข้อมูลไม่ครบ ส่งกลับกิจกรรมที่ 5</button><button class="btn" data-start-source="${esc(c.no)}"><i class="fa-solid fa-file-circle-plus" aria-hidden="true"></i>จัดทำคำร้องขอหมายจับ</button>`}</div></footer>`;
+  </div><div class="source-assignment-summary"><div><span>เจ้าของสำนวน</span><strong>${esc(c.caseOwner||'-')}</strong><small>เจ้าของสำนวนเดิมจะไม่เปลี่ยนจากการมอบหมายผู้จัดทำคำร้อง</small></div><div><span>ผู้จัดทำคำร้องปัจจุบัน</span><strong>${esc(c.requestDrafter||c.owner||'ยังไม่ได้มอบหมาย')}</strong>${source.assignmentAt?`<small>มอบหมายโดย ${esc(source.assignmentBy||'-')} · ${esc(source.assignmentAt)}${source.assignmentReason?' · '+esc(source.assignmentReason):''}</small>`:''}</div></div>
+  <div class="field"><label for="source-assignee">มอบหมายผู้จัดทำคำร้อง</label><select id="source-assignee">${staffDirectory.filter(person=>person.department===(c.department||staffDepartment(c.caseOwner))).map(person=>`<option ${person.name===(c.requestDrafter||c.owner)?'selected':''}>${esc(person.name)}</option>`).join('')}<option ${(!c.requestDrafter||c.requestDrafter==='ยังไม่ได้มอบหมาย')?'selected':''}>ยังไม่ได้มอบหมาย</option></select></div>
+  <div class="field"><label for="source-assignment-reason">เหตุผลการมอบหมาย</label><textarea id="source-assignment-reason" placeholder="เช่น เจ้าของสำนวนจัดทำเอง หรือมอบหมายผู้ปฏิบัติงานในสำนัก/กอง">${esc(source.assignmentReason||'')}</textarea></div>
+  <button class="btn secondary" data-assign-source="${esc(c.no)}"><i class="fa-solid fa-user-check" aria-hidden="true"></i>บันทึกผู้จัดทำ</button><div class="source-start-note ${readiness.ready?'':'blocked'}">${readiness.ready?'เงื่อนไขเปิดงานครบ เมื่อยืนยัน ระบบจะสร้างเลข AW และไปหน้าเลือกวิธีจัดทำคำร้อง':'ยังเปิดงานกิจกรรมที่ 9 ไม่ได้ ต้องรับข้อมูลที่แก้ไขจากกิจกรรมที่ 5 ให้ครบก่อน'}</div></aside></section>
+  <footer class="sticky-actions"><button class="btn secondary" data-go="registry"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i>กลับทะเบียนคำร้อง</button><div class="actions">${returned?`<button class="btn" data-source-received="${esc(c.no)}"><i class="fa-solid fa-inbox" aria-hidden="true"></i>รับข้อมูลที่แก้ไขแล้ว</button>`:`<button class="btn secondary" data-return-source="${esc(c.no)}"><i class="fa-solid fa-rotate-left" aria-hidden="true"></i>ข้อมูลไม่ครบ ส่งกลับกิจกรรมที่ 5</button><button class="btn" data-start-source="${esc(c.no)}" ${readiness.ready?'':'disabled'}><i class="fa-solid fa-file-circle-plus" aria-hidden="true"></i>จัดทำคำร้องขอหมายจับ</button>`}</div></footer>`;
 }
 
 function intakeChoicePage(no){
   const c=demoCases.find(x=>x.no===no);
   if(!c)return base('ไม่พบงานขอหมายจับ','ไม่พบเลขงานนี้ในระบบ');
+  const era=c.limitationEra,eraChosen=Boolean(era),lockedClass=eraChosen?'':' method-locked';
+  const eraCard=(key,cls,icon,badgeHtml,title,desc)=>`<div class="intake-option-card era-card ${cls}${era===key?' selected':''}" data-select-era="${key}" data-select-era-case="${esc(c.no)}">
+      <div class="intake-option-icon"><i class="fa-solid ${icon}" aria-hidden="true"></i></div>
+      ${era===key?'<span class="intake-option-selected-mark"><i class="fa-solid fa-check" aria-hidden="true"></i>เลือกแล้ว</span>':badgeHtml}
+      <h2>${title}</h2>
+      <p>${desc}</p>
+      <button class="btn ${era===key?'':'secondary'}" data-select-era="${key}" data-select-era-case="${esc(c.no)}" type="button"><i class="fa-solid ${era===key?'fa-check':'fa-arrow-right'}" aria-hidden="true"></i>${era===key?'เลือกกรณีนี้แล้ว':'เลือกกรณีนี้'}</button>
+    </div>`;
   return base('เลือกวิธีจัดทำคำร้องตามแบบ ปปท.8-17','เลขงาน '+esc(c.no)+' · '+esc(c.suspect)+' · เลขสำนวนต้นทาง '+esc(c.fromCaseNo||'-'))
-  +`<div class="intake-option-section"><div class="intake-option-heading"><h2>เลือกวิธีจัดทำคำร้อง</h2><p>ข้อมูลสำนวนได้รับการตรวจจากหน้าก่อนแล้ว เลือก 1 วิธีเพื่อเริ่มสร้างร่างคำร้องภายใต้เลขงานนี้</p></div><div class="intake-option-grid">
-    <div class="intake-option-card online" data-choose-intake="form" data-choose-case="${esc(c.no)}">
+  +`<div class="intake-option-section"><div class="intake-option-heading"><h2>เลือกกรณีเหตุเกิดของคดีนี้</h2><p>วันที่เกิดเหตุมีผลต่อรูปแบบเอกสารและการนับอายุความตามกฎหมาย โปรดเลือกให้ตรงกับข้อเท็จจริงของคดีก่อนเริ่มจัดทำคำร้อง</p></div><div class="intake-option-grid era-option-grid">
+    ${eraCard('after','era-after','fa-calendar-check','<span class="intake-option-badge"><i class="fa-solid fa-star" aria-hidden="true"></i>ส่วนใหญ่ใช้กรณีนี้</span>','เหตุเกิดหลัง 30 เมษายน พ.ศ. 2559','ใช้แบบคำร้องขอหมายจับมาตรฐาน ปปท.8-17 พร้อมข้อกำหนดอายุความตามกฎหมายปัจจุบัน')}
+    ${eraCard('onward','era-onward','fa-hourglass-half','','เหตุเกิด 30 เมษายน พ.ศ. 2559 เป็นต้นไป','ใช้แบบหมายจับกรณี "อายุความสะดุดหยุดลง" — ไม่นับเวลาที่ผู้ถูกกล่าวหาหลบหนีรวมเป็นอายุความ (มาตรา 61/1) จึง<strong>ไม่บังคับ</strong>ระบุวันสิ้นสุดอายุความตายตัว')}
+    ${eraCard('before','era-before','fa-clock-rotate-left','','เหตุเกิดก่อน 30 เมษายน พ.ศ. 2559','ใช้แบบหมายจับกรณี "อายุความไม่สะดุดหยุดลง" ตามกฎหมายเดิม อายุความเดินต่อเนื่อง จึง<strong>ต้องระบุวันสิ้นสุดอายุความให้ชัดเจน</strong> (Mandatory)')}
+  </div></div>`
+  +`<div class="intake-option-section"><div class="intake-option-heading"><h2>เลือกวิธีจัดทำคำร้อง</h2><p>${eraChosen?'ข้อมูลสำนวนได้รับการตรวจจากหน้าก่อนแล้ว เลือก 1 วิธีเพื่อเริ่มสร้างร่างคำร้องภายใต้เลขงานนี้':'เลือกกรณีเหตุเกิดด้านบนก่อน จึงจะเริ่มจัดทำคำร้องได้'}</p></div><div class="intake-option-grid">
+    <div class="intake-option-card online${lockedClass}" data-choose-intake="form" data-choose-case="${esc(c.no)}">
       <div class="intake-option-icon"><i class="fa-solid fa-pen-to-square" aria-hidden="true"></i></div>
       <span class="intake-option-badge"><i class="fa-solid fa-star" aria-hidden="true"></i>แนะนำ</span>
       <h2>กรอกฟอร์มออนไลน์</h2>
       <p>กรอกข้อมูลคำร้องขอหมายจับตามแบบ ปปท.8-17 ในระบบโดยตรง ทีละหัวข้อ พร้อมตัวอย่างหน้าเอกสารจริงประกอบไว้ให้เทียบขณะกรอก</p>
-      <button class="btn" data-choose-intake="form" data-choose-case="${esc(c.no)}"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i>เริ่มกรอกฟอร์ม</button>
+      <button class="btn" data-choose-intake="form" data-choose-case="${esc(c.no)}" ${eraChosen?'':'disabled'}><i class="fa-solid fa-arrow-right" aria-hidden="true"></i>เริ่มกรอกฟอร์ม</button>
     </div>
-    <div class="intake-option-card upload" data-choose-intake="upload" data-choose-case="${esc(c.no)}">
+    <div class="intake-option-card upload${lockedClass}" data-choose-intake="upload" data-choose-case="${esc(c.no)}">
       <div class="intake-option-icon"><i class="fa-solid fa-file-arrow-up" aria-hidden="true"></i></div>
       <h2>อัปโหลดไฟล์ที่จัดทำภายนอก</h2>
       <p>กรณีจัดทำคำร้องด้วย Word แล้วแปลงเป็น PDF มาอัปโหลดแทนการกรอกฟอร์มในระบบ เหมาะสำหรับคำร้องที่จัดทำไว้ล่วงหน้าแล้ว</p>
-      <button class="btn secondary" data-choose-intake="upload" data-choose-case="${esc(c.no)}"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i>ไปหน้าอัปโหลด</button>
+      <button class="btn secondary" data-choose-intake="upload" data-choose-case="${esc(c.no)}" ${eraChosen?'':'disabled'}><i class="fa-solid fa-arrow-right" aria-hidden="true"></i>ไปหน้าอัปโหลด</button>
     </div>
   </div></div><footer class="sticky-actions"><button class="btn secondary" data-go="registry"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i>กลับทะเบียนคำร้อง</button></footer>`;
 }
@@ -849,7 +1041,7 @@ function refreshOwnerReviewUi(c){
   const count=document.querySelector('[data-owner-review-count]');if(count)count.textContent=`${completion.done} / ${completion.total} รายการ`;
   const meter=document.querySelector('[data-owner-review-meter]');if(meter)meter.style.width=(completion.total?Math.round(completion.done/completion.total*100):0)+'%';
   const guidance=document.querySelector('[data-owner-review-guidance]');
-  if(guidance){guidance.classList.toggle('ready',completion.complete);guidance.innerHTML=completion.complete?'<i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>ตรวจครบแล้ว พร้อมส่งให้ผู้บังคับบัญชา</span>':'<i class="fa-solid fa-circle-info" aria-hidden="true"></i><span>ทำเครื่องหมายข้อมูลและเอกสารให้ครบก่อนส่ง</span>';}
+  if(guidance){guidance.classList.toggle('ready',completion.complete);guidance.innerHTML=completion.complete?'<i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>ตรวจครบแล้ว พร้อมเตรียมชุดยื่นศาล</span>':'<i class="fa-solid fa-circle-info" aria-hidden="true"></i><span>ทำเครื่องหมายข้อมูลและเอกสารให้ครบก่อนยืนยัน</span>';}
   const submit=document.querySelector('[data-submit-review]');if(submit)submit.disabled=!completion.complete;
 }
 
@@ -857,11 +1049,9 @@ function reviewPage(no){
   const c=demoCases.find(x=>x.no===no);
   if(!c)return base('ไม่พบงานขอหมายจับ','ไม่พบเลขงานนี้ในระบบ');
   const po=c.prosecutorOrder||{},isOwnerReview=c.stage==='owner_review',state=ownerReviewState(c),docs=ownerReviewDocuments(c),completion=ownerReviewCompletion(c);
-  const ownerActions=`<button class="btn secondary" data-edit-owner-review="${esc(c.no)}"><i class="fa-solid fa-pen" aria-hidden="true"></i>แก้ไขคำร้อง</button><button class="btn" data-submit-review="${esc(c.no)}" ${completion.complete?'':'disabled'}><i class="fa-solid fa-paper-plane" aria-hidden="true"></i>ยืนยันและส่งให้ผู้บังคับบัญชาตรวจสอบ</button>`;
+  const ownerActions=`<button class="btn secondary" data-edit-owner-review="${esc(c.no)}"><i class="fa-solid fa-pen" aria-hidden="true"></i>แก้ไขคำร้อง</button><button class="btn" data-submit-review="${esc(c.no)}" ${completion.complete?'':'disabled'}><i class="fa-solid fa-file-circle-check" aria-hidden="true"></i>ยืนยันและเตรียมชุดยื่นศาล</button>`;
   const reviewConfig={
-    owner_review:{title:'ตรวจสอบคำร้องในฐานะเจ้าของสำนวน',banner:'เจ้าของสำนวนต้องตรวจและยืนยันด้วยตนเอง',detail:'เปิดอ่านคำร้อง ตรวจข้อมูลสำนวน คำสั่งพนักงานอัยการ และเอกสารทุกฉบับ ก่อนส่งให้ผู้บังคับบัญชาตรวจสอบ',actions:ownerActions},
-    supervisor_review:{title:'ตรวจสอบคำร้องโดยผู้บังคับบัญชาชั้นต้น',banner:'รอผู้บังคับบัญชาชั้นต้นตรวจสอบ',detail:'ตรวจความครบถ้วนของคำร้องและเอกสารประกอบ แล้วเลือกส่งกลับแก้ไขหรือเห็นชอบเพื่อส่งต่อ',actions:`<button class="btn secondary" data-review-action="return" data-review-case="${esc(c.no)}"><i class="fa-solid fa-rotate-left" aria-hidden="true"></i>ส่งกลับให้แก้ไข</button><button class="btn" data-review-action="approve" data-review-case="${esc(c.no)}"><i class="fa-solid fa-check" aria-hidden="true"></i>เห็นชอบและส่งต่อ</button>`},
-    director_review:{title:'พิจารณาคำร้องโดย ผอ.สำนัก/กอง',banner:'รอ ผอ.สำนัก/กอง พิจารณา',detail:'พิจารณาคำร้องและเอกสารก่อนส่งให้ผู้รับผิดชอบเตรียมยื่นศาล',actions:`<button class="btn secondary" data-review-action="return" data-review-case="${esc(c.no)}"><i class="fa-solid fa-rotate-left" aria-hidden="true"></i>ส่งกลับให้แก้ไข</button><button class="btn" data-review-action="approve" data-review-case="${esc(c.no)}"><i class="fa-solid fa-check" aria-hidden="true"></i>เห็นชอบและส่งเตรียมยื่นศาล</button>`},
+    owner_review:{title:'ตรวจสอบคำร้องในฐานะเจ้าของสำนวน',banner:'เจ้าของสำนวนต้องตรวจและยืนยันด้วยตนเอง',detail:'เปิดอ่านคำร้อง ตรวจข้อมูลสำนวน คำสั่งพนักงานอัยการ และเอกสารทุกฉบับ ก่อนยืนยันชุดคำร้องเพื่อเตรียมยื่นศาล',actions:ownerActions},
     court_pending:{title:'ติดตามผลคำร้องจากศาล',banner:'ยื่นคำร้องต่อศาลแล้ว',detail:'รอบันทึกผลจากศาล ได้แก่ ขอแก้ไข ไม่อนุมัติ หรือออกหมายจับ',actions:`<button class="btn" data-go="officer-work/${esc(c.no)}"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i>กลับไปดูรายละเอียดงาน</button>`}
   };
   const config=reviewConfig[c.stage]||reviewConfig.owner_review;
@@ -872,12 +1062,12 @@ function reviewPage(no){
     {key:'prosecutor_order',title:'ตรวจหนังสือหรือคำสั่งจากพนักงานอัยการ',detail:`${po.ref||'ยังไม่ระบุเลขอ้างอิง'}${po.date?' ลงวันที่ '+po.date:''}`,action:`<button class="btn secondary" data-preview-name="${esc(po.file||'หนังสือหรือคำสั่งจากพนักงานอัยการ')}">เปิดเอกสาร</button>`},
     {key:'consistency',title:'ยืนยันว่าข้อมูลและเอกสารสอดคล้องกัน',detail:'ไม่พบชื่อ เลขประจำตัว เลขสำนวน ข้อกล่าวหา หรือเหตุขอหมายที่ขัดแย้งกัน',action:''}
   ];
-  const ownerPanel=isOwnerReview?`<section class="card" data-owner-review-workspace><div class="card-head"><div><h2>ตรวจข้อมูลสำคัญ</h2><p>เปิดอ่านและยืนยันเฉพาะรายการที่ตรวจแล้ว</p></div></div><div class="owner-review-progress"><div><strong>ความคืบหน้าทั้งหมด</strong><small>รวมข้อมูลและเอกสาร</small><div class="owner-review-meter"><span data-owner-review-meter style="width:${completion.total?Math.round(completion.done/completion.total*100):0}%"></span></div></div><div class="owner-review-count" data-owner-review-count>${completion.done} / ${completion.total} รายการ</div></div><div class="owner-review-list">${checks.map(x=>{const checked=!!state.checks[x.key];return `<div class="owner-review-check ${checked?'reviewed':''}"><input type="checkbox" data-owner-review-check="${x.key}" aria-label="ยืนยัน ${esc(x.title)}" ${checked?'checked':''}><span><strong>${esc(x.title)}</strong><small>${esc(x.detail)}</small></span>${x.action}<span class="owner-review-state">${checked?'ตรวจแล้ว':'รอตรวจ'}</span></div>`}).join('')}</div><details class="owner-review-note" ${state.note?'open':''}><summary>หมายเหตุถึงผู้บังคับบัญชา (ถ้ามี)</summary><textarea id="owner-review-note" aria-label="หมายเหตุของเจ้าของสำนวนถึงผู้บังคับบัญชา" placeholder="ระบุข้อสังเกตหรือข้อมูลสำคัญ">${esc(state.note||'')}</textarea></details><div class="owner-review-guidance ${completion.complete?'ready':''}" data-owner-review-guidance>${completion.complete?'<i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>ตรวจครบแล้ว พร้อมส่งให้ผู้บังคับบัญชา</span>':'<i class="fa-solid fa-circle-info" aria-hidden="true"></i><span>ทำเครื่องหมายข้อมูลและเอกสารให้ครบก่อนส่ง</span>'}</div></section>`:`<section class="card"><div class="card-head"><div><h2>ผลการตรวจของเจ้าของสำนวน</h2><p>บันทึกการตรวจที่ส่งมาพร้อมคำร้องและเอกสารชุดนี้</p></div><span class="badge ${state.completedAt?'success':'warning'}">${state.completedAt?'ตรวจครบแล้ว':'ยังไม่พบบันทึกผลตรวจ'}</span></div><div style="padding:16px 20px" class="review-summary"><div><span>ผู้ตรวจ</span><strong>${esc(c.caseOwner||'-')}</strong></div><div><span>วันที่ตรวจ</span><strong>${esc(state.completedAt||'-')}</strong></div><div><span>ผลการตรวจ</span><strong>${state.completedAt?'ยืนยันข้อมูลและเอกสารครบถ้วน':'-'}</strong></div><div><span>หมายเหตุ</span><strong>${esc(state.note||'ไม่มีหมายเหตุ')}</strong></div></div></section>`;
+  const ownerPanel=isOwnerReview?`<section class="card" data-owner-review-workspace><div class="card-head"><div><h2>ตรวจคำร้องและเอกสาร</h2><p>เปิดอ่านและยืนยันรายการที่ต้องใช้จัดชุดยื่นศาล</p></div></div><div class="owner-review-progress"><div><strong>ความคืบหน้าทั้งหมด</strong><small>รวมข้อมูลและเอกสาร</small><div class="owner-review-meter"><span data-owner-review-meter style="width:${completion.total?Math.round(completion.done/completion.total*100):0}%"></span></div></div><div class="owner-review-count" data-owner-review-count>${completion.done} / ${completion.total} รายการ</div></div><div class="owner-review-list">${checks.map(x=>{const checked=!!state.checks[x.key];return `<div class="owner-review-check ${checked?'reviewed':''}"><input type="checkbox" data-owner-review-check="${x.key}" aria-label="ยืนยัน ${esc(x.title)}" ${checked?'checked':''}><span><strong>${esc(x.title)}</strong><small>${esc(x.detail)}</small></span>${x.action}<span class="owner-review-state">${checked?'ตรวจแล้ว':'รอตรวจ'}</span></div>`}).join('')}</div><details class="owner-review-note" ${state.note?'open':''}><summary>หมายเหตุสำหรับการจัดชุดยื่นศาล (ถ้ามี)</summary><textarea id="owner-review-note" aria-label="หมายเหตุสำหรับการจัดชุดยื่นศาล" placeholder="ระบุข้อสังเกตหรือข้อมูลสำคัญสำหรับการจัดชุดยื่นศาล">${esc(state.note||'')}</textarea></details><div class="owner-review-guidance ${completion.complete?'ready':''}" data-owner-review-guidance>${completion.complete?'<i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>ตรวจครบแล้ว พร้อมเตรียมชุดยื่นศาล</span>':'<i class="fa-solid fa-circle-info" aria-hidden="true"></i><span>ทำเครื่องหมายข้อมูลและเอกสารให้ครบก่อนเตรียมชุดยื่นศาล</span>'}</div></section>`:`<section class="card"><div class="card-head"><div><h2>ผลการตรวจของเจ้าของสำนวน</h2><p>บันทึกการตรวจที่ส่งมาพร้อมคำร้องและเอกสารชุดนี้</p></div><span class="badge ${state.completedAt?'success':'warning'}">${state.completedAt?'ตรวจครบแล้ว':'ยังไม่พบบันทึกผลตรวจ'}</span></div><div style="padding:16px 20px" class="review-summary"><div><span>ผู้ตรวจ</span><strong>${esc(c.caseOwner||'-')}</strong></div><div><span>วันที่ตรวจ</span><strong>${esc(state.completedAt||'-')}</strong></div><div><span>ผลการตรวจ</span><strong>${state.completedAt?'ยืนยันข้อมูลและเอกสารครบถ้วน':'-'}</strong></div><div><span>หมายเหตุ</span><strong>${esc(state.note||'ไม่มีหมายเหตุ')}</strong></div></div></section>`;
   const documentRows=docs.map(d=>{const checked=!!state.documents[d.key],open=d.kind==='request'?`data-view-request-document="${esc(c.no)}"`:`data-preview-name="${esc(d.name)}"`;return `<div class="owner-document-row ${checked?'reviewed':''}"><i class="fa-solid ${checked?'fa-file-circle-check':'fa-file-lines'}" aria-hidden="true"></i><div><strong>${esc(d.name)}</strong><small>${esc(d.source)}</small></div><button class="btn secondary" ${open}><i class="fa-solid fa-eye" aria-hidden="true"></i>เปิดดู</button>${isOwnerReview?`<label class="owner-document-confirm"><input type="checkbox" data-owner-doc-check="${esc(d.key)}" ${checked?'checked':''}><span data-owner-doc-label>${checked?'ตรวจแล้ว':'รอตรวจ'}</span></label>`:'<span class="badge success">อยู่ในชุดตรวจ</span>'}</div>`}).join('');
   const unifiedRows=checks.map((x,i)=>{const checked=!!state.checks[x.key];return `<div class="owner-unified-item ${checked?'reviewed':''}"><span class="owner-unified-index">${i+1}</span><div class="owner-unified-copy"><strong>${esc(x.title)}</strong><small>${esc(x.detail)}</small></div><div class="owner-unified-actions">${x.action||'<span></span>'}<label class="owner-unified-confirm"><input type="checkbox" data-owner-review-check="${x.key}" aria-label="ยืนยัน ${esc(x.title)}" ${checked?'checked':''}><span class="owner-review-state">${checked?'ตรวจแล้ว':'รอตรวจ'}</span></label></div></div>`}).concat(docs.map((d,i)=>{const checked=!!state.documents[d.key],open=d.kind==='request'?`data-view-request-document="${esc(c.no)}"`:`data-preview-name="${esc(d.name)}"`;return `<div class="owner-unified-item ${checked?'reviewed':''}"><span class="owner-unified-index">${checks.length+i+1}</span><div class="owner-unified-copy"><strong>${esc(d.name)}</strong><small>${esc(d.source)}</small></div><div class="owner-unified-actions"><button class="btn secondary" ${open}><i class="fa-solid fa-eye" aria-hidden="true"></i>เปิดดู</button><label class="owner-unified-confirm"><input type="checkbox" data-owner-doc-check="${esc(d.key)}" aria-label="ยืนยัน ${esc(d.name)}" ${checked?'checked':''}><span data-owner-doc-label>${checked?'ตรวจแล้ว':'รอตรวจ'}</span></label></div></div>`})).join('');
   const caseOverview=`<section class="owner-case-overview" data-owner-source-summary><div class="owner-case-overview-head"><div class="owner-case-overview-title"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i><div><strong>${esc(config.banner)}</strong><small>${esc(config.detail)}</small></div></div>${draftButton}</div><div class="owner-case-grid"><div class="owner-case-item"><span>เลขงานขอหมายจับ</span><strong>${esc(c.no)}</strong></div><div class="owner-case-item"><span>เลขสำนวนต้นทาง</span><strong>${esc(c.fromCaseNo||'-')}</strong></div><div class="owner-case-item"><span>เจ้าของสำนวน</span><strong>${esc(c.caseOwner||c.owner)}</strong></div><div class="owner-case-item end"><span>วิธีจัดทำคำร้อง</span><strong>${c.intakeMode==='upload'?'อัปโหลดไฟล์ PDF':'กรอกแบบ ปปท.8-17 ในระบบ'}</strong></div><div class="owner-case-item span-2"><span>ผู้ถูกกล่าวหา</span><strong>${esc(c.suspect)} · ${esc(c.idCard||'-')}</strong></div><div class="owner-case-item span-2 end"><span>หนังสือ/คำสั่งจากพนักงานอัยการ</span><strong>${esc(po.ref||'-')} · ${esc(po.date||'-')}</strong></div><div class="owner-case-item span-4"><span>ข้อกล่าวหาและฐานความผิด</span><strong>${esc(c.charge||'-')}</strong></div></div></section>`;
   const documentsPanel=`<section class="card"><div class="card-head"><div><h2>${isOwnerReview?'ตรวจเอกสาร':'เอกสารที่ตรวจแล้ว'}</h2><p>${isOwnerReview?'เปิดอ่านและยืนยันให้ครบทุกฉบับ':'เอกสารชุดเดียวกับที่เจ้าของสำนวนส่งมา'}</p></div><span class="badge">${docs.length} ฉบับ</span></div><div class="owner-document-list">${documentRows}</div></section>`;
-  const unifiedPanel=`<section class="card owner-review-unified" data-owner-review-workspace><div class="card-head"><div><h2>ตรวจสอบคำร้องและเอกสาร</h2><p>ตรวจให้ครบทุก ${completion.total} รายการก่อนส่งให้ผู้บังคับบัญชา</p></div><div class="owner-review-count" data-owner-review-count>${completion.done} / ${completion.total} รายการ</div></div><div class="owner-review-progress"><div><strong>ความคืบหน้าการตรวจ</strong><small>คำร้อง ข้อมูลสำนวน และเอกสารประกอบทั้งหมด</small><div class="owner-review-meter"><span data-owner-review-meter style="width:${completion.total?Math.round(completion.done/completion.total*100):0}%"></span></div></div></div><div class="owner-unified-list">${unifiedRows}</div><div class="owner-review-upload"><div class="owner-review-upload-copy"><i class="fa-solid fa-file-circle-plus" aria-hidden="true"></i><div><strong>เอกสารขาดหรือมีเอกสารเพิ่มเติม</strong><small>เจ้าของสำนวนสามารถเพิ่มไฟล์ Word, Excel, PDF หรือรูปภาพเข้าชุดตรวจนี้ได้ โดยไม่ต้องย้อนกลับไปหน้าจัดทำคำร้อง</small></div></div><button class="btn secondary" type="button" data-owner-review-upload-trigger><i class="fa-solid fa-upload" aria-hidden="true"></i>อัปโหลดเอกสาร</button><input class="owner-review-upload-input" type="file" multiple accept=".doc,.docx,.xls,.xlsx,.pdf,.jpg,.jpeg,.png" data-owner-review-upload aria-label="อัปโหลดเอกสารที่ขาดหรือเอกสารเพิ่มเติม"></div><details class="owner-review-note" ${state.note?'open':''}><summary>หมายเหตุถึงผู้บังคับบัญชา (ถ้ามี)</summary><textarea id="owner-review-note" aria-label="หมายเหตุของเจ้าของสำนวนถึงผู้บังคับบัญชา" placeholder="ระบุข้อสังเกตหรือข้อมูลสำคัญ">${esc(state.note||'')}</textarea></details><div class="owner-review-guidance ${completion.complete?'ready':''}" data-owner-review-guidance>${completion.complete?'<i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>ตรวจครบแล้ว พร้อมส่งให้ผู้บังคับบัญชา</span>':'<i class="fa-solid fa-circle-info" aria-hidden="true"></i><span>ตรวจและยืนยันให้ครบทุก '+completion.total+' รายการก่อนส่ง</span>'}</div></section>`;
+  const unifiedPanel=`<section class="card owner-review-unified" data-owner-review-workspace><div class="card-head"><div><h2>ตรวจสอบคำร้องและเอกสาร</h2><p>ตรวจให้ครบทุก ${completion.total} รายการก่อนยืนยันชุดคำร้อง</p></div><div class="owner-review-count" data-owner-review-count>${completion.done} / ${completion.total} รายการ</div></div><div class="owner-review-progress"><div><strong>ความคืบหน้าการตรวจ</strong><small>คำร้อง ข้อมูลสำนวน และเอกสารประกอบทั้งหมด</small><div class="owner-review-meter"><span data-owner-review-meter style="width:${completion.total?Math.round(completion.done/completion.total*100):0}%"></span></div></div></div><div class="owner-unified-list">${unifiedRows}</div><div class="owner-review-upload"><div class="owner-review-upload-copy"><i class="fa-solid fa-file-circle-plus" aria-hidden="true"></i><div><strong>เอกสารขาดหรือมีเอกสารเพิ่มเติม</strong><small>เจ้าของสำนวนสามารถเพิ่มไฟล์ Word, Excel, PDF หรือรูปภาพเข้าชุดตรวจนี้ได้ โดยไม่ต้องย้อนกลับไปหน้าจัดทำคำร้อง</small></div></div><button class="btn secondary" type="button" data-owner-review-upload-trigger><i class="fa-solid fa-upload" aria-hidden="true"></i>อัปโหลดเอกสาร</button><input class="owner-review-upload-input" type="file" multiple accept=".doc,.docx,.xls,.xlsx,.pdf,.jpg,.jpeg,.png" data-owner-review-upload aria-label="อัปโหลดเอกสารที่ขาดหรือเอกสารเพิ่มเติม"></div><details class="owner-review-note" ${state.note?'open':''}><summary>หมายเหตุประกอบการยื่นศาล (ถ้ามี)</summary><textarea id="owner-review-note" aria-label="หมายเหตุประกอบการยื่นศาล" placeholder="ระบุข้อสังเกตหรือข้อมูลสำคัญสำหรับการเตรียมยื่นศาล">${esc(state.note||'')}</textarea></details><div class="owner-review-guidance ${completion.complete?'ready':''}" data-owner-review-guidance>${completion.complete?'<i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>ตรวจครบแล้ว พร้อมเตรียมชุดยื่นศาล</span>':'<i class="fa-solid fa-circle-info" aria-hidden="true"></i><span>ตรวจและยืนยันให้ครบทุก '+completion.total+' รายการก่อนดำเนินการต่อ</span>'}</div></section>`;
   const reviewWorkspace=isOwnerReview?unifiedPanel:ownerPanel+documentsPanel;
   return base(config.title,'เลขงาน '+esc(c.no)+' · '+esc(c.suspect))
   +caseOverview
@@ -949,7 +1139,8 @@ function courtResultPage(no){
       <div class="field"><label>วันที่ออกหมายจับ <span aria-hidden="true">*</span></label><input id="court-warrant-date" type="date" value="${esc(warrant.warrantDate||'')}"></div>
       <div class="field"><label>ศาลที่ออกหมาย</label><input id="court-warrant-court" value="${esc(warrant.court||filing.court||'')}"></div>
       <div class="field"><label>เลขคดีของศาล</label><input id="court-case-no" value="${esc(warrant.caseNo||'')}"></div>
-      <div class="field wide"><label>วันสิ้นสุดอายุความ/วันติดตามสำคัญ</label><input id="court-warrant-expiry" type="date" value="${esc(c.expiry||'')}"></div>
+      <div class="field wide"><label>วันสิ้นสุดอายุความ/วันติดตามสำคัญ${c.limitationEra==='before'?' <span aria-hidden="true">*</span>':''}</label><input id="court-warrant-expiry" type="date" value="${esc(c.expiry||'')}">${c.limitationEra==='before'?'<small class="field-help">เหตุเกิดก่อน 30 เม.ย. 2559 อายุความเดินต่อเนื่อง ต้องระบุวันสิ้นสุดอายุความให้ชัดเจน (บังคับ)</small>':''}</div>
+      ${(c.limitationEra&&c.limitationEra!=='after')?`<div class="field wide era-reference-block"><label>เอกสารอ้างอิงแบบหมายจับทางการ — ${esc(eraDocumentLabel(c.limitationEra))}</label><div class="era-reference-images">${officialFormPages[eraDocumentKind(c.limitationEra)].map(p=>`<a href="${officialPagePath(eraDocumentKind(c.limitationEra),p)}" target="_blank" rel="noopener"><img src="${officialPagePath(eraDocumentKind(c.limitationEra),p)}" alt="ตัวอย่างหมายจับ ${esc(eraDocumentLabel(c.limitationEra))} หน้า ${p}"></a>`).join('')}</div><small class="field-help">ใช้เทียบกับหมายจับฉบับจริงที่ได้รับจากศาล ก่อนกรอกเลขที่หมายจับและข้อมูลด้านบน — เอกสารระบุกรณีเหตุเกิดไว้บนหัวกระดาษแล้ว (คลิกที่ภาพเพื่อดูขนาดเต็ม)</small></div>`:''}
     </div>
   </div></section>`
   +`<footer class="sticky-actions"><button class="btn secondary" data-go="officer-work/${esc(c.no)}"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i>กลับรายละเอียดงาน</button><div class="actions"><button class="btn" data-save-court-result="${esc(c.no)}"><i class="fa-solid fa-floppy-disk" aria-hidden="true"></i>บันทึกผลจากศาล</button></div></footer>`;
@@ -1038,9 +1229,15 @@ function courtFollowupPage(no){
 
 function esc(v){return String(v).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
 function toast(message){const el=document.getElementById('toast');el.textContent=message;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),2400)}
-function appendAudit(c,action,from,to,note=''){
+function thaiNow(){return new Intl.DateTimeFormat('th-TH',{dateStyle:'medium',timeStyle:'short',timeZone:'Asia/Bangkok'}).format(new Date())}
+function appendAudit(c,action,from,to,note='',meta={}){
+  const time=thaiNow();
   c.auditTrail=c.auditTrail||[];
-  c.auditTrail.unshift({action,actor:roleNames[currentRole]||'ผู้ใช้งานระบบ',from:from||'-',to:to||'-',note,time:'15 ส.ค. 2569 '+new Date().toLocaleTimeString('th-TH',{hour:'2-digit',minute:'2-digit'})});
+  c.auditTrail.unshift({action,actor:roleNames[currentRole]||'ผู้ใช้งานระบบ',from:from||'-',to:to||'-',note,time});
+  if(meta.recordAssignment){
+    c.assignmentHistory=c.assignmentHistory||[];
+    c.assignmentHistory.unshift({action,from:from||'-',to:to||'-',note,time,assignedBy:meta.assignedBy||currentOfficerName,transferType:meta.transferType||'assign',fromDepartment:meta.fromDepartment||'',toDepartment:meta.toDepartment||'',referenceOrder:meta.referenceOrder||''});
+  }
 }
 function addDocumentVersion(c,by){
   if(!c.requestDocument)return;
@@ -1250,11 +1447,58 @@ function showOwnerSubmissionPreview(c,from,to){
     overlay.onclick=event=>{if(event.target===overlay)finish(false)};
   });
 }
-function go(route){const next='#/'+route;if(location.hash===next)render();else location.hash=next}
+const roleQueueRoutes={officer:'queue-officer',got:'queue-got',supervisor:'queue-supervisor',director:'queue-director',approver:'queue-approver',bureau:'queue-bureau',admin:'queue-officer'};
+let activeProcessNav='registry';
+function workRouteForRole(role=currentRole){return roleQueueRoutes[role]||'queue-officer'}
+function caseInActiveProcess(c){
+  if(activeProcessNav==='court-process')return ['court_ready','court_pending','court_revision','court_hearing','court_transfer','court_decision','court_decision_review','warrant_verification','warrant_correction','warrant_verified','issued'].includes(c.stage);
+  if(activeProcessNav==='termination-process')return c.stage==='central_registry_due'||c.stage==='withdrawn'||['termination_','withdrawal_','court_withdrawal_','final_notification_'].some(prefix=>c.stage.startsWith(prefix));
+  return true;
+}
+function activeWorkContext(){
+  if(activeProcessNav==='court-process')return {title:'ยื่นศาลและผลจากศาล',description:'เฉพาะงานยื่นคำร้อง บันทึกผลศาล และตรวจรับหมายที่บทบาทปัจจุบันต้องดำเนินการ'};
+  if(activeProcessNav==='termination-process')return {title:'ยุติและถอนหมายจับ',description:'เฉพาะงานขอยุติ แจ้งยุติ รายงานศาล ถอนหมาย และแจ้งผลที่บทบาทปัจจุบันต้องดำเนินการ'};
+  return {title:'งานของฉัน',description:'เฉพาะงานที่บทบาทปัจจุบันต้องดำเนินการในขณะนี้'};
+}
+function roleIsAllowed(role){return currentUserAccess.roles.includes(role)}
+function applyRoleAccess(){
+  const select=document.getElementById('role');
+  [...select.options].forEach(option=>{const allowed=roleIsAllowed(option.value);option.hidden=!allowed;option.disabled=!allowed});
+  if(!roleIsAllowed(currentRole))currentRole=currentUserAccess.roles[0]||'officer';
+  select.value=currentRole;
+}
+function queueScope(role=currentRole){
+  if(role==='officer')return {kind:'personal',label:'คิวส่วนบุคคล',detail:`เฉพาะงานที่ ${currentUserAccess.name} เป็นผู้รับผิดชอบ`};
+  return {kind:'role',label:'คิวตามบทบาท',detail:`งานกลางที่ส่งถึง ${roleNames[role]||'บทบาทปัจจุบัน'} ตามสิทธิ์ของบัญชีนี้`};
+}
+function queueScopeHeading(role=currentRole){
+  const scope=queueScope(role),icon=scope.kind==='personal'?'fa-user':'fa-users';
+  return `<div class="queue-scope-title"><h2>${scope.kind==='personal'?'งานของฉัน':'คิวงานตามบทบาท'}</h2><span class="queue-scope-badge ${scope.kind}"><i class="fa-solid ${icon}" aria-hidden="true"></i>${scope.label}</span></div><p>${esc(scope.detail)}</p>`;
+}
+function processSectionForRoute(route){
+  if(route==='registry'||['activity5-intake/','case/','intake-choice/','form/','review/'].some(prefix=>route.startsWith(prefix)))return 'registry';
+  if(route==='reports')return 'reports';
+  if(route==='tracking'||route.startsWith('tracking-work/')||route.startsWith('execution-plan/'))return 'tracking';
+  if(route.startsWith('approval-work/')||route.startsWith('termination-notice/')||route.startsWith('bureau-work/')||route.startsWith('central-registry/'))return 'termination-process';
+  if(['officer-court-package/','officer-court-filing/','officer-court-result/','officer-court-followup/','officer-warrant-verification/'].some(prefix=>route.startsWith(prefix)))return 'court-process';
+  return activeProcessNav==='registry'?'my-work':activeProcessNav;
+}
+function resolveProcessRoute(route){
+  if(route==='my-work')return workRouteForRole();
+  if(route==='court-process')return workRouteForRole();
+  if(route==='termination-process')return currentRole==='approver'?'queue-approver':currentRole==='bureau'?'queue-bureau':workRouteForRole();
+  return route;
+}
+function go(route){
+  if(['registry','my-work','court-process','tracking','termination-process','reports'].includes(route))activeProcessNav=route;
+  const resolved=resolveProcessRoute(route),next='#/'+resolved;
+  if(location.hash===next)render();else location.hash=next;
+}
 function base(title,description,actions=''){return `<div class="breadcrumb">กิจกรรมที่ 9 <b>›</b> ระบบหมายจับ</div><header class="page-head"><div><h1>${title}</h1><p>${description}</p></div><div class="actions">${actions}</div></header>`}
 function placeholderNote(text){return `<div class="placeholder-note"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><div>${text}</div></div>`}
 function stageTrack(current){
-  return `<div class="card"><div class="stage-track">${stageOrder.map(([key,label],i)=>{const idx=stageOrder.findIndex(s=>s[0]===current);const cls=i<idx?'done':i===idx?'current':'';return `<span class="stage-step ${cls}">${i<idx?'<i class="fa-solid fa-check"></i>':''}${esc(label)}</span>`+(i<stageOrder.length-1?'<span class="stage-arrow"><i class="fa-solid fa-chevron-right"></i></span>':'')}).join('')}</div></div>`;
+  const info=workflowStageInfo(current),idx=stageOrder.findIndex(([key])=>key===info.phase);
+  return `<div class="card"><div class="stage-track" aria-label="ความคืบหน้ากระบวนงาน: ${esc(info.label)}">${stageOrder.map(([key,label],i)=>{const cls=i<idx?'done':i===idx?'current':'';return `<span class="stage-step ${cls}" title="${i===idx?esc(info.label):esc(label)}">${i<idx?'<i class="fa-solid fa-check"></i>':''}${esc(label)}</span>`+(i<stageOrder.length-1?'<span class="stage-arrow"><i class="fa-solid fa-chevron-right"></i></span>':'')}).join('')}</div></div>`;
 }
 
 function caseOpenRoute(c){
@@ -1297,15 +1541,13 @@ function caseActionLabel(c){
 }
 function warrantFormRoute(c){return ['draft','owner_review'].includes(c.stage)?caseOpenRoute(c):'review/'+c.no}
 function registryGroup(c){
-  if(c.stage==='activity5_new')return 'source_new';
-  if(c.stage==='activity5_source_revision')return 'source_revision';
-  if(c.stage==='draft')return 'draft';
-  if(['owner_review','supervisor_review','director_review'].includes(c.stage))return 'complete';
-  if(['court_ready','court_pending'].includes(c.stage))return 'court';
-  if(['warrant_verification','warrant_correction','warrant_verified','got_pending','issued'].includes(c.stage))return 'complete';
+  if(['activity5_new','activity5_source_revision','draft','owner_review'].includes(c.stage))return 'request';
+  if((c.stage.startsWith('court_')&&!c.stage.startsWith('court_withdrawal_'))||['warrant_verification','warrant_correction'].includes(c.stage))return 'court';
+  if(['warrant_verified','issued','execution_planning','operation_tracking','warrant_tracking','arrest_handover','got_pending','got_letter','got_dispatch','got_tracking'].includes(c.stage))return 'enforcement';
+  if(c.stage==='central_registry_due'||c.stage==='withdrawn'||['termination_','withdrawal_','court_withdrawal_','final_notification_'].some(prefix=>c.stage.startsWith(prefix)))return 'closure';
   return 'other';
 }
-function caseRows(items){return items.map(c=>{const sourceOnly=['activity5_new','activity5_source_revision'].includes(c.stage);return `<tr><td><strong>${sourceOnly?'ยังไม่ออกเลขงาน':esc(c.no)}</strong><small>${esc(c.fromCaseNo||'-')}${sourceOnly&&c.sourceTransferId?' · '+esc(c.sourceTransferId):''}</small></td><td><strong>${esc(c.suspect)}</strong><small>${esc(c.department||'สำนัก/กองต้นทาง')}</small></td><td><span class="badge">${esc(c.status)}</span></td><td><div class="role-stack"><strong>${esc(c.owner||'-')}</strong><small>${sourceOnly?'ผู้จัดทำคำร้องที่ได้รับมอบหมาย':c.stage==='owner_review'?'เจ้าของสำนวนผู้รับผิดชอบคำร้อง':'ผู้รับผิดชอบขั้นตอนปัจจุบัน'}</small></div></td><td>${esc(updatedAtByCase[c.no]||c.activity5Source?.sentAt||'-')}</td><td>${esc(c.next)}</td><td><button class="btn secondary" data-go="${esc(caseOpenRoute(c))}">${esc(caseActionLabel(c))}</button></td></tr>`}).join('')}
+function caseRows(items,{registryView=false}={}){return items.map(c=>{const sourceOnly=['activity5_new','activity5_source_revision'].includes(c.stage);return `<tr><td><strong>${sourceOnly?'ยังไม่ออกเลขงาน':esc(c.no)}</strong><small>${esc(c.fromCaseNo||'-')}${sourceOnly&&c.sourceTransferId?' · '+esc(c.sourceTransferId):''}</small></td><td><strong>${esc(c.suspect)}</strong><small>${esc(c.department||'สำนัก/กองต้นทาง')}</small></td><td><span class="badge">${esc(c.status)}</span></td><td><div class="role-stack"><strong>${esc(c.owner||'-')}</strong><small>${sourceOnly?'ผู้จัดทำคำร้องที่ได้รับมอบหมาย':c.stage==='owner_review'?'เจ้าของสำนวนผู้รับผิดชอบคำร้อง':'ผู้รับผิดชอบขั้นตอนปัจจุบัน'}</small></div></td><td>${esc(updatedAtByCase[c.no]||c.activity5Source?.sentAt||'-')}</td><td>${esc(c.next)}</td><td><button class="btn secondary" data-go="${esc(caseOpenRoute(c))}">${registryView?'ดูรายละเอียด →':esc(caseActionLabel(c))}</button></td></tr>`}).join('')}
 
 function registrySearchPanel(all){
   const statuses=[...new Set(all.map(c=>c.status))];
@@ -1313,7 +1555,7 @@ function registrySearchPanel(all){
   const s=registrySearchState;
   return `<section class="registry-search-panel" aria-label="ค้นหาและกรองทะเบียนคำร้อง">
     <div class="field"><label for="registry-query">ค้นหาเลขงาน เลขสำนวน หรือชื่อผู้ถูกกล่าวหา</label><input id="registry-query" value="${esc(s.query)}" placeholder="เช่น AW-2569-000101, กบค.002/2569 หรือชื่อผู้ถูกกล่าวหา"></div>
-    <div class="field"><label for="registry-status">สถานะคำร้อง</label><select id="registry-status"><option value="all">ทุกสถานะ</option>${statuses.map(status=>`<option value="${esc(status)}" ${s.status===status?'selected':''}>${esc(status)}</option>`).join('')}</select></div>
+    <div class="field"><label for="registry-status">สถานะรายการ</label><select id="registry-status"><option value="all">ทุกสถานะ</option>${statuses.map(status=>`<option value="${esc(status)}" ${s.status===status?'selected':''}>${esc(status)}</option>`).join('')}</select></div>
     <button type="button" class="btn" data-registry-search><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>ค้นหา</button>
     <button type="button" class="btn secondary" data-registry-clear><i class="fa-solid fa-rotate-left" aria-hidden="true"></i>ล้างเงื่อนไข</button>
   </section>
@@ -1358,29 +1600,30 @@ function registrySearchMatches(c){
 }
 
 function registry(){
-  const registryStages=['activity5_new','activity5_source_revision','draft','owner_review','supervisor_review','director_review'];
-  const all=activity9Cases().filter(c=>registryStages.includes(c.stage));
+  const all=activity9Cases().filter(caseInActiveProcess);
   const searched=all.filter(registrySearchMatches);
   const tabs=[
-    ['source_new','งานใหม่จากกิจกรรมที่ 5',searched.filter(c=>registryGroup(c)==='source_new').length],
-    ['draft','กำลังจัดทำคำร้อง',searched.filter(c=>registryGroup(c)==='draft').length],
-    ['source_revision','รอแก้ไขข้อมูลต้นทาง',searched.filter(c=>registryGroup(c)==='source_revision').length],
-    ['complete','จัดทำคำร้องแล้ว',searched.filter(c=>registryGroup(c)==='complete').length]
+    ['all','ทั้งหมด',searched.length],
+    ['request','รับเรื่อง/จัดทำคำร้อง',searched.filter(c=>registryGroup(c)==='request').length],
+    ['court','ยื่นศาล/ผลศาล',searched.filter(c=>registryGroup(c)==='court').length],
+    ['enforcement','ส่งหมาย/ติดตาม',searched.filter(c=>registryGroup(c)==='enforcement').length],
+    ['closure','ยุติ/ถอน/ปิดงาน',searched.filter(c=>registryGroup(c)==='closure').length]
   ];
-  if(!tabs.some(t=>t[0]===registryFilter))registryFilter='source_new';
-  const filtered=searched.filter(c=>registryGroup(c)===registryFilter);
-  return base('ทะเบียนคำร้องขอศาลออกหมายจับ','รับงานจากกิจกรรมที่ 5 ตรวจข้อมูลต้นทาง และจัดทำคำร้องตามแบบ ปปท.8-17')
-  +`<div class="source-banner"><i class="fa-solid fa-arrows-turn-to-dots" aria-hidden="true"></i><div><strong>จุดเริ่มต้นกิจกรรมที่ 9 คือข้อมูลสำนวนที่กิจกรรมที่ 5 ส่งเข้ามา</strong><small>ระบบแสดงข้อมูลสำนวน ผลจากพนักงานอัยการ และเอกสารประกอบให้ตรวจสอบก่อนออกเลขงานหมายจับ เมื่อเริ่มจัดทำคำร้องจึงสร้างเลข AW และนำข้อมูลต้นทางไปเติมในแบบคำร้องอัตโนมัติ</small></div></div>`
-  +`<div class="stats"><div class="stat"><small>งานใหม่จากกิจกรรมที่ 5</small><strong>${all.filter(c=>c.stage==='activity5_new').length}</strong></div><div class="stat"><small>กำลังจัดทำคำร้อง</small><strong>${all.filter(c=>c.stage==='draft').length}</strong></div><div class="stat"><small>รอแก้ข้อมูลต้นทาง</small><strong>${all.filter(c=>c.stage==='activity5_source_revision').length}</strong></div><div class="stat"><small>จัดทำคำร้องแล้ว</small><strong>${all.filter(c=>['owner_review','supervisor_review','director_review'].includes(c.stage)).length}</strong></div></div>`
+  if(!tabs.some(t=>t[0]===registryFilter))registryFilter='all';
+  const filtered=registryFilter==='all'?searched:searched.filter(c=>registryGroup(c)===registryFilter);
+  const phaseCount=phase=>all.filter(c=>registryGroup(c)===phase).length;
+  return base('ทะเบียนคำร้องขอศาลออกหมายจับ','ทะเบียนกลางสำหรับค้นหาและดูข้อมูลตลอดวงจรงานตามสิทธิ์ของผู้ใช้')
+  +`<div class="source-banner"><i class="fa-solid fa-table-list" aria-hidden="true"></i><div><strong>หน้านี้ใช้ค้นหาและดูสถานะของรายการทั้งหมด ไม่ใช่คิวงานที่ต้องดำเนินการ</strong><small>หากต้องตรวจ แก้ไข ส่งต่อ หรือบันทึกผล ให้เปิดจากเมนู “งานของฉัน” ระบบยังคงใช้เลขงานเดิมตั้งแต่เปิดงานจนยุติหรือถอนหมาย</small></div></div>`
+  +`<div class="stats"><div class="stat"><small>รับเรื่อง/จัดทำคำร้อง</small><strong>${phaseCount('request')}</strong></div><div class="stat"><small>ยื่นศาล/ผลศาล</small><strong>${phaseCount('court')}</strong></div><div class="stat"><small>ส่งหมาย/ติดตาม</small><strong>${phaseCount('enforcement')}</strong></div><div class="stat"><small>ยุติ/ถอน/ปิดงาน</small><strong>${phaseCount('closure')}</strong></div></div>`
   +registrySearchPanel(all)
-  +`<section class="card"><div class="card-head"><div><h2>รายการงานจัดทำคำร้อง</h2><p class="registry-result-summary"><strong>พบ ${filtered.length} รายการ</strong><span>จากทั้งหมด ${all.length} รายการ ตามเงื่อนไขค้นหาและแท็บงานที่เลือก</span></p></div></div><div class="registry-tabs" role="tablist" aria-label="กรองทะเบียนตามช่วงงาน">${tabs.map(t=>`<button class="${registryFilter===t[0]?'active':''}" data-registry-filter="${t[0]}" role="tab" aria-selected="${registryFilter===t[0]}"><span>${t[1]}</span><span class="registry-tab-count" aria-label="${t[2]} รายการ">${t[2]}</span></button>`).join('')}</div><div class="table-wrap"><table><thead><tr><th>เลขงาน/เลขสำนวน</th><th>ผู้ถูกกล่าวหา</th><th>สถานะ</th><th>ผู้จัดทำ/ผู้รับผิดชอบ</th><th>อัปเดตล่าสุด</th><th>งานถัดไป</th><th>การดำเนินการ</th></tr></thead><tbody>${filtered.length?caseRows(filtered):'<tr><td colspan="7"><div class="empty"><i class="fa-solid fa-inbox"></i><br>ไม่มีรายการในแท็บนี้ตามเงื่อนไขที่เลือก</div></td></tr>'}</tbody></table></div></section>`;
+  +`<section class="card"><div class="card-head"><div><h2>รายการในทะเบียนกลาง</h2><p class="registry-result-summary"><strong>พบ ${filtered.length} รายการ</strong><span>จากทั้งหมด ${all.length} รายการ ตามเงื่อนไขค้นหาและช่วงกระบวนงานที่เลือก</span></p></div><span class="queue-scope-badge">ดูข้อมูลตามสิทธิ์</span></div><div class="registry-tabs" role="tablist" aria-label="กรองทะเบียนตามช่วงกระบวนงาน">${tabs.map(t=>`<button class="${registryFilter===t[0]?'active':''}" data-registry-filter="${t[0]}" role="tab" aria-selected="${registryFilter===t[0]}"><span>${t[1]}</span><span class="registry-tab-count" aria-label="${t[2]} รายการ">${t[2]}</span></button>`).join('')}</div><div class="table-wrap"><table><thead><tr><th>เลขงาน/เลขสำนวน</th><th>ผู้ถูกกล่าวหา</th><th>สถานะ</th><th>ผู้รับผิดชอบปัจจุบัน</th><th>อัปเดตล่าสุด</th><th>ขั้นตอนถัดไป</th><th>รายละเอียด</th></tr></thead><tbody>${filtered.length?caseRows(filtered,{registryView:true}):'<tr><td colspan="7"><div class="empty"><i class="fa-solid fa-inbox"></i><br>ไม่มีรายการในแท็บนี้ตามเงื่อนไขที่เลือก</div></td></tr>'}</tbody></table></div></section>`;
 }
 
 const queues={
   'queue-officer':{role:'officer',label:'งานของฉัน',stages:['owner_review','court_ready','court_pending','court_revision','court_hearing','court_transfer','court_decision','court_decision_review','warrant_verification','warrant_correction','warrant_verified','execution_planning','operation_tracking','termination_owner_correction','withdrawal_owner_review','issued']},
   'queue-got':{role:'got',label:'งานของเจ้าหน้าที่ธุรการคดี กอท.',stages:['got_pending','got_letter','got_dispatch','got_tracking','termination_got_pending','termination_got_accepted','termination_approval_pending','termination_approval_revision','termination_notice_prepare','termination_notice_dispatch','termination_notice_tracking','termination_rejected','central_registry_due']},
-  'queue-supervisor':{role:'supervisor',label:'คิวผู้บังคับบัญชาชั้นต้น',stages:['supervisor_review','court_decision_review']},
-  'queue-director':{role:'director',label:'คิว ผอ.สำนัก/กอง',stages:['director_review']}
+  'queue-supervisor':{role:'supervisor',label:'คิวพิจารณาแนวทางหลังผลศาล',stages:['court_decision_review']},
+  'queue-director':{role:'director',label:'คิว ผอ.สำนัก/กอง',stages:[]}
 };
 function officerTaskGroup(c){
   if(c.stage==='termination_owner_correction')return 'termination_owner_correction';
@@ -1388,8 +1631,6 @@ function officerTaskGroup(c){
   if(c.stage==='execution_planning')return 'execution_planning';
   if(c.stage==='operation_tracking'||planHasParallelPaccWork(c))return c.executionPlan?.mode==='pacc'?'pacc_operation':'joint_operation';
   if(c.stage==='owner_review')return c.returnedBy?'returned':'owner_review';
-  if(c.stage==='supervisor_review')return 'supervisor_review';
-  if(c.stage==='director_review')return 'director_review';
   if(c.stage==='court_ready')return 'court_ready';
   if(c.stage==='court_pending')return 'court_pending';
   if(c.stage==='court_revision')return 'court_revision';
@@ -1411,9 +1652,7 @@ function officerTaskMeta(c){
   if(group==='termination_owner_correction')return {label:'แก้ไขเอกสารประกอบเหตุยุติหมายตามข้อสังเกต กอท.',detail:c.terminationGotReturn?.detail||'ตรวจรายการที่ กอท. แจ้ง แก้ไขหรือแนบเอกสารเพิ่มเติม แล้วส่งกลับตรวจรับอีกครั้ง',icon:'fa-rotate-left',badge:'danger',action:'เปิดงาน',route:'tracking-work/'+c.no};
   if(group==='withdrawal_owner_review')return {label:'ตรวจสอบเหตุยุติหมาย: '+terminationReasonMeta(c).shortLabel,detail:'ตรวจตัวบุคคล หมายจับ และหลักฐานของเหตุให้ตรงกัน ก่อนยืนยันส่งให้เจ้าหน้าที่ธุรการคดี กอท. จัดทำชุดเสนอขอยุติหมาย',icon:'fa-user-check',badge:'warning',action:'เปิดตรวจเหตุ',route:'tracking-work/'+c.no};
   if(group==='returned')return {label:'แก้ไขคำร้องตามข้อสังเกต',detail:c.returnNote||c.next,icon:'fa-rotate-left',badge:'danger',action:'เปิดงาน',route:'officer-work/'+c.no};
-  if(group==='owner_review')return {label:'ตรวจสอบคำร้องในฐานะเจ้าของสำนวน',detail:'เปิดอ่านข้อมูลและเอกสารฉบับที่ได้รับ หากถูกต้องส่งต่อผู้บังคับบัญชา หากพบข้อผิดพลาดจึงเข้าโหมดแก้ไข',icon:'fa-file-circle-check',badge:'success',action:'เปิดงาน',route:'officer-work/'+c.no};
-  if(group==='supervisor_review')return {label:'รอผู้บังคับบัญชาชั้นต้นตรวจสอบ',detail:'ส่งคำร้องแล้ว เจ้าของสำนวนติดตามผลการตรวจหรือรายการที่ส่งกลับแก้ไข',icon:'fa-user-check',badge:'',action:'เปิดงาน',route:'officer-work/'+c.no};
-  if(group==='director_review')return {label:'รอ ผอ.สำนัก/กอง พิจารณา',detail:'คำร้องผ่านการตรวจชั้นต้นแล้ว อยู่ระหว่างรอผลพิจารณาก่อนยื่นศาล',icon:'fa-building-user',badge:'',action:'เปิดงาน',route:'officer-work/'+c.no};
+  if(group==='owner_review')return {label:'ตรวจสอบและยืนยันคำร้องในฐานะเจ้าของสำนวน',detail:'เปิดอ่านข้อมูลและเอกสารฉบับที่ได้รับ หากถูกต้องยืนยันเพื่อเตรียมชุดยื่นศาล หากพบข้อผิดพลาดจึงเข้าโหมดแก้ไข',icon:'fa-file-circle-check',badge:'success',action:'เปิดงาน',route:'officer-work/'+c.no};
   if(group==='court_ready')return c.courtPackage?.prepared
     ?{label:'นำชุดเอกสารไปยื่นศาลและบันทึกใบรับ',detail:'ชุดเอกสารถูกล็อกแล้ว หลังศาลรับเรื่องให้บันทึกเฉพาะเลขรับ วันที่ศาลรับ และหลักฐานการยื่น',icon:'fa-person-walking-arrow-right',badge:'warning',action:'เปิดงาน',route:'officer-work/'+c.no}
     :{label:'เตรียมชุดเอกสารยื่นศาล',detail:'เลือกเอกสารที่ต้องส่งศาล แยกเอกสารภายใน และล็อก Version ก่อนดาวน์โหลดหรือพิมพ์',icon:'fa-folder-tree',badge:'warning',action:'เปิดงาน',route:'officer-work/'+c.no};
@@ -1471,7 +1710,7 @@ function legacyOfficerQueuePage(){
   +`<section class="toolbar" aria-label="ค้นหางานของเจ้าหน้าที่"><div class="field"><label for="officer-query">ค้นหาเลขงาน เลขสำนวน ชื่อ หรือชื่อไฟล์คำร้อง</label><input id="officer-query" value="${esc(officerTaskSearch.query)}" placeholder="เช่น AW-2569-000104 หรือชื่อผู้ถูกกล่าวหา"></div><div class="field"><label for="officer-task-type">ประเภทงาน</label><select id="officer-task-type"><option value="all" ${activeFilter==='all'?'selected':''}>ทุกประเภทงาน</option><option value="draft" ${activeFilter==='draft'?'selected':''}>ตรวจสอบคำร้อง</option><option value="court_ready" ${activeFilter==='court_ready'?'selected':''}>พร้อมยื่นศาล</option><option value="court_pending" ${activeFilter==='court_pending'?'selected':''}>รอติดตามผลศาล</option></select></div><button class="btn" data-officer-search><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>ค้นหา</button><button class="btn secondary" data-officer-clear><i class="fa-solid fa-rotate-left" aria-hidden="true"></i>ล้างเงื่อนไข</button></section>`
   +`<details class="registry-advanced" data-officer-advanced ${officerAdvancedOpen?'open':''}><summary><i class="fa-solid fa-sliders" aria-hidden="true"></i>ตัวกรองขั้นสูง</summary><div class="registry-advanced-grid">
     <div class="field"><label for="officer-department">สำนัก/กองต้นทาง</label><select id="officer-department"><option value="all">ทุกสำนัก/กอง</option>${departments.map(department=>`<option value="${esc(department)}" ${officerTaskSearch.department===department?'selected':''}>${esc(department)}</option>`).join('')}</select></div>
-    <div class="field"><label for="officer-document-state">สถานะเอกสารคำร้อง</label><select id="officer-document-state"><option value="all">ทุกสถานะเอกสาร</option><option value="owner_review" ${officerTaskSearch.documentState==='owner_review'?'selected':''}>รอเจ้าของสำนวนตรวจสอบ</option><option value="internal" ${officerTaskSearch.documentState==='internal'?'selected':''}>อยู่ระหว่างตรวจสอบภายใน</option><option value="approved" ${officerTaskSearch.documentState==='approved'?'selected':''}>พร้อมยื่นศาล</option><option value="submitted" ${officerTaskSearch.documentState==='submitted'?'selected':''}>ยื่นต่อศาลแล้ว</option><option value="warrant_verification" ${officerTaskSearch.documentState==='warrant_verification'?'selected':''}>รอตรวจสอบข้อมูลหมายจับ</option><option value="warrant_verified" ${officerTaskSearch.documentState==='warrant_verified'?'selected':''}>ตรวจสอบหมายจับแล้ว</option></select></div>
+    <div class="field"><label for="officer-document-state">สถานะเอกสารคำร้อง</label><select id="officer-document-state"><option value="all">ทุกสถานะเอกสาร</option><option value="owner_review" ${officerTaskSearch.documentState==='owner_review'?'selected':''}>รอเจ้าของสำนวนตรวจสอบ</option><option value="court_ready" ${officerTaskSearch.documentState==='court_ready'?'selected':''}>เจ้าของสำนวนยืนยันแล้ว</option><option value="approved" ${officerTaskSearch.documentState==='approved'?'selected':''}>พร้อมยื่นศาล</option><option value="submitted" ${officerTaskSearch.documentState==='submitted'?'selected':''}>ยื่นต่อศาลแล้ว</option><option value="warrant_verification" ${officerTaskSearch.documentState==='warrant_verification'?'selected':''}>รอตรวจสอบข้อมูลหมายจับ</option><option value="warrant_verified" ${officerTaskSearch.documentState==='warrant_verified'?'selected':''}>ตรวจสอบหมายจับแล้ว</option></select></div>
     <div class="field"><label for="officer-intake">วิธีจัดทำคำร้อง</label><select id="officer-intake"><option value="all">ทุกวิธี</option><option value="form" ${officerTaskSearch.intakeMode==='form'?'selected':''}>กรอกฟอร์มออนไลน์</option><option value="upload" ${officerTaskSearch.intakeMode==='upload'?'selected':''}>อัปโหลด Word/PDF</option></select></div>
     <div class="field"><label for="officer-date-from">อัปเดตตั้งแต่วันที่</label><input id="officer-date-from" type="date" value="${esc(officerTaskSearch.dateFrom)}"></div>
     <div class="field"><label for="officer-date-to">ถึงวันที่</label><input id="officer-date-to" type="date" value="${esc(officerTaskSearch.dateTo)}"></div>
@@ -1479,14 +1718,32 @@ function legacyOfficerQueuePage(){
   +`<section class="card officer-work-card"><div class="card-head"><div><h2>รายการงานที่ต้องดำเนินการ</h2><p>พบ ${items.length} รายการจากงานของเจ้าของสำนวนทั้งหมด ${all.length} รายการ</p></div><button class="btn secondary" data-route="registry"><i class="fa-solid fa-clipboard-list" aria-hidden="true"></i>เปิดทะเบียนกลาง</button></div><div class="table-wrap"><table><thead><tr><th>เลขงาน/เลขสำนวน</th><th>ผู้ถูกกล่าวหา</th><th>เจ้าของสำนวน</th><th>เอกสารคำร้องจากทะเบียน</th><th>งานที่ต้องดำเนินการ</th><th>สถานะปัจจุบัน</th><th>อัปเดตล่าสุด</th><th>การดำเนินการ</th></tr></thead><tbody>${items.length?items.map(c=>{const meta=officerTaskMeta(c),doc=officerDocumentMeta(c);return `<tr><td><strong>${esc(c.no)}</strong><small>${esc(c.fromCaseNo||'ยังไม่มีเลขสำนวนในตัวอย่าง')}</small></td><td><strong>${esc(c.suspect)}</strong><small>${esc(c.department||'สำนัก/กองเจ้าของสำนวน')}</small></td><td><div class="role-stack"><strong>${esc(c.caseOwner||'-')}</strong><small>ผู้รับผิดชอบคำร้อง</small></div></td><td><div class="officer-document"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i><div><strong>${esc(doc.form)} · ${esc(doc.status)}</strong><small>${esc(doc.file)}${doc.version?' · '+esc(doc.version):''}</small><button class="officer-document-link" data-view-request-document="${esc(c.no)}">เปิดเอกสารฉบับเดียวกับทะเบียน</button></div></div></td><td><div class="officer-task-title"><i class="fa-solid ${meta.icon}" aria-hidden="true"></i><div><strong>${esc(meta.label)}</strong><small>${esc(meta.detail)}</small></div></div></td><td><span class="badge ${meta.badge}">${esc(c.status)}</span></td><td>${esc(updatedAtByCase[c.no]||'-')}</td><td><button class="btn" data-go="${esc(meta.route)}">${esc(meta.action)} <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button></td></tr>`}).join(''):'<tr><td colspan="8"><div class="empty"><i class="fa-solid fa-inbox"></i><br>ไม่พบงานที่ตรงกับเงื่อนไข</div></td></tr>'}</tbody></table></div></section>`;
 }
 
+function workBucket(c){
+  const stage=c?.stage||'';
+  if(['activity5_new','owner_review','got_pending','termination_got_pending'].includes(stage))return 'new';
+  if(['activity5_source_revision','court_revision','warrant_correction','termination_owner_correction','termination_approval_revision'].includes(stage))return 'returned';
+  if(['court_pending','court_hearing','court_decision_review','termination_approval_pending','got_tracking','termination_notice_tracking','operation_tracking','warrant_tracking'].includes(stage))return 'waiting';
+  if(['withdrawn','closed','completed','termination_rejected'].includes(stage))return 'completed';
+  return 'action';
+}
+function workBucketTabs(items){
+  const count=key=>items.filter(item=>workBucket(item)===key).length;
+  return [
+    ['all','ทั้งหมด',items.length],
+    ['new','งานใหม่',count('new')],
+    ['action','ต้องดำเนินการ',count('action')],
+    ['returned','ส่งกลับแก้ไข',count('returned')],
+    ['waiting','รอผล',count('waiting')],
+    ['completed','ดำเนินการเสร็จแล้ว',count('completed')]
+  ];
+}
+
 function officerQueuePage(){
-  const ownerStages=['owner_review','supervisor_review','director_review','court_ready','court_pending','court_revision','court_hearing','court_transfer','court_decision','court_decision_review','warrant_verification','warrant_correction','warrant_verified','execution_planning','operation_tracking','termination_owner_correction','withdrawal_owner_review','issued'];
-  const all=activity9Cases().filter(c=>(ownerStages.includes(c.stage)||planHasParallelPaccWork(c))&&c.caseOwner===currentOfficerName);
+  const ownerStages=['owner_review','court_ready','court_pending','court_revision','court_hearing','court_transfer','court_decision','court_decision_review','warrant_verification','warrant_correction','warrant_verified','execution_planning','operation_tracking','termination_owner_correction','withdrawal_owner_review','issued'];
+  const all=activity9Cases().filter(c=>(ownerStages.includes(c.stage)||planHasParallelPaccWork(c))&&(c.owner===currentOfficerName||c.actingOwner===currentOfficerName)&&caseInActiveProcess(c));
   const counts={
     all:all.length,
     owner_review:all.filter(c=>['owner_review','returned'].includes(officerTaskGroup(c))).length,
-    supervisor_review:all.filter(c=>officerTaskGroup(c)==='supervisor_review').length,
-    director_review:all.filter(c=>officerTaskGroup(c)==='director_review').length,
     court_ready:all.filter(c=>officerTaskGroup(c)==='court_ready').length,
     court_pending:all.filter(c=>officerTaskGroup(c)==='court_pending').length,
     court_revision:all.filter(c=>officerTaskGroup(c)==='court_revision').length,
@@ -1501,8 +1758,8 @@ function officerQueuePage(){
     withdrawal_owner_review:all.filter(c=>officerTaskGroup(c)==='withdrawal_owner_review').length
   };
   const query=officerTaskSearch.query.toLocaleLowerCase('th'),activeFilter=officerTaskFilter;
-  const departments=[...new Set(all.map(c=>c.department).filter(Boolean))],taskRank={withdrawal_owner_review:0,termination_owner_correction:1,execution_planning:2,joint_operation:3,pacc_operation:4,court_revision:5,court_hearing:6,court_transfer:7,court_decision:8,returned:9,owner_review:10,court_ready:11,court_pending:12,supervisor_review:13,director_review:14,issued:15};
-  const items=all.filter(c=>{
+  const departments=[...new Set(all.map(c=>c.department).filter(Boolean))],taskRank={withdrawal_owner_review:0,termination_owner_correction:1,execution_planning:2,joint_operation:3,pacc_operation:4,court_revision:5,court_hearing:6,court_transfer:7,court_decision:8,returned:9,owner_review:10,court_ready:11,court_pending:12,issued:13};
+  const detailedItems=all.filter(c=>{
     const group=officerTaskGroup(c),doc=officerDocumentMeta(c),updated=updatedDateByCase[c.no]||'',haystack=[c.no,c.fromCaseNo,c.suspect,c.status,c.next,doc.file,doc.status].filter(Boolean).join(' ').toLocaleLowerCase('th');
     const groupMatch=activeFilter==='all'||(activeFilter==='owner_review'&&['owner_review','returned'].includes(group))||group===activeFilter;
     return groupMatch&&(!query||haystack.includes(query))
@@ -1512,28 +1769,31 @@ function officerQueuePage(){
       &&(!officerTaskSearch.dateFrom||updated>=officerTaskSearch.dateFrom)
       &&(!officerTaskSearch.dateTo||updated<=officerTaskSearch.dateTo);
   }).sort((a,b)=>(taskRank[officerTaskGroup(a)]??99)-(taskRank[officerTaskGroup(b)]??99));
+  const bucketTabs=workBucketTabs(all);
+  const items=detailedItems.filter(c=>myWorkBucket==='all'||workBucket(c)===myWorkBucket);
   const courtDecisionWaiting=all.filter(c=>c.stage==='court_decision_review').length;
   const verifiedWarrants=all.filter(c=>c.stage==='warrant_verified').length;
   const actionCount=counts.owner_review+counts.court_ready+counts.court_pending+counts.court_revision+counts.court_hearing+counts.court_transfer+(counts.court_decision-courtDecisionWaiting)+(counts.issued-verifiedWarrants)+counts.execution_planning+counts.joint_operation+counts.pacc_operation+counts.termination_owner_correction+counts.withdrawal_owner_review;
-  const waitingCount=counts.supervisor_review+counts.director_review+courtDecisionWaiting;
-  const taskTabs=[['all','ทั้งหมด',counts.all],['withdrawal_owner_review','ตรวจเหตุยุติหมาย',counts.withdrawal_owner_review],['termination_owner_correction','แก้เอกสารเหตุยุติหมาย',counts.termination_owner_correction],['owner_review','ตรวจสอบคำร้อง',counts.owner_review],['supervisor_review','รอผู้บังคับบัญชา',counts.supervisor_review],['director_review','รอ ผอ.สำนัก/กอง',counts.director_review],['court_ready','พร้อมยื่นศาล',counts.court_ready],['court_pending','รอผลจากศาล',counts.court_pending],['court_revision','ศาลขอแก้ไข',counts.court_revision],['court_hearing','นัดไต่สวน',counts.court_hearing],['court_transfer','โอน/ยื่นศาลใหม่',counts.court_transfer],['court_decision','ไม่อนุมัติ/ถอนคำร้อง',counts.court_decision],['issued','ศาลออกหมายแล้ว',counts.issued],['execution_planning','กำหนดแนวทาง',counts.execution_planning],['joint_operation','งานจับร่วม',counts.joint_operation],['pacc_operation','ป.ป.ท. ดำเนินการ',counts.pacc_operation]];
-  return base('งานของเจ้าหน้าที่ ป.ป.ท.','ตรวจคำร้อง ติดตามการพิจารณา และดำเนินงานต่อจนศาลออกหมายจับ')
+  const waitingCount=courtDecisionWaiting;
+  const taskTabs=[['all','ทั้งหมด',counts.all],['withdrawal_owner_review','ตรวจเหตุยุติหมาย',counts.withdrawal_owner_review],['termination_owner_correction','แก้เอกสารเหตุยุติหมาย',counts.termination_owner_correction],['owner_review','ตรวจสอบคำร้อง',counts.owner_review],['court_ready','พร้อมยื่นศาล',counts.court_ready],['court_pending','รอผลจากศาล',counts.court_pending],['court_revision','ศาลขอแก้ไข',counts.court_revision],['court_hearing','นัดไต่สวน',counts.court_hearing],['court_transfer','โอน/ยื่นศาลใหม่',counts.court_transfer],['court_decision','ไม่อนุมัติ/ถอนคำร้อง',counts.court_decision],['issued','ศาลออกหมายแล้ว',counts.issued],['execution_planning','กำหนดแนวทาง',counts.execution_planning],['joint_operation','งานจับร่วม',counts.joint_operation],['pacc_operation','ป.ป.ท. ดำเนินการ',counts.pacc_operation]];
+  const context=activeWorkContext();
+  return base(context.title,context.description)
   +`<section class="stats officer-role-stats" aria-label="สรุปงานของเจ้าหน้าที่ ป.ป.ท.">
     <div class="stat"><span>งานทั้งหมด</span><strong>${counts.all}</strong><small>งานที่เจ้าของสำนวนรับผิดชอบ</small></div>
     <div class="stat danger"><span>ต้องดำเนินการ</span><strong>${actionCount}</strong><small>ตรวจคำร้อง ยื่นศาล หรือติดตามผล</small></div>
-    <div class="stat warning"><span>รอตรวจตามสายงาน</span><strong>${waitingCount}</strong><small>ผู้บังคับบัญชาและ ผอ.สำนัก/กอง</small></div>
+    <div class="stat warning"><span>รอพิจารณาแนวทาง</span><strong>${waitingCount}</strong><small>เฉพาะกรณีศาลไม่อนุมัติหรือถอนคำร้อง</small></div>
     <div class="stat warning"><span>รอผลจากศาล</span><strong>${counts.court_pending}</strong><small>ยื่นคำร้องแล้วและรอผลพิจารณา</small></div>
     <div class="stat success"><span>งานหลังศาลออกหมาย</span><strong>${counts.issued+counts.execution_planning+counts.joint_operation+counts.pacc_operation}</strong><small>ตรวจหมาย กำหนดแผน และเตรียมปฏิบัติการ</small></div>
   </section>`
   +`<section class="officer-toolbar" aria-label="ค้นหางานของเจ้าหน้าที่"><div class="field"><label for="officer-query">ค้นหาเลขงาน เลขสำนวน ชื่อ หรือชื่อไฟล์คำร้อง</label><input id="officer-query" value="${esc(officerTaskSearch.query)}" placeholder="เช่น AW-2569-000104 หรือชื่อผู้ถูกกล่าวหา"></div><div class="field"><label for="officer-task-type">สถานะ</label><select id="officer-task-type">${taskTabs.map(tab=>`<option value="${tab[0]}" ${activeFilter===tab[0]?'selected':''}>${tab[0]==='all'?'ทุกสถานะ':tab[1]}</option>`).join('')}</select></div><button class="btn" data-officer-search><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>ค้นหา</button><button class="btn secondary" data-officer-clear><i class="fa-solid fa-rotate-left" aria-hidden="true"></i>ล้างเงื่อนไข</button></section>`
   +`<details class="registry-advanced" data-officer-advanced ${officerAdvancedOpen?'open':''}><summary><i class="fa-solid fa-sliders" aria-hidden="true"></i>ตัวกรองขั้นสูง</summary><div class="registry-advanced-grid">
     <div class="field"><label for="officer-department">สำนัก/กองต้นทาง</label><select id="officer-department"><option value="all">ทุกสำนัก/กอง</option>${departments.map(department=>`<option value="${esc(department)}" ${officerTaskSearch.department===department?'selected':''}>${esc(department)}</option>`).join('')}</select></div>
-    <div class="field"><label for="officer-document-state">สถานะเอกสารคำร้อง</label><select id="officer-document-state"><option value="all">ทุกสถานะเอกสาร</option><option value="owner_review" ${officerTaskSearch.documentState==='owner_review'?'selected':''}>รอเจ้าของสำนวนตรวจสอบ</option><option value="internal" ${officerTaskSearch.documentState==='internal'?'selected':''}>อยู่ระหว่างตรวจสอบภายใน</option><option value="approved" ${officerTaskSearch.documentState==='approved'?'selected':''}>พร้อมยื่นศาล</option><option value="submitted" ${officerTaskSearch.documentState==='submitted'?'selected':''}>ยื่นต่อศาลแล้ว</option><option value="warrant_verification" ${officerTaskSearch.documentState==='warrant_verification'?'selected':''}>รอตรวจสอบข้อมูลหมายจับ</option><option value="warrant_verified" ${officerTaskSearch.documentState==='warrant_verified'?'selected':''}>ตรวจสอบหมายจับแล้ว</option></select></div>
+    <div class="field"><label for="officer-document-state">สถานะเอกสารคำร้อง</label><select id="officer-document-state"><option value="all">ทุกสถานะเอกสาร</option><option value="owner_review" ${officerTaskSearch.documentState==='owner_review'?'selected':''}>รอเจ้าของสำนวนตรวจสอบ</option><option value="court_ready" ${officerTaskSearch.documentState==='court_ready'?'selected':''}>พร้อมจัดชุดยื่นศาล</option><option value="approved" ${officerTaskSearch.documentState==='approved'?'selected':''}>พร้อมยื่นศาล</option><option value="submitted" ${officerTaskSearch.documentState==='submitted'?'selected':''}>ยื่นต่อศาลแล้ว</option><option value="warrant_verification" ${officerTaskSearch.documentState==='warrant_verification'?'selected':''}>รอตรวจสอบข้อมูลหมายจับ</option><option value="warrant_verified" ${officerTaskSearch.documentState==='warrant_verified'?'selected':''}>ตรวจสอบหมายจับแล้ว</option></select></div>
     <div class="field"><label for="officer-intake">วิธีจัดทำคำร้อง</label><select id="officer-intake"><option value="all">ทุกวิธี</option><option value="form" ${officerTaskSearch.intakeMode==='form'?'selected':''}>กรอกฟอร์มออนไลน์</option><option value="upload" ${officerTaskSearch.intakeMode==='upload'?'selected':''}>อัปโหลด Word/PDF</option></select></div>
     <div class="field"><label for="officer-date-from">อัปเดตตั้งแต่วันที่</label><input id="officer-date-from" type="date" value="${esc(officerTaskSearch.dateFrom)}"></div>
     <div class="field"><label for="officer-date-to">ถึงวันที่</label><input id="officer-date-to" type="date" value="${esc(officerTaskSearch.dateTo)}"></div>
   </div></details>`
-  +`<section class="card officer-work-card"><div class="card-head"><div><h2>งานของเจ้าหน้าที่ ป.ป.ท.</h2><p>พบ ${items.length} รายการจากงานที่รับผิดชอบทั้งหมด ${all.length} รายการ</p></div><div class="officer-card-actions"><button class="btn secondary" data-export-officer><i class="fa-solid fa-file-export" aria-hidden="true"></i>ส่งออกผลค้นหา</button></div></div><nav class="registry-tabs" role="tablist" aria-label="สถานะงานของเจ้าหน้าที่">${taskTabs.map(tab=>`<button class="${activeFilter===tab[0]?'active':''}" data-officer-filter="${tab[0]}" role="tab" aria-selected="${activeFilter===tab[0]}">${tab[1]} <span class="registry-tab-count">${tab[2]}</span></button>`).join('')}</nav><div class="table-wrap"><table class="officer-queue-table"><thead><tr><th>เลขงาน/เลขสำนวน</th><th>ผู้ถูกกล่าวหา</th><th>ขั้นตอน/สถานะ</th><th>ผู้รับผิดชอบ/อัปเดตล่าสุด</th><th>การดำเนินการ</th></tr></thead><tbody>${items.length?items.map(c=>{const meta=officerTaskMeta(c);return `<tr>
+  +`<section class="card officer-work-card"><div class="card-head"><div>${queueScopeHeading('officer')}<p>แสดง ${items.length} จากงานที่รับผิดชอบทั้งหมด ${all.length} รายการ</p></div><div class="officer-card-actions"><button class="btn secondary" data-export-officer><i class="fa-solid fa-file-export" aria-hidden="true"></i>ส่งออกผลค้นหา</button></div></div><nav class="registry-tabs" role="tablist" aria-label="แท็บสถานะงานส่วนบุคคล">${bucketTabs.map(tab=>`<button class="${myWorkBucket===tab[0]?'active':''}" data-work-bucket="${tab[0]}" role="tab" aria-selected="${myWorkBucket===tab[0]}">${tab[1]} <span class="registry-tab-count">${tab[2]}</span></button>`).join('')}</nav><div class="table-wrap"><table class="officer-queue-table"><thead><tr><th>เลขงาน/เลขสำนวน</th><th>ผู้ถูกกล่าวหา</th><th>ขั้นตอน/สถานะ</th><th>ผู้รับผิดชอบ/อัปเดตล่าสุด</th><th>การดำเนินการ</th></tr></thead><tbody>${items.length?items.map(c=>{const meta=officerTaskMeta(c);return `<tr>
     <td><div class="officer-work-main"><strong>${esc(c.no)}</strong><small>${esc(c.fromCaseNo||'ยังไม่มีเลขสำนวน')}</small></div></td>
     <td><strong>${esc(c.suspect)}</strong><small>${esc(c.department||'สำนัก/กองเจ้าของสำนวน')}</small></td>
     <td><div class="officer-task-title"><i class="fa-solid ${meta.icon}" aria-hidden="true"></i><div><strong>${esc(meta.label)}</strong><small>${esc(meta.detail)}</small><span class="badge ${meta.badge}">${esc(c.status)}</span></div></div></td>
@@ -1775,7 +2035,7 @@ function readGotTaskSearch(){
   gotAdvancedOpen=Boolean(document.querySelector('[data-got-advanced]')?.open);
 }
 function gotQueuePage(){
-  const all=activity9Cases().filter(c=>queues['queue-got'].stages.includes(c.stage));
+  const all=activity9Cases().filter(c=>queues['queue-got'].stages.includes(c.stage)&&caseInActiveProcess(c));
   const counts={
     all:all.length,
     got_pending:all.filter(c=>c.stage==='got_pending').length,
@@ -1795,7 +2055,7 @@ function gotQueuePage(){
   const departments=[...new Set(all.map(c=>c.department).filter(Boolean))];
   const senders=[...new Set(all.map(c=>c.terminationGotTransfer?.sentBy||c.gotTransfer?.sentBy||c.caseOwner).filter(Boolean))];
   const query=gotTaskSearch.query.toLocaleLowerCase('th');
-  const items=all.filter(c=>{
+  const detailedItems=all.filter(c=>{
     const meta=gotTaskMeta(c),updated=updatedDateByCase[c.no]||'',sender=c.terminationGotTransfer?.sentBy||c.gotTransfer?.sentBy||c.caseOwner||'',haystack=[c.no,c.fromCaseNo,c.suspect,c.warrant?.warrantNo,c.status,meta.label,sender].filter(Boolean).join(' ').toLocaleLowerCase('th');
     return (gotTaskFilter==='all'||c.stage===gotTaskFilter)
       &&(!query||haystack.includes(query))
@@ -1804,9 +2064,12 @@ function gotQueuePage(){
       &&(!gotTaskSearch.dateFrom||updated>=gotTaskSearch.dateFrom)
       &&(!gotTaskSearch.dateTo||updated<=gotTaskSearch.dateTo);
   });
+  const bucketTabs=workBucketTabs(all);
+  const items=detailedItems.filter(c=>myWorkBucket==='all'||workBucket(c)===myWorkBucket);
   const terminationNoticeCount=counts.termination_notice_prepare+counts.termination_notice_dispatch+counts.termination_notice_tracking;
   const actionCount=counts.got_pending+counts.got_letter+counts.got_dispatch+counts.termination_got_pending+counts.termination_got_accepted+counts.termination_approval_revision+terminationNoticeCount+counts.central_registry_due;
-  return base('งานของเจ้าหน้าที่ธุรการคดี กอท.','ตรวจรับ จัดทำหนังสือนำส่ง และติดตามการส่งหมายจับ')
+  const context=activeWorkContext();
+  return base(context.title,context.description)
   +`<section class="stats got-role-stats" aria-label="สรุปงานของเจ้าหน้าที่ธุรการคดี กอท.">
     <div class="stat"><span>งานทั้งหมด</span><strong>${counts.all}</strong><small>งานหมายจับในความรับผิดชอบ</small></div>
     <div class="stat danger"><span>ต้องดำเนินการ</span><strong>${actionCount}</strong><small>ตรวจรับ จัดส่ง หรือจัดทำชุดเสนอขอยุติ</small></div>
@@ -1821,7 +2084,7 @@ function gotQueuePage(){
     <div class="field"><label for="got-date-from">รับงานตั้งแต่วันที่</label><input id="got-date-from" type="date" value="${esc(gotTaskSearch.dateFrom)}"></div>
     <div class="field"><label for="got-date-to">ถึงวันที่</label><input id="got-date-to" type="date" value="${esc(gotTaskSearch.dateTo)}"></div>
   </div></details>`
-  +`<section class="card officer-work-card"><div class="card-head"><div><h2>งานของเจ้าหน้าที่ธุรการคดี กอท.</h2><p>พบ ${items.length} รายการจากงานในคิวทั้งหมด ${all.length} รายการ</p></div><div class="officer-card-actions"><button class="btn secondary" data-export-got><i class="fa-solid fa-file-export" aria-hidden="true"></i>ส่งออกผลค้นหา</button></div></div><nav class="registry-tabs got-queue-tabs" role="tablist" aria-label="สถานะงานของเจ้าหน้าที่ธุรการคดี">${tabs.map(tab=>`<button class="${gotTaskFilter===tab[0]?'active':''}" data-got-filter="${tab[0]}" role="tab" aria-selected="${gotTaskFilter===tab[0]}">${tab[1]} <span class="registry-tab-count">${tab[2]}</span></button>`).join('')}</nav><div class="table-wrap"><table class="got-queue-table"><thead><tr><th>เลขงาน/เลขสำนวน</th><th>ผู้ถูกกล่าวหา/หมายจับ</th><th>ขั้นตอน/สถานะ</th><th>ผู้ส่งงาน/อัปเดตล่าสุด</th><th>การดำเนินการ</th></tr></thead><tbody>${items.length?items.map(c=>{const meta=gotTaskMeta(c);return `<tr>
+  +`<section class="card officer-work-card"><div class="card-head"><div>${queueScopeHeading('got')}<p>แสดง ${items.length} จากงานในคิวทั้งหมด ${all.length} รายการ</p></div><div class="officer-card-actions"><button class="btn secondary" data-export-got><i class="fa-solid fa-file-export" aria-hidden="true"></i>ส่งออกผลค้นหา</button></div></div><nav class="registry-tabs got-queue-tabs" role="tablist" aria-label="แท็บสถานะคิวงานธุรการคดี กอท.">${bucketTabs.map(tab=>`<button class="${myWorkBucket===tab[0]?'active':''}" data-work-bucket="${tab[0]}" role="tab" aria-selected="${myWorkBucket===tab[0]}">${tab[1]} <span class="registry-tab-count">${tab[2]}</span></button>`).join('')}</nav><div class="table-wrap"><table class="got-queue-table"><thead><tr><th>เลขงาน/เลขสำนวน</th><th>ผู้ถูกกล่าวหา/หมายจับ</th><th>ขั้นตอน/สถานะ</th><th>ผู้ส่งงาน/อัปเดตล่าสุด</th><th>การดำเนินการ</th></tr></thead><tbody>${items.length?items.map(c=>{const meta=gotTaskMeta(c);return `<tr>
     <td><div class="officer-work-main"><strong>${esc(c.no)}</strong><small>${esc(c.fromCaseNo||'ยังไม่มีเลขสำนวน')}</small></div></td>
     <td><strong>${esc(c.suspect)}</strong><small>${esc(c.warrant?.warrantNo||'ยังไม่ระบุเลขหมายจับ')} · ${esc(c.department||'สำนัก/กองต้นทาง')}</small></td>
     <td><div class="officer-task-title"><i class="fa-solid ${meta.icon}" aria-hidden="true"></i><div><strong>${esc(meta.label)}</strong><small>${esc(meta.detail)}</small><span class="badge ${meta.badge}">${esc(c.status)}</span></div></div></td>
@@ -1946,13 +2209,26 @@ function legacyOfficerWorkPage(no){
 }
 
 function officerWorkProgress(c){
-  const steps=['รับงานจากทะเบียน','จัดทำคำร้อง ปปท.8-17','เจ้าของสำนวนตรวจสอบ','ผู้บังคับบัญชาตรวจสอบ','ผอ.สำนัก/กองอนุมัติ','เตรียมชุดยื่นศาล','ยื่นศาลและบันทึกเลขรับ','รอผล/แก้ไขตามศาล','ศาลออกหมาย','ตรวจสอบและบันทึกหมายจับ','กำหนดแนวทางดำเนินการ'];
-  const stageIndex={draft:1,owner_review:2,supervisor_review:3,director_review:4,court_ready:5,court_pending:7,court_revision:7,court_hearing:7,court_transfer:7,court_decision:7,court_decision_review:7,court_closed:8,warrant_verification:9,warrant_correction:9,warrant_verified:9,execution_planning:10,got_pending:10,got_letter:10,got_dispatch:10,got_tracking:10,operation_tracking:10,issued:10};
+  const steps=['รับงานจากกิจกรรมที่ 5','จัดทำคำร้อง','เจ้าของสำนวนตรวจสอบและยืนยัน','เตรียมชุดยื่นศาล','ยื่นศาลและบันทึกเลขรับ','รอผลหรือแก้ไขตามศาล','ศาลออกหมาย','ตรวจสอบและบันทึกหมายจับ','กำหนดแนวทางดำเนินการ'];
+  const stageIndex={draft:1,owner_review:2,court_ready:3,court_pending:5,court_revision:5,court_hearing:5,court_transfer:5,court_decision:5,court_decision_review:5,court_closed:6,warrant_verification:7,warrant_correction:7,warrant_verified:7,execution_planning:8,got_pending:8,got_letter:8,got_dispatch:8,got_tracking:8,operation_tracking:8,issued:8};
   let current=stageIndex[c.stage]??0;
-  if(c.stage==='court_ready'&&c.courtPackage?.prepared)current=6;
+  if(c.stage==='court_ready'&&c.courtPackage?.prepared)current=4;
   const complete=Boolean(c.executionPlan?.confirmed&&c.executionPlan.mode!=='pending');
   const currentLabel=complete?'ครบ '+steps.length+' ขั้นตอน':'ขั้นตอน '+(current+1)+' / '+steps.length+' · '+steps[current];
   return `<section class="officer-progress"><div class="officer-progress-head"><strong>ความคืบหน้างานตั้งแต่รับเรื่องถึงศาลออกหมาย</strong><span>${currentLabel}</span></div><div class="officer-progress-scroll"><div class="officer-progress-track">${steps.map((label,i)=>{const done=complete||i<current,currentStep=!complete&&i===current;return `<div class="officer-progress-step ${done?'done':currentStep?'current':''}"><span class="officer-progress-dot">${done?'<i class="fa-solid fa-check" aria-hidden="true"></i>':i+1}</span><span>${label}</span></div>`}).join('')}</div></div></section>`;
+}
+
+function responsibilityPanel(c){
+  const history=(c.assignmentHistory||[]).slice(0,4);
+  const currentDepartment=c.responsibleDepartment||c.department||staffDepartment(c.owner)||'-';
+  const actingText=c.actingFor?`<span class="responsibility-acting">รักษาการแทน ${esc(c.actingFor)}</span>`:'';
+  const stageInfo=workflowStageInfo(c.stage);
+  return `<section class="responsibility-card"><div class="responsibility-head"><div><h2>ผู้รับผิดชอบและการมอบหมายงาน</h2><p>แยกเจ้าของสำนวน ผู้จัดทำคำร้อง และผู้รับผิดชอบขั้นตอนปัจจุบันออกจากกัน</p></div><div class="actions"><span class="badge">${esc(stageInfo.label)}</span><button class="btn secondary" data-transfer-work="${esc(c.no)}"><i class="fa-solid fa-user-pen" aria-hidden="true"></i>โอนงาน / ตั้งผู้รักษาการ</button></div></div><div class="responsibility-grid">
+    <div><span>เจ้าของสำนวนเดิม</span><strong>${esc(c.originalCaseOwner||c.caseOwner||'-')}</strong></div>
+    <div><span>ผู้จัดทำคำร้อง</span><strong>${esc(c.requestDrafter||c.caseOwner||'-')}</strong></div>
+    <div><span>ผู้รับผิดชอบปัจจุบัน</span><strong>${esc(c.owner||'-')}</strong>${actingText}</div>
+    <div><span>หน่วยงานที่รับผิดชอบปัจจุบัน</span><strong>${esc(currentDepartment)}</strong></div>
+  </div>${history.length?`<div class="responsibility-history"><strong>ประวัติการมอบหมายล่าสุด</strong><div class="responsibility-history-list">${history.map(item=>`<div class="responsibility-history-item"><small><b>${esc(item.action||'มอบหมายงาน')}</b> · ${esc(item.from||'-')} → ${esc(item.to||'-')}${item.note?' · '+esc(item.note):''}${item.referenceOrder?' · อ้างอิง '+esc(item.referenceOrder):''}</small><time>${esc(item.time||'-')}</time></div>`).join('')}</div></div>`:`<div class="responsibility-history"><strong>ยังไม่มีประวัติการโอนงาน</strong></div>`}</section>`;
 }
 
 function officerWorkPage(no){
@@ -1996,6 +2272,7 @@ function officerWorkPage(no){
   const panels={overview:overviewPanel,case:casePanel,documents:documentsPanel,audit:auditPanel};
   return base('รายละเอียดงานของเจ้าหน้าที่ ป.ป.ท.','เลขงาน '+esc(c.no)+' · '+esc(c.suspect))
   +`<section class="officer-current-bar" aria-label="สถานะงานปัจจุบัน"><div class="officer-current-main"><small>สถานะงานปัจจุบัน</small><div class="officer-current-heading"><i class="fa-solid ${meta.icon}" aria-hidden="true"></i><strong>${esc(c.status)}</strong></div><p class="officer-current-next"><b>ดำเนินการถัดไป:</b> ${esc(meta.label)} · ${esc(meta.detail)}</p></div><div class="officer-current-meta"><small>ผู้รับผิดชอบปัจจุบัน</small><strong>${esc(c.owner||'-')}</strong></div><div class="officer-current-meta"><small>อัปเดตล่าสุด</small><strong>${esc(updatedAtByCase[c.no]||'-')}</strong></div></section>`
+  +responsibilityPanel(c)
   +officerWorkProgress(c)
   +`<section class="card officer-detail-card"><nav class="registry-tabs" role="tablist" aria-label="ข้อมูลรายละเอียดงาน">${tabs.map(tab=>`<button class="${officerWorkTab===tab[0]?'active':''}" data-officer-work-tab="${tab[0]}" role="tab" aria-selected="${officerWorkTab===tab[0]}">${tab[1]}${tab[2]!==undefined?` <span class="registry-tab-count">${tab[2]}</span>`:''}</button>`).join('')}</nav><div class="officer-detail-panel">${panels[officerWorkTab]||overviewPanel}</div></section>`
   +`<footer class="sticky-actions"><button class="btn secondary" data-go="queue-officer"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i>กลับงานของฉัน</button><div class="actions"><button class="btn secondary" data-officer-work-tab="documents"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i>ดูเอกสาร</button>${primaryAction}</div></footer>`;
@@ -2004,10 +2281,13 @@ function queuePage(routeKey){
   if(routeKey==='queue-officer')return officerQueuePage();
   if(routeKey==='queue-got')return gotQueuePage();
   const meta=queues[routeKey];
-  const items=activity9Cases().filter(c=>meta.stages.includes(c.stage));
-  return base(meta.label,'เฉพาะงานที่บทบาทนี้ต้องดำเนินการในขณะนี้')
+  const all=activity9Cases().filter(c=>meta.stages.includes(c.stage)&&caseInActiveProcess(c));
+  const context=activeWorkContext();
+  const bucketTabs=workBucketTabs(all);
+  const items=all.filter(c=>myWorkBucket==='all'||workBucket(c)===myWorkBucket);
+  return base(context.title,context.description)
   +placeholderNote('คิวงานต่างจากทะเบียนกลาง เมื่อดำเนินการเสร็จ รายการจะย้ายออกจากคิวของผู้ใช้รายนี้ แต่ยังค้นหาและตรวจสอบย้อนหลังได้จากทะเบียนคำร้องขอศาลออกหมายจับ')
-  +`<section class="card"><div class="card-head"><div><h2>${esc(meta.label)}</h2><p>พบ ${items.length} รายการ</p></div></div><div class="table-wrap"><table><thead><tr><th>เลขงาน</th><th>เลขสำนวน</th><th>ผู้ถูกกล่าวหา</th><th>สถานะ</th><th>งานถัดไป</th><th>การดำเนินการ</th></tr></thead><tbody>${items.length?items.map(c=>`<tr><td>${esc(c.no)}</td><td>${esc(c.fromCaseNo||'-')}</td><td>${esc(c.suspect)}</td><td><span class="badge">${esc(c.status)}</span></td><td>${esc(c.next)}</td><td><button class="btn secondary" data-go="${caseOpenRoute(c)}">${caseActionLabel(c)}</button></td></tr>`).join(''):'<tr><td colspan="6"><div class="empty"><i class="fa-solid fa-inbox"></i><br>ไม่มีรายการในคิวนี้</div></td></tr>'}</tbody></table></div></section>`;
+  +`<section class="card"><div class="card-head"><div>${queueScopeHeading(currentRole)}<p>${esc(meta.label)} · แสดง ${items.length} จาก ${all.length} รายการ</p></div></div><nav class="registry-tabs" role="tablist" aria-label="แท็บสถานะคิวงานตามบทบาท">${bucketTabs.map(tab=>`<button class="${myWorkBucket===tab[0]?'active':''}" data-work-bucket="${tab[0]}" role="tab" aria-selected="${myWorkBucket===tab[0]}">${tab[1]} <span class="registry-tab-count">${tab[2]}</span></button>`).join('')}</nav><div class="table-wrap"><table><thead><tr><th>เลขงาน</th><th>เลขสำนวน</th><th>ผู้ถูกกล่าวหา</th><th>สถานะ</th><th>งานถัดไป</th><th>การดำเนินการ</th></tr></thead><tbody>${items.length?items.map(c=>`<tr><td>${esc(c.no)}</td><td>${esc(c.fromCaseNo||'-')}</td><td>${esc(c.suspect)}</td><td><span class="badge">${esc(c.status)}</span></td><td>${esc(c.next)}</td><td><button class="btn secondary" data-go="${caseOpenRoute(c)}">${caseActionLabel(c)}</button></td></tr>`).join(''):'<tr><td colspan="6"><div class="empty"><i class="fa-solid fa-inbox"></i><br>ไม่มีรายการในกลุ่มงานนี้</div></td></tr>'}</tbody></table></div></section>`;
 }
 
 function casePage(no){
@@ -2263,13 +2543,15 @@ function roleCaseTable(items,routePrefix){
 }
 
 function approvalQueuePage(){
-  const all=activity9Cases().filter(c=>['termination_approval_pending','termination_approval_revision','termination_rejected'].includes(c.stage));
-  const groups={pending:all.filter(c=>c.stage==='termination_approval_pending'),returned:all.filter(c=>c.stage==='termination_approval_revision'),completed:all.filter(c=>c.stage==='termination_rejected')};
-  const items=approvalFilter==='all'?all:(groups[approvalFilter]||groups.pending);
+  const cases=activity9Cases().filter(caseInActiveProcess);
+  const all=cases.filter(c=>['termination_approval_pending','termination_rejected'].includes(c.stage));
+  const groups={pending:all.filter(c=>c.stage==='termination_approval_pending'),returned:cases.filter(c=>c.stage==='termination_approval_revision'),completed:all.filter(c=>c.stage==='termination_rejected')};
+  const bucketTabs=workBucketTabs(all);
+  const items=all.filter(c=>myWorkBucket==='all'||workBucket(c)===myWorkBucket);
   return base('งานพิจารณาอนุมัติการยุติหมาย','หน้าสาธิตบทบาทผู้มีอำนาจอนุมัติและผลที่ส่งกลับเข้าสู่กิจกรรมที่ 9')
   +`<div class="workflow-note"><i class="fa-solid fa-diagram-project"></i><div><strong>การอนุมัติเป็นกระบวนการส่วนกลางของ E-CMIS</strong><small>กิจกรรมที่ 9 ส่งชุดข้อมูลไปพิจารณาและรับผลกลับมา โดยยังไม่แจ้งตำรวจจนกว่าจะได้รับผลอนุมัติ</small></div></div>`
   +`<section class="role-kpis"><div class="role-kpi"><span>รอพิจารณา</span><strong>${groups.pending.length}</strong><small>ตรวจเหตุและเอกสาร</small></div><div class="role-kpi"><span>ขอข้อมูลเพิ่ม</span><strong>${groups.returned.length}</strong><small>ส่งกลับ กอท. แก้ไข</small></div><div class="role-kpi"><span>ไม่อนุมัติ</span><strong>${groups.completed.length}</strong><small>คงหมายไว้ติดตาม</small></div><div class="role-kpi"><span>งานทั้งหมด</span><strong>${all.length}</strong><small>ตรวจสอบย้อนหลังได้</small></div></section>`
-  +`<section class="card"><div class="card-head"><div><h2>รายการเสนอพิจารณา</h2><p>ตรวจชุดเอกสารและบันทึกผลพร้อมเลขอ้างอิง</p></div></div><nav class="registry-tabs">${[['pending','รอพิจารณา',groups.pending.length],['returned','ขอข้อมูลเพิ่ม',groups.returned.length],['completed','ไม่อนุมัติ',groups.completed.length],['all','ทั้งหมด',all.length]].map(t=>`<button class="${approvalFilter===t[0]?'active':''}" data-approval-filter="${t[0]}">${t[1]} <span class="registry-tab-count">${t[2]}</span></button>`).join('')}</nav>${roleCaseTable(items,'approval-work/')}</section>`;
+  +`<section class="card"><div class="card-head"><div>${queueScopeHeading('approver')}<p>แสดงงานที่รอการพิจารณาและผลไม่อนุมัติที่ตรวจย้อนหลังได้ ส่วนงานขอข้อมูลเพิ่มย้ายกลับคิว กอท. ทันที</p></div></div><nav class="registry-tabs" aria-label="แท็บสถานะคิวอนุมัติ">${bucketTabs.map(t=>`<button class="${myWorkBucket===t[0]?'active':''}" data-work-bucket="${t[0]}">${t[1]} <span class="registry-tab-count">${t[2]}</span></button>`).join('')}</nav>${roleCaseTable(items,'approval-work/')}</section>`;
 }
 
 function approvalWorkPage(no){
@@ -2305,11 +2587,12 @@ function terminationNoticePage(no){
 }
 
 function bureauQueuePage(){
-  const all=activity9Cases().filter(c=>['court_withdrawal_prepare','court_withdrawal_pending','court_withdrawal_revision','final_notification_prepare','withdrawn'].includes(c.stage)),active=all.filter(c=>c.stage!=='withdrawn'),done=all.filter(c=>c.stage==='withdrawn');
-  const items=bureauFilter==='completed'?done:bureauFilter==='all'?all:active;
+  const all=activity9Cases().filter(c=>['court_withdrawal_prepare','court_withdrawal_pending','court_withdrawal_revision','final_notification_prepare','withdrawn'].includes(c.stage)&&caseInActiveProcess(c)),active=all.filter(c=>c.stage!=='withdrawn'),done=all.filter(c=>c.stage==='withdrawn');
+  const bucketTabs=workBucketTabs(all);
+  const items=all.filter(c=>myWorkBucket==='all'||workBucket(c)===myWorkBucket);
   return base('งานของสำนัก/กองผู้รับผิดชอบ','รายงานศาลที่ออกหมาย บันทึกผลถอนหมาย และแจ้งหน่วยงานที่เกี่ยวข้อง')
   +`<section class="role-kpis"><div class="role-kpi"><span>กำลังดำเนินการ</span><strong>${active.length}</strong><small>จัดทำรายงานหรือรอศาล</small></div><div class="role-kpi"><span>รอผลจากศาล</span><strong>${all.filter(c=>c.stage==='court_withdrawal_pending').length}</strong><small>ยังไม่เปลี่ยนเป็นถอนหมาย</small></div><div class="role-kpi"><span>รอบันทึก/แจ้งผล</span><strong>${all.filter(c=>c.stage==='final_notification_prepare').length}</strong><small>มีคำสั่งถอนแล้ว</small></div><div class="role-kpi"><span>ถอนหมายแล้ว</span><strong>${done.length}</strong><small>ปิดงานสมบูรณ์</small></div></section>`
-  +`<section class="card"><div class="card-head"><div><h2>รายการงานถอนหมาย</h2><p>ทุกสถานะผูกกับหมายจับและสำนวนเดิม</p></div></div><nav class="registry-tabs">${[['active','กำลังดำเนินการ',active.length],['completed','ถอนหมายแล้ว',done.length],['all','ทั้งหมด',all.length]].map(t=>`<button class="${bureauFilter===t[0]?'active':''}" data-bureau-filter="${t[0]}">${t[1]} <span class="registry-tab-count">${t[2]}</span></button>`).join('')}</nav>${roleCaseTable(items,'bureau-work/')}</section>`;
+  +`<section class="card"><div class="card-head"><div>${queueScopeHeading('bureau')}<p>งานรายงานศาลและถอนหมายที่สำนัก/กองได้รับมอบหมาย ภายใต้เลขงานเดิม</p></div></div><nav class="registry-tabs" aria-label="แท็บสถานะคิวสำนักหรือกอง">${bucketTabs.map(t=>`<button class="${myWorkBucket===t[0]?'active':''}" data-work-bucket="${t[0]}">${t[1]} <span class="registry-tab-count">${t[2]}</span></button>`).join('')}</nav>${roleCaseTable(items,'bureau-work/')}</section>`;
 }
 
 function bureauWorkPage(no){
@@ -2348,6 +2631,7 @@ function reportsPage(){
 
 function render(){
   const route=(location.hash.replace(/^#\//,'')||'registry');
+  activeProcessNav=processSectionForRoute(route);
   const officerContext=['officer-work/','officer-form/','officer-review/','officer-court-package/','officer-court-filing/','officer-court-result/','officer-court-followup/','officer-warrant-verification/','execution-plan/'].some(prefix=>route.startsWith(prefix));
   const gotContext=route==='queue-got'||route.startsWith('got-work/')||route.startsWith('termination-notice/')||route.startsWith('central-registry/');
   const approverContext=route==='queue-approver'||route.startsWith('approval-work/');
@@ -2361,12 +2645,12 @@ function render(){
   else if(route==='queue-officer'||officerContext)routeRole='officer';
   else if(route==='queue-supervisor')routeRole='supervisor';
   else if(route==='queue-director')routeRole='director';
-  if(routeRole){
+  if(routeRole&&roleIsAllowed(routeRole)){
     currentRole=routeRole;
     document.getElementById('role').value=routeRole;
     document.getElementById('side-role').textContent=roleNames[routeRole];
   }
-  document.querySelectorAll('.nav button[data-route]').forEach(b=>b.classList.toggle('active',route===b.dataset.route||(officerContext&&b.dataset.route==='queue-officer')||(gotContext&&b.dataset.route==='queue-got')||(approverContext&&b.dataset.route==='queue-approver')||(bureauContext&&b.dataset.route==='queue-bureau')||(trackingContext&&b.dataset.route==='tracking')||(registryContext&&b.dataset.route==='registry')));
+  document.querySelectorAll('.nav button[data-process-nav]').forEach(b=>b.classList.toggle('active',b.dataset.processNav===activeProcessNav));
   const view=document.getElementById('view');
   if(route==='registry')view.innerHTML=registry();
   else if(route.startsWith('activity5-intake/'))view.innerHTML=activity5IntakePage(decodeURIComponent(route.substring('activity5-intake/'.length)));
@@ -2413,10 +2697,34 @@ function bind(){
   document.querySelectorAll('[data-assign-source]').forEach(b=>b.onclick=async()=>{
     const c=demoCases.find(x=>x.no===b.dataset.assignSource);if(!c)return;
     const assignee=document.getElementById('source-assignee')?.value||'ยังไม่ได้มอบหมาย';
-    c.owner=assignee;c.activity5Source={...(c.activity5Source||{}),assignedTo:assignee};
+    const reason=document.getElementById('source-assignment-reason')?.value.trim()||'';
+    if(assignee!==c.caseOwner&&assignee!=='ยังไม่ได้มอบหมาย'&&!reason){toast('กรุณาระบุเหตุผลเมื่อมอบหมายผู้อื่นจัดทำคำร้อง');return}
+    const assignedAt=thaiNow(),from=c.requestDrafter||c.caseOwner||'กิจกรรมที่ 9';
+    c.requestDrafter=assignee;c.owner=assignee;c.responsibleDepartment=c.department||staffDepartment(assignee)||'-';
+    c.activity5Source={...(c.activity5Source||{}),assignedTo:assignee,assignmentBy:currentOfficerName,assignmentAt:assignedAt,assignmentReason:reason||(assignee===c.caseOwner?'เจ้าของสำนวนจัดทำคำร้องด้วยตนเอง':'')};
     c.next=assignee==='ยังไม่ได้มอบหมาย'?'มอบหมายผู้จัดทำและตรวจข้อมูลก่อนเริ่มคำร้อง':'ตรวจข้อมูลสำนวนและเอกสารต้นทางก่อนเปิดงานจัดทำคำร้อง';
-    appendAudit(c,'มอบหมายผู้จัดทำคำร้อง','กิจกรรมที่ 9',assignee,c.sourceTransferId||'');
-    await successAlert('บันทึกผู้จัดทำแล้ว',assignee==='ยังไม่ได้มอบหมาย'?'รายการยังอยู่ในงานใหม่และต้องมอบหมายก่อนเริ่มคำร้อง':'ระบบบันทึกผู้จัดทำภายใต้รายการจากกิจกรรมที่ 5 แล้ว');render();
+    appendAudit(c,'มอบหมายผู้จัดทำคำร้อง',from,assignee,c.activity5Source.assignmentReason||c.sourceTransferId||'',{recordAssignment:true,assignedBy:currentOfficerName,transferType:assignee===c.caseOwner?'self':'delegated',fromDepartment:c.department||'',toDepartment:c.department||''});
+    await successAlert('บันทึกผู้จัดทำแล้ว',assignee==='ยังไม่ได้มอบหมาย'?'รายการยังอยู่ในงานใหม่และต้องมอบหมายก่อนเริ่มคำร้อง':'ระบบบันทึกผู้จัดทำ ผู้มอบหมาย วันเวลา และเหตุผลไว้ในประวัติรายการแล้ว');render();
+  });
+  document.querySelectorAll('[data-transfer-work]').forEach(b=>b.onclick=async()=>{
+    const c=demoCases.find(x=>x.no===b.dataset.transferWork);if(!c)return;
+    const currentDepartment=c.responsibleDepartment||c.department||staffDepartment(c.owner)||'-';
+    const result=await Swal.fire({title:'โอนงานหรือตั้งผู้รักษาการ',html:`<div class="assignment-form"><div><label for="transfer-type">ประเภทการมอบหมาย</label><select id="transfer-type" class="swal2-select"><option value="within">โอนภายในหน่วยงาน</option><option value="acting">ตั้งผู้รักษาการ/ปฏิบัติหน้าที่แทน</option><option value="cross">โอนข้ามหน่วยงานตามคำสั่ง</option>${c.actingFor?'<option value="return_acting">คืนงานจากผู้รักษาการ</option>':''}</select></div><div><label for="transfer-person">ผู้รับผิดชอบใหม่</label><select id="transfer-person" class="swal2-select">${staffDirectory.map(person=>`<option value="${esc(person.name)}" ${person.name===c.owner?'selected':''}>${esc(person.name)} · ${esc(person.department)}</option>`).join('')}</select></div><div class="wide"><label for="transfer-reason">เหตุผลการมอบหมาย/โอนงาน</label><textarea id="transfer-reason" class="swal2-textarea" placeholder="ระบุเหตุผลที่ตรวจสอบย้อนหลังได้"></textarea></div><div class="wide"><label for="transfer-order-ref">เลขคำสั่งหรือหนังสืออ้างอิง</label><input id="transfer-order-ref" class="swal2-input" placeholder="จำเป็นเมื่อโอนข้ามหน่วยงาน"></div></div><div style="margin-top:10px;text-align:left;color:#60728a;font-size:12px">เจ้าของสำนวนเดิม: <b>${esc(c.originalCaseOwner||c.caseOwner||'-')}</b><br>หน่วยงานปัจจุบัน: <b>${esc(currentDepartment)}</b></div>`,showCancelButton:true,confirmButtonText:'ยืนยันการมอบหมาย',cancelButtonText:'ยกเลิก',confirmButtonColor:'#1f5f96',focusConfirm:false,preConfirm:()=>{
+      const transferType=document.getElementById('transfer-type')?.value||'within',selectedTarget=document.getElementById('transfer-person')?.value||'',reasonInput=document.getElementById('transfer-reason')?.value.trim()||'',referenceOrder=document.getElementById('transfer-order-ref')?.value.trim()||'';
+      const target=transferType==='return_acting'?(c.actingFor||c.caseOwner):selectedTarget,targetDepartment=staffDepartment(target)||c.department||currentDepartment,reason=transferType==='return_acting'?(reasonInput||'สิ้นสุดการรักษาการและคืนงาน'):reasonInput;
+      if(transferType!=='return_acting'&&(!target||target===c.owner)){Swal.showValidationMessage('กรุณาเลือกผู้รับผิดชอบใหม่');return false}
+      if(!reason){Swal.showValidationMessage('กรุณาระบุเหตุผลการมอบหมายหรือโอนงาน');return false}
+      if(transferType==='within'&&targetDepartment!==currentDepartment){Swal.showValidationMessage('การโอนภายในต้องเลือกผู้รับที่อยู่หน่วยงานเดียวกัน');return false}
+      if(transferType==='cross'&&!referenceOrder){Swal.showValidationMessage('การโอนข้ามหน่วยงานต้องระบุเลขคำสั่งหรือหนังสืออ้างอิง');return false}
+      return{transferType,target,targetDepartment,reason,referenceOrder};
+    }});
+    if(!result.isConfirmed)return;
+    const {transferType,target,targetDepartment,reason,referenceOrder}=result.value,previousOwner=c.owner,previousDepartment=currentDepartment;
+    if(transferType==='acting'){c.actingFor=previousOwner;c.actingOwner=target}else{delete c.actingFor;delete c.actingOwner}
+    c.owner=target;c.responsibleDepartment=targetDepartment;
+    appendAudit(c,transferType==='acting'?'ตั้งผู้รักษาการ/ปฏิบัติหน้าที่แทน':transferType==='return_acting'?'คืนงานจากผู้รักษาการ':'โอนผู้รับผิดชอบงาน',previousOwner,target,reason,{recordAssignment:true,assignedBy:currentOfficerName,transferType,fromDepartment:previousDepartment,toDepartment:targetDepartment,referenceOrder});
+    updatedAtByCase[c.no]=thaiNow();
+    await successAlert('บันทึกการมอบหมายแล้ว',`ผู้รับผิดชอบปัจจุบันคือ ${target} และรายการยังคงอยู่ในคิวของ ${targetDepartment}`);render();
   });
   document.querySelectorAll('[data-return-source]').forEach(b=>b.onclick=async()=>{
     const c=demoCases.find(x=>x.no===b.dataset.returnSource);if(!c)return;
@@ -2434,11 +2742,13 @@ function bind(){
   });
   document.querySelectorAll('[data-start-source]').forEach(b=>b.onclick=async()=>{
     const c=demoCases.find(x=>x.no===b.dataset.startSource);if(!c)return;
+    const readiness=activity5Readiness(c);
+    if(!readiness.ready){toast('ยังเปิดงานไม่ได้ กรุณาตรวจเงื่อนไขและข้อมูลจากกิจกรรมที่ 5 ให้ครบ');return}
     const assignee=document.getElementById('source-assignee')?.value||c.owner;
     if(!assignee||assignee==='ยังไม่ได้มอบหมาย'){toast('กรุณามอบหมายผู้จัดทำคำร้องก่อนเริ่มงาน');return}
     const confirmed=await Swal.fire({icon:'question',title:'เปิดงานจัดทำคำร้องขอหมายจับ',html:`<div style="text-align:left;line-height:1.7"><b>เลขสำนวนต้นทาง:</b> ${esc(c.fromCaseNo||'-')}<br><b>ผู้ถูกกล่าวหา:</b> ${esc(c.suspect)}<br><b>ผู้จัดทำ:</b> ${esc(assignee)}<br><b>เลขงานที่จะสร้าง:</b> ${esc(c.activity9No||'-')}</div>`,showCancelButton:true,confirmButtonText:'ยืนยันเปิดงาน',cancelButtonText:'ตรวจสอบอีกครั้ง',confirmButtonColor:'#1f5f96'});
     if(!confirmed.isConfirmed)return;
-    const oldNo=c.no,newNo=c.activity9No||c.no;c.no=newNo;c.owner=assignee;c.stage='draft';c.status='เตรียมคำร้องขอหมายจับ';c.next='เลือกวิธีจัดทำคำร้องตามแบบ ปปท.8-17';c.started=false;delete c.intakeMode;
+    const oldNo=c.no,newNo=c.activity9No||c.no;c.no=newNo;c.requestDrafter=assignee;c.owner=assignee;c.responsibleDepartment=c.department||staffDepartment(assignee)||c.responsibleDepartment;c.stage='draft';c.status='เตรียมคำร้องขอหมายจับ';c.next='เลือกวิธีจัดทำคำร้องตามแบบ ปปท.8-17';c.started=false;delete c.intakeMode;
     updatedAtByCase[newNo]='16 ส.ค. 2569 13:45';updatedDateByCase[newNo]='2026-08-16';delete updatedAtByCase[oldNo];delete updatedDateByCase[oldNo];
     appendAudit(c,'เปิดงานกิจกรรมที่ 9 จากสำนวนไต่สวน',c.activity5Source?.sentBy||'กิจกรรมที่ 5',assignee,c.sourceTransferId||'');
     await successAlert('เปิดงานจัดทำคำร้องแล้ว',`ระบบสร้างเลขงาน ${newNo} และเตรียมข้อมูลจากกิจกรรมที่ 5 สำหรับเติมในคำร้อง`);go('intake-choice/'+newNo);
@@ -2446,10 +2756,11 @@ function bind(){
   const registryQuery=document.getElementById('registry-query');
   if(registryQuery)registryQuery.onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();readRegistrySearchControls();render()}};
   document.querySelectorAll('[data-officer-filter]').forEach(b=>b.onclick=()=>{officerTaskFilter=b.dataset.officerFilter;officerTaskSearch.task=officerTaskFilter;render()});
+  document.querySelectorAll('[data-work-bucket]').forEach(b=>b.onclick=()=>{myWorkBucket=b.dataset.workBucket;render()});
   document.querySelectorAll('[data-open-officer-work]').forEach(b=>b.onclick=()=>{const c=demoCases.find(item=>item.no===b.dataset.openOfficerWork);officerWorkTab='overview';trackingWorkTab='overview';go(c?officerTaskMeta(c).route:'officer-work/'+b.dataset.openOfficerWork)});
   document.querySelectorAll('[data-officer-work-tab]').forEach(b=>b.onclick=()=>{officerWorkTab=b.dataset.officerWorkTab;render()});
   document.querySelectorAll('[data-officer-search]').forEach(b=>b.onclick=()=>{readOfficerTaskSearch();render()});
-  document.querySelectorAll('[data-officer-clear]').forEach(b=>b.onclick=()=>{officerTaskFilter='all';officerTaskSearch={query:'',task:'all',department:'all',documentState:'all',intakeMode:'all',dateFrom:'',dateTo:''};officerAdvancedOpen=false;render()});
+  document.querySelectorAll('[data-officer-clear]').forEach(b=>b.onclick=()=>{officerTaskFilter='all';myWorkBucket='all';officerTaskSearch={query:'',task:'all',department:'all',documentState:'all',intakeMode:'all',dateFrom:'',dateTo:''};officerAdvancedOpen=false;render()});
   document.querySelectorAll('[data-export-officer]').forEach(b=>b.onclick=()=>toast('เตรียมส่งออกผลค้นหางานของเจ้าหน้าที่ ป.ป.ท. แล้ว'));
   const officerAdvanced=document.querySelector('[data-officer-advanced]');
   if(officerAdvanced)officerAdvanced.ontoggle=()=>{officerAdvancedOpen=officerAdvanced.open};
@@ -2656,7 +2967,7 @@ function bind(){
     await successAlert('ยืนยันเหตุและส่งให้ กอท. แล้ว','รายการย้ายไปคิวตรวจรับเอกสารของ กอท. โดยยังไม่แจ้งตำรวจและยังไม่เปลี่ยนสถานะเป็นถอนหมายแล้ว');go('queue-got');
   });
   document.querySelectorAll('[data-got-search]').forEach(b=>b.onclick=()=>{readGotTaskSearch();render()});
-  document.querySelectorAll('[data-got-clear]').forEach(b=>b.onclick=()=>{gotTaskFilter='all';gotTaskSearch={query:'',task:'all',department:'all',sender:'all',dateFrom:'',dateTo:''};gotAdvancedOpen=false;render()});
+  document.querySelectorAll('[data-got-clear]').forEach(b=>b.onclick=()=>{gotTaskFilter='all';myWorkBucket='all';gotTaskSearch={query:'',task:'all',department:'all',sender:'all',dateFrom:'',dateTo:''};gotAdvancedOpen=false;render()});
   document.querySelectorAll('[data-export-got]').forEach(b=>b.onclick=()=>toast('เตรียมส่งออกผลค้นหางานของเจ้าหน้าที่ธุรการคดี กอท. แล้ว'));
   const gotAdvanced=document.querySelector('[data-got-advanced]');
   if(gotAdvanced)gotAdvanced.ontoggle=()=>{gotAdvancedOpen=gotAdvanced.open};
@@ -2784,11 +3095,12 @@ function bind(){
       document.querySelector('.got-letter-doc-list')?.scrollIntoView({behavior:'smooth',block:'center'});
       return
     }
-    const confirmed=await confirmHandoff({title:'ยืนยันส่งชุดเสนอขอยุติการบังคับตามหมาย',c,from:'เจ้าหน้าที่ธุรการคดี กอท.',to:'กระบวนการพิจารณาอนุมัติของ E-CMIS',documentLabel:draft.proposalFile+' พร้อมเอกสารประกอบ '+draft.selectedDocuments.length+' ฉบับ',confirmText:'ยืนยันส่งเสนอ',note:'ส่งข้อมูลภายใน E-CMIS เพื่อรอผลพิจารณา ยังไม่แจ้งตำรวจและยังไม่ถอนหมาย'});
+    const approvalOwner='ผู้มีอำนาจอนุมัติ/เลขาธิการ';
+    const confirmed=await confirmHandoff({title:'ยืนยันส่งชุดเสนอขอยุติการบังคับตามหมาย',c,from:'เจ้าหน้าที่ธุรการคดี กอท.',to:approvalOwner,documentLabel:draft.proposalFile+' พร้อมเอกสารประกอบ '+draft.selectedDocuments.length+' ฉบับ',confirmText:'ยืนยันส่งเสนอ',note:'ส่งข้อมูลภายใน E-CMIS เพื่อรอผลพิจารณา ยังไม่แจ้งตำรวจและยังไม่ถอนหมาย'});
     if(!confirmed)return;
-    c.terminationProposal={...draft,selectedDocuments:[...draft.selectedDocuments],preparedBy:'เจ้าหน้าที่ธุรการคดี กอท.',sentAt:'16 ส.ค. 2569 17:50',destination:'กระบวนการพิจารณาอนุมัติของ E-CMIS',status:'pending'};
-    c.stage='termination_approval_pending';c.status='ส่งเสนออนุมัติแล้ว รอผลพิจารณา';c.owner='กระบวนการพิจารณาอนุมัติของ E-CMIS';c.next='รอผลอนุมัติ ผลส่งกลับขอข้อมูลเพิ่ม หรือผลไม่อนุมัติ ก่อนดำเนินการขั้นถัดไป';
-    appendAudit(c,'ส่งชุดเสนอขอยุติการบังคับตามหมาย','เจ้าหน้าที่ธุรการคดี กอท.','กระบวนการพิจารณาอนุมัติของ E-CMIS',draft.proposalFile+' · เอกสารประกอบ '+draft.selectedDocuments.length+' ฉบับ');
+    c.terminationProposal={...draft,selectedDocuments:[...draft.selectedDocuments],preparedBy:'เจ้าหน้าที่ธุรการคดี กอท.',sentAt:'16 ส.ค. 2569 17:50',destination:approvalOwner,status:'pending'};
+    c.stage='termination_approval_pending';c.status='ส่งเสนออนุมัติแล้ว รอผลพิจารณา';c.owner=approvalOwner;c.next='รอผลอนุมัติ ผลส่งกลับขอข้อมูลเพิ่ม หรือผลไม่อนุมัติ ก่อนดำเนินการขั้นถัดไป';
+    appendAudit(c,'ส่งชุดเสนอขอยุติการบังคับตามหมาย','เจ้าหน้าที่ธุรการคดี กอท.',approvalOwner,draft.proposalFile+' · เอกสารประกอบ '+draft.selectedDocuments.length+' ฉบับ');
     updatedAtByCase[c.no]='16 ส.ค. 2569 17:50';updatedDateByCase[c.no]='2026-08-16';gotTaskFilter='termination_approval_pending';gotWorkTab='overview';
     await successAlert('ส่งเสนออนุมัติแล้ว','รายการย้ายไปแท็บ “รอผลอนุมัติ” และยังไม่ส่งหนังสือแจ้งตำรวจหรือเปลี่ยนสถานะเป็นถอนหมายแล้ว');
     render();
@@ -2999,12 +3311,19 @@ function bind(){
     appendAudit(c,'เปิดบันทึกการส่งรอบใหม่','เจ้าหน้าที่ธุรการคดี กอท.','ขั้นตอนบันทึกการส่ง',c.dispatchHistory.at(-1)?.tracking?.failureReason||'นำจ่ายไม่สำเร็จ');
     updatedAtByCase[c.no]='16 ส.ค. 2569 14:45';updatedDateByCase[c.no]='2026-08-16';await successAlert('เปิดการส่งรอบใหม่แล้ว','ประวัติการส่งเดิมยังคงอยู่ในรายการ และระบบเปิดให้บันทึกข้อมูลการส่งใหม่ในเลขงานเดิม');render();
   });
+  document.querySelectorAll('[data-select-era]').forEach(b=>b.onclick=()=>{
+    const c=demoCases.find(x=>x.no===b.dataset.selectEraCase);
+    if(!c)return;
+    c.limitationEra=b.dataset.selectEra;
+    render();
+  });
   document.querySelectorAll('[data-choose-intake]').forEach(b=>b.onclick=()=>{
     const c=demoCases.find(x=>x.no===b.dataset.chooseCase);
     if(!c)return;
+    if(!c.limitationEra){toast('โปรดเลือกกรณีเหตุเกิดของคดีก่อนเริ่มจัดทำคำร้อง');return}
     c.intakeMode=b.dataset.chooseIntake;
     c.started=true;
-    c.requestDocument={form:'ปปท.8-17',name:'คำร้องขอให้ศาลออกหมายจับ',file:'ร่างคำร้อง_'+c.no+'.pdf',version:'ฉบับร่าง 1',status:'อยู่ระหว่างจัดทำ',stateKey:'drafting'};
+    c.requestDocument={form:'ปปท.8-17',name:eraDocNames[c.limitationEra]||'คำร้องขอให้ศาลออกหมายจับ',file:'ร่างคำร้อง_'+c.no+'.pdf',version:'ฉบับร่าง 1',status:'อยู่ระหว่างจัดทำ',stateKey:'drafting'};
     addDocumentVersion(c,currentOfficerName);
     c.status='อยู่ระหว่างจัดทำร่างคำร้องขอหมายจับ';
     c.next='จัดทำคำร้องตามแบบ ปปท.8-17 และตรวจเอกสารก่อนส่งตรวจ';
@@ -3162,7 +3481,7 @@ function bind(){
     c.status='รอเจ้าของสำนวนตรวจสอบคำร้อง';
     c.owner=to;
     c.ownerReview={checks:{},documents:{},note:'',completedAt:''};
-    c.next='เจ้าของสำนวนตรวจสอบและแก้ไขคำร้อง ก่อนส่งให้ผู้บังคับบัญชาตามสายงาน';
+    c.next='เจ้าของสำนวนตรวจสอบและแก้ไขคำร้อง ก่อนยืนยันชุดคำร้องเพื่อเตรียมยื่นศาล';
     c.requestDocument={...(c.requestDocument||{}),form:'ปปท.8-17',name:'คำร้องขอให้ศาลออกหมายจับ',file:c.requestDocument?.file||'ร่างคำร้อง_'+c.no+'.pdf',version:'ฉบับส่งเจ้าของสำนวน',status:'รอเจ้าของสำนวนตรวจสอบ',stateKey:'owner_review'};
     addDocumentVersion(c,from);
     appendAudit(c,'ส่งร่างคำร้องให้เจ้าของสำนวนตรวจสอบ',from,to,'ใช้เลขงานและเอกสารฉบับเดิม');
@@ -3222,69 +3541,22 @@ function bind(){
     const completion=ownerReviewCompletion(c);
     if(!completion.complete){toast(`กรุณาตรวจข้อมูลและเอกสารให้ครบ (${completion.done}/${completion.total})`);document.querySelector('[data-owner-review-workspace]')?.scrollIntoView({behavior:'smooth',block:'start'});return;}
     const state=ownerReviewState(c);state.note=document.getElementById('owner-review-note')?.value.trim()||state.note||'';
-    const from=c.caseOwner||c.owner,to='ผู้บังคับบัญชาชั้นต้น';
-    const confirmed=await confirmHandoff({title:'ยืนยันส่งคำร้องให้ผู้บังคับบัญชาตรวจสอบ',c,from,to,documentLabel:c.requestDocument?.file||'คำร้อง ปปท.8-17',confirmText:'ยืนยันส่งคำร้อง',note:'หลังส่งแล้ว ผู้จัดทำจะไม่สามารถแก้ไขจนกว่าจะถูกส่งกลับ'});
+    const from=c.caseOwner||c.owner,to='ขั้นเตรียมชุดยื่นศาล';
+    const confirmed=await confirmHandoff({title:'ยืนยันคำร้องและเตรียมชุดยื่นศาล',c,from,to,documentLabel:c.requestDocument?.file||'คำร้อง ปปท.8-17',confirmText:'ยืนยันและเตรียมชุดยื่นศาล',note:'ระบบจะล็อกฉบับที่ยืนยันและนำไปจัดชุดเอกสารสำหรับยื่นศาล โดยไม่ผ่านขั้นอนุมัติภายในเพิ่มเติม'});
     if(!confirmed)return;
     c.caseOwner=c.caseOwner||c.owner;
-    c.stage='supervisor_review';
-    c.status='รอผู้ตรวจตามสายงานตรวจสอบคำร้อง';
-    c.owner='ผู้บังคับบัญชาชั้นต้น';
-    c.next='ตรวจความครบถ้วนของคำร้องและเอกสารประกอบ หรือส่งกลับให้เจ้าของสำนวนแก้ไข';
+    c.stage='court_ready';
+    c.status='พร้อมเตรียมชุดยื่นศาล';
+    c.owner=c.caseOwner;
+    c.next='ตรวจรายการเอกสาร เลือกเอกสารที่ส่งศาล และยืนยันชุดยื่นศาล';
     state.completedAt='16 ส.ค. 2569 12:55';
     state.completedBy=from;
-    c.requestDocument={...(c.requestDocument||{}),form:'ปปท.8-17',name:'คำร้องขอให้ศาลออกหมายจับ',file:c.requestDocument?.file||'คำร้อง_'+c.no+'.pdf',version:'ฉบับส่งตรวจ',status:'อยู่ระหว่างตรวจสอบภายใน',stateKey:'internal'};
+    c.requestDocument={...(c.requestDocument||{}),form:'ปปท.8-17',name:'คำร้องขอให้ศาลออกหมายจับ',file:c.requestDocument?.file||'คำร้อง_'+c.no+'.pdf',version:'ฉบับเจ้าของสำนวนยืนยัน',status:'พร้อมจัดชุดยื่นศาล',stateKey:'court_ready'};
     addDocumentVersion(c,from);
-    appendAudit(c,'เจ้าของสำนวนส่งคำร้องให้ผู้บังคับบัญชาตรวจสอบ',from,to,'ล็อกสิทธิแก้ไขระหว่างตรวจสอบ');
+    appendAudit(c,'เจ้าของสำนวนยืนยันคำร้องและเอกสาร',from,to,'ล็อกฉบับที่ยืนยันเพื่อจัดชุดยื่นศาล');
     updatedAtByCase[c.no]='15 ส.ค. 2569 10:15';
-    await successAlert('ส่งคำร้องแล้ว','รายการถูกส่งเข้าคิวผู้บังคับบัญชาชั้นต้น และยังค้นหาได้จากทะเบียนกลาง');
-    go('queue-officer');
-  });
-  document.querySelectorAll('[data-review-action]').forEach(b=>b.onclick=async()=>{
-    const c=demoCases.find(x=>x.no===b.dataset.reviewCase);
-    if(!c)return;
-    const action=b.dataset.reviewAction;
-    if(action==='return'){
-      const result=await Swal.fire({icon:'warning',title:'ส่งคำร้องกลับให้เจ้าของสำนวนแก้ไข',html:`<div class="assignment-summary"><span>เลขงาน</span><strong>${esc(c.no)}</strong><span>เจ้าของสำนวน</span><strong>${esc(c.caseOwner||'-')}</strong><span>เอกสาร</span><strong>${esc(c.requestDocument?.file||'คำร้อง ปปท.8-17')}</strong></div>`,input:'textarea',inputLabel:'ประเด็นที่ต้องแก้ไข',inputPlaceholder:'ระบุข้อมูลหรือเอกสารที่ต้องแก้ไขให้ชัดเจน',inputValue:c.returnNote||'',showCancelButton:true,confirmButtonText:'ยืนยันส่งกลับ',cancelButtonText:'ยกเลิก',confirmButtonColor:'#ad3f3d',cancelButtonColor:'#718198',reverseButtons:true,inputValidator:value=>!value.trim()?'กรุณาระบุประเด็นที่ต้องแก้ไข':undefined});
-      if(!result.isConfirmed)return;
-      const note=result.value.trim(),from=c.owner,to=c.caseOwner;
-      c.returnedBy=c.owner;
-      c.returnNote=note;
-      c.stage='owner_review';
-      c.status='ส่งกลับให้เจ้าของสำนวนแก้ไขคำร้อง';
-      c.owner=to;
-      c.ownerReview={checks:{},documents:{},note:'',completedAt:''};
-      c.next='แก้ไขคำร้องตามข้อสังเกต แล้วตรวจความครบถ้วนและส่งตรวจอีกครั้ง';
-      c.requestDocument={...(c.requestDocument||{}),status:'ส่งกลับให้เจ้าของสำนวนแก้ไข',stateKey:'owner_review'};
-      addDocumentVersion(c,to);
-      appendAudit(c,'ส่งคำร้องกลับให้เจ้าของสำนวนแก้ไข',from,to,note);
-      await successAlert('ส่งกลับให้เจ้าของสำนวนแล้ว','รายการกลับเข้าสู่งานของเจ้าของสำนวน พร้อมข้อสังเกตและเอกสารฉบับเดิม');
-    }else if(action==='approve'&&c.stage==='supervisor_review'){
-      const from=c.owner,to='ผอ.สำนัก/กอง';
-      const confirmed=await confirmHandoff({title:'ยืนยันเห็นชอบและส่งให้ ผอ.สำนัก/กอง',c,from,to,confirmText:'เห็นชอบและส่งต่อ'});
-      if(!confirmed)return;
-      c.stage='director_review';
-      c.status='รอ ผอ.สำนัก/กอง พิจารณาคำร้อง';
-      c.owner=to;
-      c.next='พิจารณาคำร้องและเอกสารประกอบก่อนเตรียมยื่นศาล';
-      delete c.returnedBy;delete c.returnNote;
-      appendAudit(c,'ผู้บังคับบัญชาเห็นชอบและส่งต่อ',from,to,'ผ่านการตรวจสอบชั้นต้น');
-      await successAlert('ส่งให้ ผอ.สำนัก/กอง แล้ว','คำร้องถูกส่งเข้าคิวพิจารณา โดยเจ้าของสำนวนและเลขงานยังคงเดิม');
-    }else if(action==='approve'&&c.stage==='director_review'){
-      const from=c.owner,to=c.caseOwner;
-      const confirmed=await confirmHandoff({title:'ยืนยันเห็นชอบและส่งให้เจ้าของสำนวนยื่นศาล',c,from,to,confirmText:'เห็นชอบและส่งกลับ'});
-      if(!confirmed)return;
-      c.stage='court_ready';
-      c.status='พร้อมยื่นคำร้องต่อศาล';
-      c.owner=to;
-      c.next='ตรวจชุดเอกสาร นำคำร้องไปยื่นศาล และบันทึกเลขรับคำร้อง';
-      c.requestDocument={...(c.requestDocument||{}),form:'ปปท.8-17',name:'คำร้องขอให้ศาลออกหมายจับ',file:c.requestDocument?.file||'คำร้อง_'+c.no+'.pdf',version:'ฉบับผ่านตรวจ',status:'พร้อมยื่นศาล',stateKey:'approved'};
-      addDocumentVersion(c,to);
-      delete c.returnedBy;delete c.returnNote;
-      appendAudit(c,'ผอ.สำนัก/กอง เห็นชอบคำร้อง',from,to,'ส่งให้เจ้าของสำนวนดำเนินการยื่นศาล');
-      await successAlert('เห็นชอบคำร้องแล้ว','งานกลับเข้าสู่งานของเจ้าของสำนวนเพื่อดำเนินการยื่นศาล');
-    }
-    updatedAtByCase[c.no]='15 ส.ค. 2569 10:30';
-    go('case/'+c.no);
+    await successAlert('ยืนยันคำร้องแล้ว','ขั้นถัดไปตรวจและยืนยันรายการเอกสารในชุดยื่นศาล ก่อนนำไปยื่นต่อศาลด้วยตนเอง');
+    go('officer-court-package/'+c.no);
   });
   document.querySelectorAll('[data-download-court-package]').forEach(b=>b.onclick=()=>{
     const c=demoCases.find(x=>x.no===b.dataset.downloadCourtPackage);
@@ -3383,6 +3655,8 @@ function bind(){
       const warrantNo=document.getElementById('court-warrant-no').value.trim();
       const warrantDate=document.getElementById('court-warrant-date').value;
       if(!warrantNo||!warrantDate){toast('กรุณาระบุเลขหมายจับและวันที่ศาลออกหมาย');return}
+      const expiryValue=document.getElementById('court-warrant-expiry').value;
+      if(c.limitationEra==='before'&&!expiryValue){toast('เหตุเกิดก่อน 30 เม.ย. 2559 ต้องระบุวันสิ้นสุดอายุความให้ชัดเจน');return}
       warrantData={warrantNo,warrantDate,court:document.getElementById('court-warrant-court').value.trim()||c.courtSubmission?.court||'',caseNo:document.getElementById('court-case-no').value.trim(),file:courtDocumentFile};
     }
     const confirmed=await confirmHandoff({title:'ยืนยันบันทึกผลพิจารณาจากศาล',c,from:c.courtSubmission?.court||'ศาล',to:c.caseOwner||c.owner,documentLabel:courtDocumentFile,confirmText:'ยืนยันบันทึกผล',note:courtOutcomeLabels[outcome]});
@@ -3522,8 +3796,12 @@ function bind(){
   });
 }
 
-document.getElementById('role').addEventListener('change',e=>{currentRole=e.target.value;document.getElementById('side-role').textContent=roleNames[currentRole];const destinations={officer:'queue-officer',got:'queue-got',supervisor:'queue-supervisor',director:'queue-director',approver:'queue-approver',bureau:'queue-bureau',manager:'reports'};toast('เปลี่ยนบทบาทเป็น '+roleNames[currentRole]);if(destinations[currentRole])go(destinations[currentRole]);});
+document.getElementById('role').addEventListener('change',e=>{
+  if(!roleIsAllowed(e.target.value)){e.target.value=currentRole;toast('บัญชีนี้ไม่มีสิทธิ์ในบทบาทที่เลือก');return}
+  currentRole=e.target.value;myWorkBucket='all';document.getElementById('side-role').textContent=roleNames[currentRole];toast('เปลี่ยนมุมมองบทบาทเป็น '+roleNames[currentRole]);go(activeProcessNav==='registry'?'my-work':activeProcessNav);
+});
 window.addEventListener('hashchange',()=>{formSection=0;render()});
+applyRoleAccess();
 render();
 startAutomaticPostalTracking();
 </script>
